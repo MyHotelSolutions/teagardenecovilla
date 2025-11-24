@@ -1,13 +1,13 @@
 <template>
     <!-- video -->
-        <div class="flex flex-col justify-center gap-25 min-h-screen">
+        <div class="flex flex-col justify-center gap-6 min-h-screen">
             <div class="flex flex-col justify-center gap-12 h-[75vh] w-[75vw] mx-auto relative">
                 <img src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Video/Thumbnail.jpg" alt="" class="object-cover h-full w-full rounded-4xl">
                 
                 <!-- extra leyer -->
                 <div class="flex flex-col justify-center items-center absolute w-full h-full top-0 bottom-0 left-0 right-0 rounded-4xl bg-gradient-to-b from-white/0  to-slate-950/40">
                     <!-- play button outer layer -->
-                    <div class="border-6 p-10 rounded-full animate-ping border-white/30">
+                    <div class="border-8 p-10 rounded-3xl animate-ping border-white/30">
                     </div>
                 </div>
                 <div class="flex flex-col justify-center items-center absolute w-full h-full top-0 bottom-0 left-0 right-0 rounded-4xl">
@@ -16,12 +16,28 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full h-full bg-black/70 border fixed top-0 bottom-0 left-0 right-0 z-100" v-if="videoPopup"></div>
+            <div class="flex flex-col justify-center items-center w-full h-full bg-black/70 border fixed top-0 bottom-0 left-0 right-0 z-100" v-if="videoPopup">
+                <!-- youtube iframe with progressive enhancement (extra queries after the url to optimize the embed) -->
+                <div class="w-full">
+                    <p>Lorem, ipsum dolor.</p>
+                    <Icon name="material-symbols:cancel-outline-rounded flot-right" @click="videoPopup=false"></Icon>
+                </div>
+                <vue-plyr autoplay>
+                    <div class="plyr__video-embed">
+                        <iframe
+                            src="https://www.youtube.com/embed/bTqVqk7FSmY?amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1&autoplay=1"
+                            allowfullscreen
+                            allowtransparency
+                            allow="autoplay"
+                            class="w-[82vw] h-[94vh]"
+                        ></iframe>
+                    </div>
+                </vue-plyr>
+            </div>
         </div>
 </template>
 
 <script setup>
 
 const videoPopup = ref(false)
-
 </script>

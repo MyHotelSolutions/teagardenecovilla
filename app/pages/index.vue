@@ -28,13 +28,9 @@
         <!-- introduction gallery -->
         <HomeIntrogallery></HomeIntrogallery>
 
-        <HomeRooms2></HomeRooms2>
-        
-        <Booknow></Booknow>
-        
         <!-- amenities -->
-        <div class="flex flex-col justify-center gap-25 min-h-screen">
-            <div class="flex flex-col justify-center gap-12 h-[86vh] w-[75vw] mx-auto">
+        <div class="flex flex-col justify-center gap-25 min-h-screen bg-[#fafaf9]">
+            <div class="flex flex-col justify-center gap-12 h-[86vh] w-full mx-auto">
                 <div class="flex flex-col justify-center items-center gap-6">
                     <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">Villa Essentials</h3>
                     <p class="text-stone-500 text-lg leading-relaxed text-center w-[50%]">Our villa offers more than just a place to stay.it’s designed to make your time in 
@@ -44,25 +40,40 @@
                 </div>
 
                 <!-- outer layer -->
-                <div class="flex flex-row justify-between w-fit mx-auto gap-4">
+                <div class="flex flex-row justify-between w-[90vw] mx-auto gap-4">
                     <!-- card -->
-                    <div class="group flex flex-col items-center gap-2 p-14 rounded-xl hover:bg-teal-800 border border-gray-200 shadow-xl transition-colors duration-300" v-for="item in amenitiesList">
+                    <div class="group flex flex-col items-center gap-10 p-14 rounded-xl hover:bg-teal-800 transition-colors duration-300 shadow-lg" v-for="item in amenitiesList">
                         <!-- icon container -->
-                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-20 h-20 bg-teal-800 group-hover:bg-white transition-colors duration-300">
+                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-20 h-20 bg-[#D1FAE5] group-hover:bg-white transition-colors duration-300">
                             <!-- icon -->
-                            <Icon :name="item.icon" class="text-4xl text-white group-hover:text-teal-800 transition-colors duration-300"/>
+                            <Icon :name="item.icon" class="text-4xl text-[#43A083] group-hover:text-teal-800 transition-colors duration-300"/>
                         </div>
                         <!-- facility name -->
-                        <p class="text-center group-hover:text-white transition-colors duration-300">{{ item.name }}</p>
+                        <p class="text-center group-hover:text-white transition-colors text-lg duration-300 whitespace-nowrap">{{ item.name }}</p>
                     </div>
                 </div>
             </div>
         </div>
         
         <HomeVideo></HomeVideo>
+
+        <HomeRooms2></HomeRooms2>
         
-        <div class="h-[2000px] bg-amber-200"></div>
+        <HomeGallery></HomeGallery>
         
+        <HomeReviews></HomeReviews>
+        
+        <HomeFaq></HomeFaq>
+        
+        <Booknow></Booknow>
+
+        <HomePlaceToVisit></HomePlaceToVisit>
+        
+        <Footer></Footer>
+        
+
+        <!-- <div class="h-[2000px] bg-amber-200"></div> -->
+
 
     </div>
 </template>
