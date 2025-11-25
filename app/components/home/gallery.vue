@@ -1,16 +1,11 @@
 <template>
-    <div class="flex flex-col justify-center items-center w-full h-screen">
+    <div class="flex flex-col justify-center items-center w-full h-screen bg-[#fafaf9]">
         <div class="flex flex-col gap-12 h-[86vh] w-[75vw] mx-auto">
             
             <!-- title section -->
-            <div class="flex flex-col justify-center items-center gap-6">
-                <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">Moments Captured </h3>
-                <p class="text-stone-500 text-lg leading-relaxed text-center w-[50%]">Every corner of the villa tells a story, 
-                    and every view paints its own masterpiece. Our gallery takes 
-                    you on a journey through misty mornings.</p>
-                <Button variant="primary" class="w-fit font-light text-sm">
-                    View Gallery
-                </Button>
+            <div class="flex flex-col justify-center items-center gap-2">
+                <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">Moments Captured</h3>
+                <hr class="w-[6vw] h-1 rounded-full bg-[#059699]">
             </div>
 
             <!-- image gallery -->

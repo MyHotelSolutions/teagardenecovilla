@@ -3,20 +3,18 @@
         <div class="flex flex-col gap-12 h-auto w-[75vw] mx-auto">
             
             <!-- title section -->
-            <div class="flex flex-col justify-center items-center gap-6">
+            <div class="flex flex-col justify-center items-center gap-2">
                 <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">Guest Experiences</h3>
-                <p class="text-stone-500 text-lg leading-relaxed text-center w-[50%]">Every corner of the villa tells a story, 
-                    and every view paints its own masterpiece. Our gallery takes 
-                    you on a journey through misty mornings.</p>
+                <hr class="w-[6vw] h-1.5 rounded-full bg-[#059699]">
             </div>
 
             <!-- reviews -->
             <div class="grid grid-cols-4 gap-4 h-[55vh]">
                 <div class="flex flex-col gap-10 border border-gray-200 rounded-2xl shadow-xl items-center p-10" v-for="item in reviews">
                     <div class="flex flex-row" >
-                        <Icon name="material-symbols:kid-star" class="border p-3" v-for="value in item.star"/>
+                        <Icon name="material-symbols:kid-star" class="border p-3 text-amber-400" v-for="value in item.star"/>
                     </div>
-                    <p class="">{{ item.description }}</p>
+                    <p class="text-center">{{ item.description }}</p>
                     <div class="flex flex-row items-center w-full gap-4 mt-auto">
                         <img :src="item.image" alt="" class="rounded-full w-20 h-20">
                         <div class="flex flex-col ">

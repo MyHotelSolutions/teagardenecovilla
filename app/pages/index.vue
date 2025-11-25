@@ -29,27 +29,25 @@
         <HomeIntrogallery></HomeIntrogallery>
 
         <!-- amenities -->
-        <div class="flex flex-col justify-center gap-25 min-h-screen bg-[#fafaf9]">
+        <div class="flex flex-col justify-center gap-25 h-[60vh] bg-[#fafaf9]">
             <div class="flex flex-col justify-center gap-12 h-[86vh] w-full mx-auto">
-                <div class="flex flex-col justify-center items-center gap-6">
-                    <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">Villa Essentials</h3>
-                    <p class="text-stone-500 text-lg leading-relaxed text-center w-[50%]">Our villa offers more than just a place to stay.it’s designed to make your time in 
-                        the mountains effortless and memorable. From open spaces to relax, dining areas to enjoy 
-                        fresh meals, and cozy corners to unwind, every detail is here to make your retreat smooth, 
-                        comfortable, and connected with nature.</p>
+                <div class="flex flex-col justify-center items-center gap-2">
+                    <p class="uppercase text-center text-[#059699] transition-colors text-lg whitespace-nowrap font-semibold">Curated comforts</p>
+                    <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-[500] tracking-wider">Villa Essentials</h3>
+                    <hr class="w-[6vw] h-1.5 rounded-full bg-[#059699]">
                 </div>
 
                 <!-- outer layer -->
-                <div class="flex flex-row justify-between w-[90vw] mx-auto gap-4">
+                <div class="grid grid-cols-6 w-[90vw] mx-auto gap-4">
                     <!-- card -->
-                    <div class="group flex flex-col items-center gap-10 p-14 rounded-xl hover:bg-teal-800 transition-colors duration-300 shadow-lg" v-for="item in amenitiesList">
+                    <div class="group flex flex-col items-center gap-6 p-14 rounded-xl hover:bg-teal-800 transition-colors duration-300 border border-gray-200 " v-for="item in amenitiesList">
                         <!-- icon container -->
-                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-20 h-20 bg-[#D1FAE5] group-hover:bg-white transition-colors duration-300">
+                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-16 h-16 bg-[#D1FAE5] group-hover:bg-white transition-colors duration-300">
                             <!-- icon -->
-                            <Icon :name="item.icon" class="text-4xl text-[#43A083] group-hover:text-teal-800 transition-colors duration-300"/>
+                            <Icon :name="item.icon" class="text-3xl text-[#047857] transition-colors duration-300"/>
                         </div>
                         <!-- facility name -->
-                        <p class="text-center group-hover:text-white transition-colors text-lg duration-300 whitespace-nowrap">{{ item.name }}</p>
+                        <p class="text-center group-hover:text-white transition-colors text-lg duration-300 whitespace-nowrap font-medium">{{ item.name }}</p>
                     </div>
                 </div>
             </div>
@@ -65,10 +63,10 @@
         
         <HomeFaq></HomeFaq>
         
-        <Booknow></Booknow>
-
         <HomePlaceToVisit></HomePlaceToVisit>
-        
+
+        <Booknow></Booknow>
+                
         <Footer></Footer>
         
 
@@ -85,11 +83,11 @@ const hotelStore = useHotelStore()
 
 const amenitiesList = [
     {
-        name : 'Free parking',
-        icon : 'lucide:circle-parking'
+        name : 'Parking',
+        icon : 'material-symbols:directions-car-outline-sharp'
     },
     {
-        name : 'Daily cleaning',
+        name : 'Daily Cleaning',
         icon : 'mdi:broom'
     },
     {
@@ -101,16 +99,12 @@ const amenitiesList = [
         icon : 'streamline-plump:fried-egg-breakfast'
     },
     {
-        name : 'Picknick area',
-        icon : 'material-symbols:googler-travel'
+        name : 'Picnic Area',
+        icon : 'majesticons:basket-2-line'
     },
     {
-        name : 'Airport shuttle',
+        name : 'Airport Shuttle',
         icon : 'streamline:airport-plane-solid'
-    },
-    {
-        name : 'Smorking are',
-        icon : "material-symbols:smoking-rooms"
     },
 ]
 

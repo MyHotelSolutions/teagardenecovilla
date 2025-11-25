@@ -1,27 +1,24 @@
 <template>
-    <div class="flex flex-col justify-center items-center w-full h-screen">
-        <div class="flex flex-col gap-12 h-auto w-[75vw] mx-auto">
+    <div class="flex flex-col justify-center items-center w-full h-screen bg-[#fafaf9]">
+        <div class="flex flex-col gap-12 h-auto w-[75vw] mx-auto ">
 
             <!-- reviews -->
-            <div class="flex flex-col gap-4 h-[55vh]">
-                <div class="grid grid-cols-8 gap-20 h-full">
-                    <!-- content section -->
-                    <div class="flex flex-col gap-20 col-span-6">
+            <div class="flex flex-col gap-30">
+                
+                <div class="flex flex-col justify-center items-center gap-2">
+                    <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">FAQ</h3>
+                    <hr class="w-[6vw] h-1.5 rounded-full bg-[#059699]">
+                </div>
+                <!-- content section -->
+                <div class="grid grid-cols-10 gap-20 h-full">
 
-                        <!-- title section -->
-                        <div class="flex flex-col justify-center items-center gap-6">
-                            <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">FAQ section</h3>
-                            <p class="text-stone-500 text-lg leading-relaxed text-center w-[75%]">Every corner of the villa tells a story, 
-                                and every view paints its own masterpiece. Our gallery takes 
-                                you on a journey through misty mornings.</p>
-                        </div>
-    
-                        <!-- q&a section -->
+                    <!-- q&a section -->
+                    <div class="flex flex-col gap-20 col-span-6">
                          <div class="flex flex-col gap-6 cursor-default">
                              <div class="flex flex-col gap-4" v-for="(item, index) in faq">
                                  <!-- question -->
                                  <div class="flex flex-row justify-between" @click="selectedQestion=index">
-                                     <p class="text-black font-semibold text-xl leading-relaxed">{{ item.question }}</p>
+                                     <p class="text-black font-medium text-xl leading-relaxed">{{ item.question }}</p>
                                      <Icon name="material-symbols:keyboard-arrow-down-rounded" class="text-4xl text-black duration-200" :class="selectedQestion == index ? 'r-otate-180' : 'rotate-180'"/>
                                  </div>
                                  <!-- answare -->
@@ -33,7 +30,7 @@
                     </div>
     
                     <!-- image section -->
-                    <div class="col-span-2 h-full">
+                    <div class="col-span-4 h-full">
                         <img src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" alt="" class="w-full h-full object-cover rounded-2xl">
                     </div>
                 </div>

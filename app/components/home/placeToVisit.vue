@@ -1,14 +1,14 @@
 <template>
     <div class="flex flex-col justify-center items-center w-full h-screen">
-        <div class="flex flex-col justify-center items-center gap-12 h-auto w-full mx-auto">
+        <div class="flex flex-col justify-center items-center gap-16 h-auto w-full mx-auto">
             
             <!-- title section -->
-            <div class="flex flex-col justify-center items-center gap-6">
-                <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">Place to visit</h3>
-                <p class="text-stone-500 text-lg leading-relaxed text-center w-[75%]">Discover vibrant adventures right at your doorstep,
-                    then return to pure  tranquility. Your perfect balance of excitement and serene relaxation  awaits.</p>
+            <div class="flex flex-col justify-center items-center gap-2">
+                <p class="uppercase text-center text-[#059699] transition-colors text-lg whitespace-nowrap font-semibold">Places to Visit</p>
+                <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">Travel Beyond the Map</h3>
+                <hr class="w-[6vw] h-1 rounded-full bg-[#059699]">
             </div>
-            
+
             <!-- place scroll section -->
             <div class="grid grid-cols-10 gap-4 w-full h-[500px]">
                 <!-- left side -->
@@ -26,7 +26,7 @@
                         <img :src="placessList[selected].image" alt="" class="w-full h-full object-cover">
                         <div class="flex flex-col gap-4 justify-end items-start absolute top-0 bottom-0 right-0 left-0 p-10 bg-gradient-to-t from-black/70 to-transparent">
                             <p class="font-serif text-4xl md:text-5xl text-white leading-tight font-black">{{ placessList[selected].name }}</p>
-                            <button class="text-black py-2 px-6 rounded-md bg-white hover:bg-gray-100 transition-colors">read more</button>
+                            <button class="text-teal-800 font-semibold py-3 px-10 rounded-full bg-white hover:bg-gray-100">Read More</button>
                         </div>
                     </div>
                 </div>
