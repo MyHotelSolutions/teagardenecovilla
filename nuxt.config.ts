@@ -12,5 +12,6 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: ['@pinia/nuxt', '@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt'],
+  modules: ['@pinia/nuxt', '@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt', '@nuxt/ui'],
+
 })

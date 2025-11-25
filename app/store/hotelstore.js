@@ -17,5 +17,116 @@ export const useHotelStore = defineStore('hotel', () => {
     },
   ]
 
-  return { socialLinks }
+  const availableRooms = ref([])
+  const selectedRooms = ref([])
+  const roomDetails = ref(
+    [
+        {
+            id : 0,
+            side : 'left',
+            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00478%20(1).jpg',
+            price : 16000,
+            floor : 'down',
+            count : 4,
+            bedsize : 'Double quin size beds',
+            name : 'Duplex Quadruple room',
+            facility : [
+                'lucide-lab:kettle-electric',
+                'solar:hanger-2-bold',
+                'guidance:showers',
+                'ep:hot-water',
+                'lucide-lab:chairs-table-platter',
+                'guidance:no-smoking',
+                'ic:outline-live-tv',
+                'material-symbols:android-wifi-4-bar-rounded'
+            ]
+        },
+        {
+            id : 1,
+            side : 'right',
+            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00478%20(1).jpg',
+            price : 16000,
+            floor : 'down',
+            count : 0,
+            bedsize : 'Double quin size beds',
+            name : 'Duplex Quadruple room',
+            facility : [
+                'lucide-lab:kettle-electric',
+                'solar:hanger-2-bold',
+                'guidance:showers',
+                'ep:hot-water',
+                'lucide-lab:chairs-table-platter',
+                'guidance:no-smoking',
+                'ic:outline-live-tv',
+                'material-symbols:android-wifi-4-bar-rounded'
+            ]
+        },
+        {
+            id : 2,
+            side : 'left',
+            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00478%20(1).jpg',
+            price : 16000,
+            floor : 'first',
+            count : 0,
+            bedsize : 'Double quin size beds',
+            name : 'Duplex Quadruple room',
+            facility : [
+                'lucide-lab:kettle-electric',
+                'solar:hanger-2-bold',
+                'guidance:showers',
+                'ep:hot-water',
+                'lucide-lab:chairs-table-platter',
+                'guidance:no-smoking',
+                'ic:outline-live-tv',
+                'material-symbols:android-wifi-4-bar-rounded'
+            ]
+        },
+        {
+            id : 3,
+            side : 'right',
+            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00478%20(1).jpg',
+            price : 16000,
+            floor : 'first',
+            count : 0,
+            bedsize : 'Double quin size beds',
+            name : 'Duplex Quadruple room',
+            facility : [
+                'lucide-lab:kettle-electric',
+                'solar:hanger-2-bold',
+                'guidance:showers',
+                'ep:hot-water',
+                'lucide-lab:chairs-table-platter',
+                'guidance:no-smoking',
+                'ic:outline-live-tv',
+                'material-symbols:android-wifi-4-bar-rounded'
+            ]
+        },
+    ]
+  )
+
+  const personalData = ref(
+    {
+      firstName : '',
+      lastName : '',
+      mobile : ''
+    }
+  )
+  const accountDetails = ref(
+    {
+      email : '',
+      password : '',
+      repassword : ''
+    }
+  )
+
+  const cardDetails = ref(
+    {
+      cardNumber : '',
+      cardName : '',
+      expireDate : '',
+      csv : ''
+    }
+  )
+
+  return { socialLinks, availableRooms, selectedRooms, roomDetails, personalData, accountDetails, cardDetails }
 })

@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <menubar></menubar>
-        <Headerimage title="Gallery" description="Discover vibrant adventures right at your doorstep, then return to pure  tranquility."></Headerimage>
+        <Headerimage  title="Events" description="Discover vibrant adventures right at your doorstep, then return to pure  tranquility."></Headerimage>
         <Booknow></Booknow>
         <Footer></Footer>
     </div>

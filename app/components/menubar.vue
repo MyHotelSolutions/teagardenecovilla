@@ -14,16 +14,7 @@
 
           <!-- Desktop Nav -->
           <div class="hidden md:flex items-center space-x-8">
-            <a 
-              v-for="link in navLinks" 
-              :key="link.name" 
-              :href="link.href" 
-              :class="`text-sm font-medium tracking-wide hover:text-emerald-500 transition-colors ${
-                isScrolled ? 'text-stone-600' : 'text-white/90'
-              }`"
-            >
-              {{ link.name }}
-            </a>
+            <NuxtLink :to="`${link.href}`" class="cursor-pointer" :class="`text-sm font-medium tracking-wide hover:text-emerald-500 transition-colors ${isScrolled ? 'text-stone-600' : 'text-white/90'}`" v-for="link in navLinks">{{ link.name }}</NuxtLink>
             <Button :variant="isScrolled ? 'primary' : 'secondary'" class="py-2 px-6 text-sm rounded-full">
               Book Now
             </Button>
@@ -61,12 +52,12 @@ const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 
 const navLinks = [
-  { name: 'Home', href: '#' },
-  { name: 'Gallery', href: '#amenities' },
-  { name: 'Events', href: '#rooms' },
-  { name: 'Places to visit', href: '#gallery' },
-  { name: 'About Us', href: '#contact' },
-  { name: 'Contacts', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'Events', href: '/events' },
+  { name: 'Places to visit', href: 'placetovisit' },
+  { name: 'About Us', href: 'aboutus' },
+  { name: 'Contacts', href: '/contactus' },
 ]
 
 const handleScroll = () => {

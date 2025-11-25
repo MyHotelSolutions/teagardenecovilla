@@ -23,12 +23,12 @@
             </div>
             <div class="w-full h-full flex flex-col justify-center">
                 <ul class="flex flex-col gap-10 text-[#C1AA7F] font-[Sora] text-4xl font-bold text-center">
-                    <li class="cursor-pointer" @click="router.push('/')">Home</li>
-                    <li class="cursor-pointer" @click="router.push('/')">Gallery</li>
-                    <li class="cursor-pointer" @click="router.push('/')">Events</li>
-                    <li class="cursor-pointer" @click="router.push('/')">Place to visit</li>
-                    <li class="cursor-pointer" @click="router.push('/')">About us</li>
-                    <li class="cursor-pointer" @click="router.push('/')">Contact us</li>
+                    <li class="cursor-pointer"><NuxtLink to="/" class="cursor-pointer">Home</NuxtLink></li>
+                    <li class="cursor-pointer"><NuxtLink to="/gallery" class="cursor-pointer">Gallery</NuxtLink></li>
+                    <li class="cursor-pointer"><NuxtLink to="/events" class="cursor-pointer">Events</NuxtLink></li>
+                    <li class="cursor-pointer"><NuxtLink to="/placetovisit" class="cursor-pointer">Place to visit</NuxtLink></li>
+                    <li class="cursor-pointer"><NuxtLink to="/aboutus" class="cursor-pointer">About us</NuxtLink></li>
+                    <li class="cursor-pointer"><NuxtLink to="/contactus" class="cursor-pointer">Contact us</NuxtLink></li>
                 </ul>
             </div>
             <div class="flex flex-col items-center justify-center gap-4 text-black py-5">
