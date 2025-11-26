@@ -1,14 +1,14 @@
-<template>
+<!-- <template>
     <div class="flex flex-col justify-center items-center w-full h-screen">
         <div class="flex flex-col gap-12 h-auto w-[75vw] mx-auto">
             
-            <!-- title section -->
+            title section
             <div class="flex flex-col justify-center items-center gap-2">
                 <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">Guest Experiences</h3>
                 <hr class="w-[6vw] h-1.5 rounded-full bg-[#059699]">
             </div>
 
-            <!-- reviews -->
+            reviews
             <div class="grid grid-cols-4 gap-4 h-[55vh]">
                 <div class="flex flex-col gap-10 border border-gray-200 rounded-2xl shadow-xl items-center p-10" v-for="item in reviews">
                     <div class="flex flex-row" >
@@ -20,6 +20,59 @@
                         <div class="flex flex-col ">
                             <p class="font-semibold text-xl">{{ item.name }}</p>
                             <p class="text-gray-500">{{ item.country }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template> -->
+
+<template>
+    <div class="flex flex-col justify-center items-center w-full min-h-screen py-18 sm:py-12 lg:py-16 xl:min-h-screen">
+        <div class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12 h-auto w-[90vw] sm:w-[85vw] md:w-[80vw] lg:w-[75vw] mx-auto px-4 sm:px-0">
+            
+            <!-- title section -->
+            <div class="flex flex-col justify-center items-center gap-2 sm:gap-3">
+                <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-stone-900 leading-tight font-black text-center">
+                    Guest Experiences
+                </h3>
+                <hr class="w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[8vw] xl:w-[6vw] h-1 sm:h-1.5 rounded-full bg-[#059699]">
+            </div>
+
+            <!-- reviews -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 h-auto">
+                <div 
+                    class="flex flex-col gap-4 sm:gap-6 border border-gray-200 rounded-2xl shadow-lg sm:shadow-xl items-center p-6 sm:p-6 md:p-8 hover:shadow-2xl transition-shadow duration-300 min-h-[320px] sm:min-h-[380px] md:min-h-[400px] lg:min-h-[420px]"
+                    v-for="item in reviews"
+                    :key="item.id"
+                >
+                    <!-- Stars -->
+                    <div class="flex flex-row gap-1">
+                        <Icon 
+                            name="material-symbols:kid-star" 
+                            class="p-1 sm:p-2 text-amber-400 text-xl sm:text-2xl" 
+                            v-for="value in item.star"
+                            :key="value"
+                        />
+                    </div>
+                    
+                    <!-- Review Text -->
+                    <p class="text-center text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 flex-grow overflow-y-auto">
+                        {{ item.description }}
+                    </p>
+                    
+                    <!-- Reviewer Info -->
+                    <div class="flex flex-row items-center w-full gap-3 sm:gap-4 mt-4">
+                        <img 
+                            :src="item.image" 
+                            :alt="`${item.name} from ${item.country}`" 
+                            class="rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-cover flex-shrink-0"
+                        >
+                        <div class="flex flex-col min-w-0">
+                            <p class="font-semibold text-base sm:text-lg md:text-xl truncate">{{ item.name }}</p>
+                            <p class="text-gray-500 text-sm sm:text-base truncate">{{ item.country }}</p>
                         </div>
                     </div>
                 </div>

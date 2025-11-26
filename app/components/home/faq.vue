@@ -1,27 +1,28 @@
-<template>
+<!-- before mobile optimizing -->
+<!-- <template>
     <div class="flex flex-col justify-center items-center w-full h-screen bg-[#fafaf9]">
         <div class="flex flex-col gap-12 h-auto w-[75vw] mx-auto ">
 
-            <!-- reviews -->
+            reviews
             <div class="flex flex-col gap-30">
                 
                 <div class="flex flex-col justify-center items-center gap-2">
                     <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-black">FAQ</h3>
                     <hr class="w-[6vw] h-1.5 rounded-full bg-[#059699]">
                 </div>
-                <!-- content section -->
+                content section
                 <div class="grid grid-cols-10 gap-20 h-full">
 
-                    <!-- q&a section -->
+                    q&a section
                     <div class="flex flex-col gap-20 col-span-6">
                          <div class="flex flex-col gap-6 cursor-default">
                              <div class="flex flex-col gap-4" v-for="(item, index) in faq">
-                                 <!-- question -->
+                                 question
                                  <div class="flex flex-row justify-between" @click="selectedQestion=index">
                                      <p class="text-black font-medium text-xl leading-relaxed">{{ item.question }}</p>
                                      <Icon name="material-symbols:keyboard-arrow-down-rounded" class="text-4xl text-black duration-200" :class="selectedQestion == index ? 'r-otate-180' : 'rotate-180'"/>
                                  </div>
-                                 <!-- answare -->
+                                 answare
                                  <div @click="console.log('this ooe')" :class="selectedQestion == index ? 'block' : 'hidden'">
                                      <p class="text-black/75 font-light text-lg leading-relaxed">{{ item.answer }}</p>
                                  </div>
@@ -29,10 +30,54 @@
                          </div>
                     </div>
     
-                    <!-- image section -->
+                    image section
                     <div class="col-span-4 h-full">
                         <img src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" alt="" class="w-full h-full object-cover rounded-2xl">
                     </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template> -->
+
+<template>
+    <div class="flex flex-col justify-center items-center w-full min-h-screen bg-[#fafaf9]">
+        <div class="flex flex-col gap-10 md:gap-12 h-auto w-[90vw] lg:w-[85vw] xl:w-[75vw] mx-auto py-30    ">
+
+            <div class="flex flex-col justify-center items-center gap-2">
+                <h3 class="font-serif text-3xl md:text-5xl text-stone-900 leading-tight font-black">FAQ</h3>
+                <hr class="w-10 md:w-[6vw] h-1.5 rounded-full bg-[#059699]">
+            </div>
+
+            <div class="flex flex-col gap-10 xl:grid xl:grid-cols-10 xl:gap-20 h-full">
+
+                <div class="flex flex-col gap-8 md:gap-12 xl:gap-20 col-span-full xl:col-span-6">
+                    <div class="flex flex-col gap-6 cursor-default">
+                        <div class="flex flex-col gap-4" v-for="(item, index) in faq" :key="index">
+                            
+                            <div class="flex flex-row justify-between cursor-pointer py-2 border-b border-stone-200" @click="selectedQestion=index">
+                                <p class="text-black font-medium text-lg md:text-xl leading-relaxed pr-4">{{ item.question }}</p>
+                                <Icon 
+                                    name="material-symbols:keyboard-arrow-down-rounded" 
+                                    class="text-3xl md:text-4xl text-black duration-300 transform" 
+                                    :class="selectedQestion == index ? 'rotate-0' : '-rotate-90'" 
+                                />
+                            </div>
+                            
+                            <div :class="selectedQestion == index ? 'block pt-2 pb-4' : 'hidden'">
+                                <p class="text-black/75 font-light text-base md:text-lg leading-relaxed">{{ item.answer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-4 h-full hidden xl:block">
+                    <img 
+                        src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" 
+                        alt="Scenic view of the Tea Garden Eco Villa" 
+                        class="w-full h-full object-cover rounded-2xl shadow-xl"
+                    >
                 </div>
             </div>
 

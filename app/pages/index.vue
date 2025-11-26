@@ -3,56 +3,80 @@
         <!-- menu bar -->
         <Menubar></Menubar>
         
-        <!-- hero section -->
-        <img src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" alt="" class="w-screen h-screen object-cover">
-        <div class="flex flex-col justify-start items-end absolute top-0 z-10  w-full h-screen">
-            <header class="relative h-screen min-h-[700px] flex items-end justify-end overflow-hidden w-full pb-22">
+        <div class="relative w-full h-screen min-h-[600px] sm:min-h-[700px]">
+            <!-- Background Image -->
+            <img 
+                src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" 
+                alt="Mountain paradise view" 
+                class="w-full h-full object-cover"
+            >
+            
+            <!-- Content Overlay -->
+            <div class="flex flex-col justify-start items-end absolute top-0 z-10 w-full h-full">
+                <header class="relative h-full flex items-end justify-end overflow-hidden w-full pb-12 sm:pb-16 md:pb-20 lg:pb-22">
 
-            <div class="container mx-auto px-6 relative z-10 text-center pt-20 ">
-                <span class="inline-block py-1 px-3 border border-white/30 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-bold tracking-[0.2em] uppercase mb-6 animate-fade-in-up w-fit">
-                Welcome to Paradise
-                </span>
-                <div class="flex flex-col gap-5 justify-center items-center">
-                    <h1 class="font-serif text-5xl md:text-7xl lg:text-7xl text-white leading-tight mb-6 drop-shadow-lg">
-                    Breathe in the
-                    <span class=" text-emerald-300">Mountain Air</span>
-                    </h1>
-                    <Button variant="primary" class="w-fit">
-                        Book Now
-                    </Button>
-                </div>
+                    <div class="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-center pt-12 sm:pt-16 md:pt-20 w-full">
+                        <!-- Badge -->
+                        <span class="inline-block py-2 px-4 sm:py-1 sm:px-3 border border-white/30 rounded-full bg-white/10 backdrop-blur-sm text-white text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-4 sm:mb-6 animate-fade-in-up w-fit mx-auto">
+                            Welcome to Paradise
+                        </span>
+                        
+                        <!-- Main Content -->
+                        <div class="flex flex-col gap-4 sm:gap-5 justify-center items-center px-2 sm:px-0">
+                            <!-- Heading -->
+                            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-snug sm:leading-tight mb-4 sm:mb-6 drop-shadow-lg max-w-4xl mx-auto">
+                                Breathe in the
+                                <span class="inline-block text-emerald-300 mt-1 sm:mt-0">Mountain Air</span>
+                            </h1>
+                            
+                            <!-- Button -->
+                            <Button variant="primary" class="w-fit text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
+                                Book Now
+                            </Button>
+                        </div>
+                    </div>
+                    
+                    <!-- Gradient Overlay for Better Text Readability -->
+                    <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+                </header>
             </div>
-            </header>
         </div>
+
 
         <!-- introduction gallery -->
         <HomeIntrogallery></HomeIntrogallery>
 
         <!-- amenities -->
-        <div class="flex flex-col justify-center gap-25 h-[60vh] bg-[#fafaf9]">
-            <div class="flex flex-col justify-center gap-12 h-[86vh] w-full mx-auto">
-                <div class="flex flex-col justify-center items-center gap-2">
-                    <p class="uppercase text-center text-[#059699] transition-colors text-lg whitespace-nowrap font-semibold">Curated comforts</p>
-                    <h3 class="font-serif text-4xl md:text-5xl text-stone-900 leading-tight font-[500] tracking-wider">Villa Essentials</h3>
-                    <hr class="w-[6vw] h-1.5 rounded-full bg-[#059699]">
+        <div class="flex flex-col justify-center gap-8 sm:gap-16 md:gap-20 lg:gap-25 min-h-[60vh] sm:h-[60vh] bg-[#fafaf9] py-8 sm:py-0">
+            <div class="flex flex-col justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 h-auto sm:min-h-[86vh] w-full mx-auto px-4 sm:px-0">
+                <!-- Title Section -->
+                <div class="flex flex-col justify-center items-center gap-2 text-center">
+                    <p class="uppercase text-[#059699] transition-colors text-sm sm:text-base md:text-lg whitespace-nowrap font-semibold">Curated comforts</p>
+                    <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-stone-900 leading-tight font-[500] tracking-wider">Villa Essentials</h3>
+                    <hr class="w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[6vw] h-1 sm:h-1.5 rounded-full bg-[#059699]">
                 </div>
 
-                <!-- outer layer -->
-                <div class="grid grid-cols-6 w-[90vw] mx-auto gap-4">
-                    <!-- card -->
-                    <div class="group flex flex-col items-center gap-6 p-14 rounded-xl hover:bg-teal-800 transition-colors duration-300 border border-gray-200 " v-for="item in amenitiesList">
-                        <!-- icon container -->
-                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-16 h-16 bg-[#D1FAE5] group-hover:bg-white transition-colors duration-300">
-                            <!-- icon -->
-                            <Icon :name="item.icon" class="text-3xl text-[#047857] transition-colors duration-300"/>
+                <!-- Cards Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-full sm:w-[95vw] md:w-[92vw] lg:w-[90vw] mx-auto gap-3 sm:gap-4">
+                    <!-- Card -->
+                    <div class="group flex flex-col items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-14 rounded-lg sm:rounded-xl hover:bg-teal-800 transition-colors duration-300 border border-gray-200 cursor-pointer" 
+                        v-for="item in amenitiesList" 
+                        :key="item.id">
+                        <!-- Icon Container -->
+                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#D1FAE5] group-hover:bg-white transition-colors duration-300">
+                            <!-- Icon -->
+                            <Icon :name="item.icon" class="text-xl sm:text-2xl md:text-3xl text-[#047857] transition-colors duration-300"/>
                         </div>
-                        <!-- facility name -->
-                        <p class="text-center group-hover:text-white transition-colors text-lg duration-300 whitespace-nowrap font-medium">{{ item.name }}</p>
+                        <!-- Facility Name -->
+                        <p class="text-center group-hover:text-white transition-colors text-xs sm:text-sm md:text-base lg:text-lg duration-300 whitespace-nowrap font-medium break-words">
+                            {{ item.name }}
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        
+
+
         <HomeVideo></HomeVideo>
 
         <HomeRooms2></HomeRooms2>

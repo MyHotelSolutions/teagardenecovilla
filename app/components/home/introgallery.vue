@@ -1,9 +1,9 @@
-<template>
-    <!-- amanities heighlights -->
+<!-- <template>
+    amanities heighlights
         <section class="py-24 md:py-32 bg-white min-h-screen">
             <div class="flex flex-col justify-center items-center gap-20 container mx-auto px-6 md:px-12">
 
-                <!-- title section -->
+                title section
                 <div class="flex flex-col justify-center items-center gap-2 w-[60%]">
                     <p class="text-stone-500/60 text-lg leading-relaxed">Your Escape to Nature’s Heart</p>
                     <h3 class="font-serif text-4xl md:text-5xl text-teal-800 leading-tight font-black">Tea Garden Eco Villa</h3>
@@ -12,7 +12,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 items-center">
                     
-                    <!-- image section -->
+                    image section
                     <div class="md:col-span-9 relative">
                         <div class="grid grid-cols-2 gap-4">
                             <div class="flex flex-col mt-30 gap-4">
@@ -33,11 +33,11 @@
                             </div>
                         </div>
 
-                        <!-- Decorative element -->
+                        Decorative element
                         <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-stone-50 rounded-full blur-3xl opacity-60" />
                     </div>
                     
-                    <!-- description section -->
+                    description section
                     <div class="flex flex-col justify-between gap-4 md:col-span-3 h-[72vh] p-2 rounded-xl">
                         <div class="flex flex-col gap-4 p-4 rounded-xl" v-for="(items, index) in introductionText" @mouseenter="selectSpecialImageCategory(items.name)" @mouseleave="startShuffle">
                             <div class="flex flex-row gap-4 items-center">
@@ -52,6 +52,76 @@
                 </div>
             </div>
         </section>
+</template> -->
+
+<template>
+    <!-- amenities highlights -->
+    <section class="py-12 sm:py-20 md:py-24 lg:py-32 bg-white min-h-screen">
+        <div class="flex flex-col justify-center items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+
+            <!-- title section -->
+            <div class="flex flex-col justify-center items-center gap-2 sm:gap-3 w-full sm:w-[80%] md:w-[70%] lg:w-[60%] text-center">
+                <p class="text-stone-500/60 text-base sm:text-lg leading-relaxed">Your Escape to Nature's Heart</p>
+                <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-teal-800 leading-tight font-black">Tea Garden Eco Villa</h3>
+                <p class="text-stone-500 text-sm sm:text-base md:text-lg leading-relaxed w-full sm:w-[80%] md:w-[70%] lg:w-[55%] font-light mt-2">
+                    Where misty trails, hidden waterfalls, and forest whispers create your perfect mountain retreat.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-10 items-start w-full">
+                
+                <!-- image section -->
+                <div class="lg:col-span-8 xl:col-span-9 relative order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <!-- Left column -->
+                        <div class="flex flex-col gap-3 sm:gap-4 mt-0 sm:mt-8 md:mt-16 lg:mt-30">
+                            <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
+                                <img :src="randomImageList[0]" alt="Eco villa scenery" class="w-full h-full object-cover">
+                            </div>
+                            <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
+                                <img :src="randomImageList[1]" alt="Nature retreat" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        
+                        <!-- Right column -->
+                        <div class="flex flex-col gap-3 sm:gap-4">
+                            <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
+                                <img :src="randomImageList[2]" alt="Mountain view" class="w-full h-full object-cover">
+                            </div>
+                            <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
+                                <img :src="randomImageList[3]" alt="Forest atmosphere" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decorative element -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100%] sm:w-[120%] h-[100%] sm:h-[120%] bg-stone-50 rounded-full blur-2xl sm:blur-3xl opacity-40 sm:opacity-60" />
+                </div>
+                
+                <!-- description section -->
+                <div class="grid grid-cols-2 lg:flex lg:flex-col justify-between gap-4 sm:gap-6 lg:gap-4 lg:col-span-4 xl:col-span-3 h-auto lg:h-[72vh] p-2 rounded-xl order-1 lg:order-2">
+                    <div class="flex flex-col gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl hover:bg-stone-50/50 transition-colors duration-300 cursor-pointer" 
+                         v-for="(items, index) in introductionText" 
+                         :key="index"
+                         @mouseenter="selectSpecialImageCategory(items.name)" 
+                         @mouseleave="startShuffle"
+                         @touchstart.passive="selectSpecialImageCategory(items.name)">
+                        <div class="flex flex-row gap-3 sm:gap-4 items-center">
+                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex flex-col justify-center items-center bg-red-100/30 flex-shrink-0">
+                                <Icon :name="items.icon" class="text-xl sm:text-2xl text-red-400"></Icon>
+                            </div>
+                            <h4 class="font-serif text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-2xl text-stone-900 leading-tight font-black break-words">
+                                {{ items.name }}
+                            </h4>
+                        </div>
+                        <p class="text-stone-500 text-sm sm:text-base leading-relaxed ml-0 sm:ml-6 mt-1 sm:mt-0">
+                            {{ items.description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup>
@@ -103,7 +173,7 @@ const introductionText = [
         description : 'Immerse yourself in serene, lush landscapes that offer a perfect escape and a breath of fresh air.'
     },
     {
-        icon : 'solar:fire-outline',
+        icon : 'tabler:meat',
         name : 'BBQ',
         description : 'Vibrant, sizzling feasts under the stars—the ultimate setting for fun, flavor, and making memories.'
     },
