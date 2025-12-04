@@ -11,7 +11,7 @@
           <div :class="`font-serif text-2xl font-bold tracking-tight ${isScrolled ? 'text-teal-900' : 'text-white'}`">
             Tea Garden Eco Villa<span class="text-emerald-500">.</span>
           </div>
-
+-help-six.vercel.app
           Desktop Nav
           <div class="hidden md:flex items-center space-x-8">
             <NuxtLink :to="`${link.href}`" class="cursor-pointer" :class="`text-sm font-medium tracking-wide hover:text-emerald-500 transition-colors ${isScrolled ? 'text-stone-600' : 'text-white/90'}`" v-for="link in navLinks">{{ link.name }}</NuxtLink>
@@ -84,17 +84,17 @@ onUnmounted(() => {
       <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div class="flex justify-between items-center">
           <!-- Logo -->
-          <div :class="`font-serif text-3xl sm:text-2xl font-bold tracking-tight transition-colors duration-300 ${
+          <div :class="`font-serif text-2xl sm:text-4xl font-bold tracking-tight transition-colors duration-300 ${
             isScrolled ? 'text-teal-900' : 'text-white'
           } ${isMobileMenuOpen ? 'text-teal-900' : ''}`">
             Tea Garden Eco Villa<span class="text-emerald-500">.</span>
           </div>
 
           <!-- Desktop Nav -->
-          <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div class="hidden xl:flex items-center space-x-6 lg:space-x-8">
             <NuxtLink 
               :to="link.href" 
-              class="cursor-pointer text-sm font-medium tracking-wide hover:text-emerald-500 transition-colors duration-200"
+              class="cursor-pointer text-md font-medium tracking-wide hover:text-emerald-500 transition-colors duration-200"
               :class="isScrolled ? 'text-stone-600' : 'text-white/90'"
               v-for="link in navLinks"
               :key="link.name"
@@ -111,14 +111,14 @@ onUnmounted(() => {
 
           <!-- Mobile Menu Button -->
           <button 
-            class="md:hidden p-2 transition-colors duration-200"
+            class="xl:hidden p-2 transition-colors duration-200"
             :class="isScrolled || isMobileMenuOpen ? 'text-stone-800' : 'text-white'"
             @click="toggleMobileMenu"
             aria-label="Toggle mobile menu"
           >
             <Icon 
               :name="isMobileMenuOpen ? 'material-symbols:close-rounded' : 'material-symbols:menu-rounded'" 
-              class="text-5xl"
+              class="text-4xl"
             />
           </button>
         </div>
@@ -127,7 +127,7 @@ onUnmounted(() => {
       <!-- Full Screen Mobile Menu -->
       <div 
         v-if="isMobileMenuOpen" 
-        class="md:hidden fixed top-0 left-0 w-full h-screen bg-white z-50 animate-in slide-in-from-top duration-300 overflow-y-auto"
+        class="xl:hidden fixed top-0 left-0 w-full h-screen bg-white z-50 animate-in slide-in-from-top duration-300 overflow-y-auto"
       >
         <div class="container mx-auto px-4 sm:px-6 pt-20 pb-8">
           <!-- Close Button -->
@@ -157,7 +157,7 @@ onUnmounted(() => {
           <!-- Mobile Call to Action -->
           <div class="mt-12 sm:mt-16 text-center">
             <Button 
-              class="w-full max-w-xs mx-auto py-4 text-lg rounded-full"
+              class=" w-60 mx-auto py-4 text-lg rounded-full"
               @click="isMobileMenuOpen = false"
             >
               Book Your Stay
@@ -166,8 +166,13 @@ onUnmounted(() => {
             <!-- Contact Info -->
             <div class="mt-8 sm:mt-12 text-stone-600">
               <p class="text-lg mb-2">Need help with your booking?</p>
-              <p class="text-xl font-semibold text-teal-900">+94 77 123 4567</p>
-              <p class="text-sm mt-2">contact@teagardenvilla.com</p>
+              <div class="flex flex-row gap-3 justify-center items-center" @click="coppyToClipbord">
+                <p class="text-xl font-semibold text-teal-900">+94 776 874 714</p>
+                <button class="flex flex-col justify-center items-center">
+                  <Icon name="material-symbols:content-copy-outline" class="text-md text-gray-300 hover:text-gray-500 active:text-gray-500"/>
+                </button>
+              </div>
+              <p class="text-sm mt-2">info@teagardenvillas.com</p>
             </div>
           </div>
         </div>
@@ -203,6 +208,11 @@ const toggleMobileMenu = () => {
   } else {
     document.body.style.overflow = 'auto'
   }
+}
+
+const coppyToClipbord = () => {
+  // this is for coppy mobile number in to clipbord
+  navigator.clipboard.writeText('+94776874714')
 }
 
 // Lifecycle
