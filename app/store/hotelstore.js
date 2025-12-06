@@ -127,6 +127,10 @@ export const useHotelStore = defineStore('hotel', () => {
       csv : ''
     }
   )
+  const adultsCount = ref(2)
+  const childCount = ref(0)
+  const roomsCount = ref(1)
+  const childAgeSelectedList = ref([])
 
-  return { socialLinks, availableRooms, selectedRooms, roomDetails, personalData, accountDetails, cardDetails }
+  return { socialLinks, availableRooms, selectedRooms, roomDetails, personalData, accountDetails, cardDetails, adultsCount, childCount, roomsCount, childAgeSelectedList }
 })

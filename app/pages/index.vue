@@ -18,7 +18,7 @@
                     <div class="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-center pt-12 sm:pt-16 md:pt-20 w-full">
                         
                         <!-- booking search box -->
-                        <Searchbox></Searchbox>
+                        <Searchbox v-if="bookingView"></Searchbox>
 
                         <!-- Initial content -->
                         <div class=" border-white" v-if="!bookingView">
@@ -112,7 +112,7 @@ import { mapGamepadToXbox360Controller } from '@vueuse/core';
 import { useHotelStore } from '~/store/hotelstore';
 
 const hotelStore = useHotelStore()
-const bookingView = ref(true)
+const bookingView = ref(false)
 const adultCount = ref(0)
 const childCount = ref(0)
 

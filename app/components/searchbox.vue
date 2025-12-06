@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-5 gap-4 p-6 lg:max-w-5xl md:max-w-3xl max-w-lg mx-auto h-full w-full bg-gray-400/30 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 text-white">
+    <div class="grid grid-cols-5 gap-4 px-6 py-8 lg:max-w-5xl md:max-w-3xl max-w-lg mx-auto h-full w-full bg-gray-400/30 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 text-white">
         
         <!-- date selection -->
         <div class="flex flex-col gap-2 lg:col-span-2 col-span-5  bg-white/10 p-2 rounded-md">
@@ -25,11 +25,11 @@
                 <div class="flex flex-row gap-4 items-center">
                     <Icon name="material-symbols:person-2-rounded" class="md:text-3xl text-xl"></Icon>
                     <div class="flex flex-row justify-center items-center gap-2 md:text-lg text-md">
-                        <p class="felx flex-row ">{{ adultsCount }} Adults</p> 
+                        <p class="felx flex-row ">{{ hotelstore.adultsCount }} Adults</p> 
                         <Icon name="ci:dot-02-s"></Icon> 
-                        <p class="felx flex-row">{{ childCount }} Childs</p>
+                        <p class="felx flex-row">{{ hotelstore.childCount }} Childs</p>
                         <Icon name="ci:dot-02-s"></Icon> 
-                        <p class="felx flex-row">{{ roomsCount }} Rooms</p>
+                        <p class="felx flex-row">{{ hotelstore.roomsCount }} Rooms</p>
                     </div>
                 </div>
             
@@ -40,7 +40,7 @@
                             <p class="">Adults</p>
                             <div class="flex flex-row gap-4 justify-between items-center">
                                 <UButton variant="outline" color="neutral" class="px-3" @click="changeAdultCount('remove')">-</UButton>
-                                <p class="">{{ adultsCount }}</p>
+                                <p class="">{{ hotelstore.adultsCount }}</p>
                                 <UButton variant="outline" color="neutral"  class="px-3" @click="changeAdultCount('add')">+</UButton>
                             </div>
                         </div>
@@ -49,14 +49,14 @@
                             <p class="">Childs</p>
                             <div class="flex flex-row gap-4 justify-between items-center">
                                 <UButton variant="outline" color="neutral"  class="px-3" @click="changeChildCount('remove')">-</UButton>
-                                <p class="">{{ childCount }}</p>
+                                <p class="">{{ hotelstore.childCount }}</p>
                                 <UButton variant="outline" color="neutral"  class="px-3" @click="changeChildCount('add')">+</UButton>
                             </div>
                         </div>
                         <!-- child adge -->
-                        <div class="" v-if="childCount != 0">
+                        <div class="" v-if="hotelstore.childCount != 0">
                             <div class="grid grid-cols-2 gap-2">
-                                <USelect variant="outline" color="neutral" v-model="childAgeSelectedList[index]" :items="childAgeList" v-for="(item, index) in childCount"/>
+                                <USelect variant="outline" color="neutral" v-model="hotelstore.childAgeSelectedList[index]" :items="childAgeList" v-for="(item, index) in hotelstore.childCount"/>
                             </div>
                         </div>
                         <!-- room count -->
@@ -64,7 +64,7 @@
                             <p class="">Rooms</p>
                             <div class="flex flex-row gap-4 justify-between items-center">
                                 <UButton variant="outline" color="neutral"  class="px-3" @click="changeRoomCount('remove')">-</UButton>
-                                <p class="">{{ roomsCount }}</p>
+                                <p class="">{{ hotelstore.roomsCount }}</p>
                                 <UButton variant="outline" color="neutral"  class="px-3" @click="changeRoomCount('add')">+</UButton>
                             </div>
                         </div>
@@ -82,12 +82,19 @@
 
 <script setup>
 import { CalendarDate, DateFormatter, getLocalTimeZone } from '@internationalized/date'
+import { useHotelStore } from '~/store/hotelstore'
+
+const hotelstore = useHotelStore()
+
 const today = new Date()
 const endDate = new Date()
 endDate.setDate(today.getDate() + 180)
-const adultsCount = ref(2)
-const childCount = ref(0)
-const roomsCount = ref(1)
+// const adultsCount = ref(2)
+// hotelstore.adultsCount 
+// const childCount = ref(0)
+// hotelstore.childCount
+// const roomsCount = ref(1)
+// hotelstore.roomsCount
 
 // for child age
 const childAgeList = ref(['Age needed',
@@ -97,7 +104,8 @@ const childAgeList = ref(['Age needed',
   '13 years old', '14 years old', '15 years old', '16 years old', 
   '17 years old'
 ])
-const childAgeSelectedList = ref([])
+// const hotelstore.childAgeSelectedList = ref([])
+//  hotelstore.hotelstore.childAgeSelectedList
 
 const df = new DateFormatter('en-US', {
   dateStyle: 'medium'
@@ -141,42 +149,42 @@ const isStartdateSet = computed(() => {
 
 const changeAdultCount = (parameter) => {
     if(parameter == 'add'){
-        if((adultsCount.value + childCount.value) != 16){
-            adultsCount.value += 1
+        if((hotelstore.adultsCount + hotelstore.childCount) != 16){
+            hotelstore.adultsCount += 1
         }
     }else if(parameter  == 'remove'){
-        if((adultsCount.value + childCount.value) != 1 && adultsCount.value != 1){
-            adultsCount.value -= 1
+        if((hotelstore.adultsCount + hotelstore.childCount) != 1 && hotelstore.adultsCount != 1){
+            hotelstore.adultsCount -= 1
         }
     }
 }
 const changeChildCount = (parameter) => {
     if(parameter == 'add'){
-        if((adultsCount.value + childCount.value) != 16){
-            childCount.value += 1
-            childAgeSelectedList.value.push(childAgeList.value[0])
+        if((hotelstore.adultsCount + hotelstore.childCount) != 16){
+            hotelstore.childCount += 1
+            hotelstore.childAgeSelectedList.push(childAgeList.value[0])
         }
     }else if(parameter  == 'remove'){
-        if((adultsCount.value + childCount.value) != 1 && childCount.value != 0){
-            childCount.value -= 1
-            childAgeSelectedList.value.pop()
+        if((hotelstore.adultsCount + hotelstore.childCount) != 1 && hotelstore.childCount != 0){
+            hotelstore.childCount -= 1
+            hotelstore.childAgeSelectedList.pop()
         }
     }
 }
 const changeRoomCount = (parameter) => {
     if(parameter == 'add'){
-        if(roomsCount.value != 4){
-            roomsCount.value += 1
+        if(hotelstore.roomsCount != 4){
+            hotelstore.roomsCount += 1
         }
     }else if(parameter  == 'remove'){
-        if(roomsCount.value != 1){
-            roomsCount.value -= 1
+        if(hotelstore.roomsCount != 1){
+            hotelstore.roomsCount -= 1
         }
     }
 }
 
 const bookNow = () => {
-    alert(childAgeSelectedList.value)
+    alert(`adult count : ${hotelstore.adultsCount} | child count ${hotelstore.childCount} | child age list : ${hotelstore.childAgeSelectedList} | room count : ${hotelstore.roomsCount}`)
 }
 
 </script>
