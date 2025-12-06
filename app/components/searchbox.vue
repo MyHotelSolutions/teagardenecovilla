@@ -7,14 +7,14 @@
                 <div class="flex flex-row gap-4 items-center">
                     <Icon name="uim:calender" class="md:text-3xl text-xl"></Icon>
                     <div class="flex flex-row justify-center items-center gap-2 md:text-lg text-md">
-                        <p class="felx flex-row ">{{ modelValue.start == null ? 'Check-in date' : modifiedStartDate }}</p> 
+                        <p class="felx flex-row ">{{ hotelstore.modelValue.start == null ? 'Check-in date' : modifiedStartDate }}</p> 
                         <Icon name="bi:dash-lg"></Icon> 
-                        <p class="felx flex-row">{{ modelValue.end == null ? 'Check-out date' : modifiedEndDate  }}</p>
+                        <p class="felx flex-row">{{ hotelstore.modelValue.end == null ? 'Check-out date' : modifiedEndDate  }}</p>
                     </div>
                 </div>
             
                 <template #content>
-                    <UCalendar v-model="modelValue" class="p-2" :number-of-months="2" range :min-value="minDate" :max-value="maxDate"/>
+                    <UCalendar v-model="hotelstore.modelValue" class="p-2" :number-of-months="2" range :min-value="minDate" :max-value="maxDate"/>
                 </template>
             </UPopover>
         </div>
@@ -75,7 +75,9 @@
         
         <!-- search button -->
         <div class="lg:col-span-1 md:col-span-2 col-span-5">
-            <button class="w-full h-full bg-teal-600 rounded-md md:text-lg text-base text-white py-2" @click="bookNow">Book Now</button>
+            <NuxtLink to="/booking/notavailable">
+                <button class="w-full h-full bg-teal-600 rounded-md md:text-lg text-base text-white py-2">Book Now</button>
+            </NuxtLink>
         </div>
     </div>
 </template>
@@ -130,19 +132,19 @@ const getMonthName = (monthNum) => {
 }
 
 const modifiedStartDate = computed(() => {
-    const startDate = new Date(modelValue.value.start)
+    const startDate = new Date(hotelstore.modelValue.start)
     return `${getWeedDayName(startDate.getDay())}, ${getMonthName(startDate.getMonth())} ${startDate.getDate()}`
 })
 
 const modifiedEndDate = computed(() => {
-    const endDate = new Date(modelValue.value.end)
+    const endDate = new Date(hotelstore.modelValue.end)
     return `${getWeedDayName(endDate.getDay())}, ${getMonthName(endDate.getMonth())} ${endDate.getDate()}`
 })
 
 const isStartdateSet = computed(() => {
-    if(modelValue.value.start !== null){
+    if(hotelstore.modelValue.start !== null){
         return false
-    }else if(modelValue.value.start == null){
+    }else if(hotelstore.modelValue.start == null){
         return true
     }
 })

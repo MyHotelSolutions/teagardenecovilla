@@ -131,6 +131,11 @@ export const useHotelStore = defineStore('hotel', () => {
   const childCount = ref(0)
   const roomsCount = ref(1)
   const childAgeSelectedList = ref([])
+  const modelValue = shallowRef({
+    start: null,
+    end: null
+  })
 
-  return { socialLinks, availableRooms, selectedRooms, roomDetails, personalData, accountDetails, cardDetails, adultsCount, childCount, roomsCount, childAgeSelectedList }
+
+  return { socialLinks, availableRooms, selectedRooms, roomDetails, personalData, accountDetails, cardDetails, adultsCount, childCount, roomsCount, childAgeSelectedList, modelValue }
 })
