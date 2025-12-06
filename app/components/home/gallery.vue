@@ -43,41 +43,9 @@
             </div>
 
             <!-- image gallery -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 h-auto sm:min-h-[400px] md:min-h-[500px] lg:h-[60vh]">
-                <!-- Large left image -->
-                <div class="col-span-1 sm:col-span-2 overflow-hidden rounded-2xl h-64 sm:h-72 md:h-80 lg:h-full">
-                    <img 
-                        src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" 
-                        alt="Gallery image 1" 
-                        class="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer"
-                    >
-                </div>
-                
-                <!-- Middle image -->
-                <div class="overflow-hidden rounded-2xl h-64 sm:h-full md:h-auto lg:h-full order-3 sm:order-2">
-                    <img 
-                        src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" 
-                        alt="Gallery image 2" 
-                        class="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer"
-                    >
-                </div>
-                
-                <!-- Right side stacked images -->
-                <div class="flex flex-col gap-3 sm:gap-4 w-full order-2 sm:order-3 lg:order-4 h-64 sm:h-auto">
-                    <div class="overflow-hidden rounded-2xl flex-1">
-                        <img 
-                            src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" 
-                            alt="Gallery image 3" 
-                            class="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer"
-                        >
-                    </div>
-                    <div class="overflow-hidden rounded-2xl flex-1">
-                        <img 
-                            src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" 
-                            alt="Gallery image 4" 
-                            class="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-300 cursor-pointer"
-                        >
-                    </div>
+            <div class="grid grid-cols-6 gap-3 sm:gap-4 h-auto sm:min-h-[400px] md:min-h-[500px] lg:h-[60vh]">
+                <div class="rounded-xl hover:shadow-2xl duration-300" v-for="(item, index) in imageList.length">
+                    <img :src="imageList[item - 1]" alt="" class="w-full h-full object-cover rounded-xl hover:scale-108 duration-300">
                 </div>
             </div>
 
@@ -85,4 +53,17 @@
     </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+const imageList = ref(
+    [
+        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg',
+        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg',
+        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg',
+        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg',
+        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg',
+        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg',
+    ]
+)
+
+</script>

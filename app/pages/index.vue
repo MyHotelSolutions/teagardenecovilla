@@ -16,27 +16,34 @@
                 <header class="relative h-full flex items-end justify-end overflow-hidden w-full pb-12 sm:pb-16 md:pb-20 lg:pb-22">
 
                     <div class="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-center pt-12 sm:pt-16 md:pt-20 w-full">
-                        <!-- Badge -->
-                        <span class="inline-block py-2 px-4 sm:py-1 sm:px-3 border border-white/30 rounded-full bg-white/10 backdrop-blur-sm text-white text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-4 sm:mb-6 animate-fade-in-up w-fit mx-auto">
-                            Welcome to Paradise
-                        </span>
                         
-                        <!-- Main Content -->
-                        <div class="flex flex-col gap-4 sm:gap-5 justify-center items-center px-2 sm:px-0">
-                            <!-- Heading -->
-                            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-snug sm:leading-tight mb-4 sm:mb-6 drop-shadow-lg max-w-4xl mx-auto">
-                                Breathe in the
-                                <span class="inline-block text-emerald-300 mt-1 sm:mt-0">Mountain Air</span>
-                            </h1>
+                        <!-- booking search box -->
+                        <Searchbox></Searchbox>
+
+                        <!-- Initial content -->
+                        <div class=" border-white" v-if="!bookingView">
+                            <!-- Badge -->
+                            <span class="inline-block py-2 px-4 sm:py-1 sm:px-3 border border-white/30 rounded-full bg-white/10 backdrop-blur-sm text-white text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-4 sm:mb-6 animate-fade-in-up w-fit mx-auto">
+                                Welcome to Paradise
+                            </span>
                             
-                            <!-- Button -->
-                            <Button variant="primary" class="w-fit text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
-                                Book Now
-                            </Button>
+                            <!-- Main Content -->
+                            <div class="flex flex-col justify-center items-center px-2 sm:px-0">
+                                <!-- Heading -->
+                                <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-snug sm:leading-tight mb-4 sm:mb-6 drop-shadow-lg max-w-4xl mx-auto">
+                                    Breathe in the
+                                    <span class="inline-block text-emerald-300 mt-1 sm:mt-0">Mountain Air</span>
+                                </h1>
+                                
+                                <!-- Button -->
+    `                            <Button variant="primary" class="w-fit text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4" @click="bookingView = true">
+                                    Book Now
+                                </Button>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Gradient Overlay for Better Text Readability -->
+`                    <!-- Gradient Overlay for Better Text Readability -->
                     <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
                 </header>
             </div>
@@ -101,9 +108,22 @@
 </template>
 
 <script setup>
+import { mapGamepadToXbox360Controller } from '@vueuse/core';
 import { useHotelStore } from '~/store/hotelstore';
 
 const hotelStore = useHotelStore()
+const bookingView = ref(true)
+const adultCount = ref(0)
+const childCount = ref(0)
+
+// booking date reage controll
+const today = ref(null)
+const maxBookingDate = ref(null)
+// booking date reage controll - date inputbox tracking
+const checkin = ref(null)
+const checkout = ref(null)
+// booking date reage controll - min and max controll in the input boxes
+const breakPoint = ref(null) // this is only use for set the show selectable datas after select checkin or checkout
 
 const amenitiesList = [
     {
@@ -178,5 +198,72 @@ const placeToVist = [
         location : 'Getabaruwa'
     },
 ]
+
+const minCompute = computed(() => {
+    return `${today.value.getFullYear()}-${(today.value.getMonth()+1).toString().padStart(2,'0')}-${today.value.getDate().toString().padStart(2,'0')}`
+})
+
+const maxCompute = computed(() => {
+    return `${maxBookingDate.value.getFullYear()}-${(maxBookingDate.value.getMonth()+1).toString().padStart(2,'0')}-${maxBookingDate.value.getDate().toString().padStart(2,'0')}`
+})
+
+const setChildCount = (action) => {
+    if(action == 'add'){
+        if((childCount.value + adultCount.value) < 16){
+            childCount.value += 1
+        }
+    }else if(action == 'remove'){
+        if((childCount.value + adultCount.value) != 0){
+            childCount.value -= 1
+        }
+    }
+}
+const setAdultCount = (action) => {
+    console.log('trigger')
+    if(action == 'add'){
+        if((childCount.value + adultCount.value) < 16){
+            adultCount.value += 1
+        }
+    }else if(action == 'remove'){
+        if((childCount.value + adultCount.value) != 0){
+            adultCount.value -= 1
+        }
+    }
+}
+
+
+const searchReset = () => {
+    checkin.value = null
+    checkout.value = null
+    today.value = new Date()
+    maxBookingDate.value = new Date()
+    maxBookingDate.value.setDate(today.value.getDate() + 180)
+    breakPoint.value = null
+    adultCount.value = 0
+    childCount.value = 0
+}
+
+watch([checkin, checkout], ([newCheckIn, newCheckOut], [oldCheckIn, oldChckOut]) => {
+    if(newCheckIn !== oldCheckIn){
+        breakPoint.value = new Date(newCheckIn)
+        today.value = new Date(newCheckIn)
+    }else if(newCheckOut !== oldChckOut){
+        breakPoint.value = new Date(newCheckOut)
+        maxBookingDate.value = new Date(newCheckOut)
+    }
+})
+
+
+onBeforeMount(() => {
+    today.value = new Date()
+    // checkin.value = `${today.value.getFullYear()}-${(today.value.getMonth()+1).toString().padStart(2,'0')}-${today.value.getDate().toString().padStart(2,'0')}` //load today as min date of the checkout date when page loaded
+    
+    // to calcute the final booking date
+    maxBookingDate.value = new Date()
+    maxBookingDate.value.setDate(today.value.getDate() + 180)
+    // checkout.value = `${maxBookingDate.value.getFullYear()}-${(maxBookingDate.value.getMonth()+1).toString().padStart(2,'0')}-${maxBookingDate.value.getDate().toString().padStart(2,'0')}`
+})
+
+
 
 </script>
