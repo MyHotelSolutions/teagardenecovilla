@@ -13,15 +13,32 @@
             </div>
         </div>
 
-        <div class="w-full h-auto py-20">
+        <div class="w-full h-auto py-20 p-2">
             
-            <div class="lg:max-w-5xl md:max-w-3xl max-w-lg grid grid-cols-2 gap-6 bg-red-300/20 border-red-300/80 border-4 h-auto mx-auto rounded-xl sm:p-8 p-4">
-                <div class="lg:col-span-1 col-span-2 flex flex-col gap-10 justify-center items-center">
-                    <h2 class="text-2xl font-black text-red-400/80 text-center">Sorry for the inconvinientce !</h2>
-                    <p class="text-lg text-center">Thre is no enoghf rooms <span class="font-black">that you request according to the above parameters</span> in the bellow dates. change your parametes and check agian.</p>
+            <div class="lg:max-w-5xl md:max-w-3xl max-w-lg lg:grid lg:grid-cols-8 flex flex-col gap-6 bg-red-300/20 h-auto mx-auto rounded-xl shadow-lg">
+                <div class="lg:col-span-3 col-span-2 flex flex-col gap-6 bg-white lg:rounded-l-xl rounded-t-xl p-6">
+                    <div class="flex flex-col justify-center items-center bg-red-300/40 w-16 h-16 rounded-full">
+                        <Icon name="material-symbols:timelapse-outline-rounded" class="text-red-500 text-4xl"></Icon>
+                    </div>
+                    <h2 class="sm:text-2xl text-lg font-black text-black">Sorry for the inconvinientce</h2>
+                    <p class="sm:text-base text-base">Thre are no enough rooms avilable for your selected date.<span class="font-black"> please adjest date or rooms requirements.</span></p>
+                    <div class="flex flex-col gap-4 p-8 rounded-xl bg-red-300/20 border-2 border-red-300/40">
+                        <div class="flex flex-row gap-4">
+                            <Icon name="material-symbols:calendar-month-outline-rounded" class="text-3xl"></Icon>
+                            <h5 class="text-lg font-bold">{{ roomCountByString }} rooms Un-available dates.</h5>
+                        </div>
+                        <div class="flex felx-row flex-wrap gap-2">
+                            <div class="bg-red-300/50 py-2 px-4 rounded-full whitespace-nowrap" v-for="item in value">{{ getDate(item) }}</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="lg:col-span-1 col-span-2 w-fit mx-auto sm:p-12 p-4">
-                    <UCalendar multiple v-model="value" disabled :month-controls="false" :year-controls="false" color="error" size="xl" />
+                <div class="flex flex-col gap-6 lg:col-span-5 col-span-2 w-full mx-auto sm:p-12 p-4">
+                    <UCalendar multiple v-model="value" disabled :month-controls="false" :year-controls="false" color="error" :size="calenderSize" />
+                    <hr class="">
+                    <div class="flex flex-row justify-start items-center gap-4">
+                        <div class="w-6 h-6 rounded-full bg-red-400"></div>
+                        <p class="">Unavailable dates</p>
+                    </div>
                 </div>
             </div>
 
@@ -32,6 +49,11 @@
 </template>
 <script setup>
 import { CalendarDate } from '@internationalized/date'
+import { useHotelStore } from '~/store/hotelstore'
+
+const calenderSize = ref('xl')
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+const hotelstore =  useHotelStore()
 
 const value = shallowRef([
   new CalendarDate(2026, 1, 4),
@@ -39,5 +61,24 @@ const value = shallowRef([
   new CalendarDate(2026, 1, 22),
   new CalendarDate(2026, 1, 28),
 ])
+
+const getDate = (val) => {
+    const actualDate = new Date(val)
+    return `${monthNames[actualDate.getMonth()]} ${actualDate.getDate()}`
+}
+
+const roomCountByString = computed(() => {
+    const roomCountNames = ['One', 'Two', 'Three', 'Four']
+    return `${roomCountNames[0]}`
+})
+
+onMounted(() => {
+    if(window.innerWidth < 640){
+        calenderSize.value = 'lg'
+    }else if(window.innerWidth >= 640){
+
+        calenderSize.value = 'xl'
+    }
+})
 
 </script>
