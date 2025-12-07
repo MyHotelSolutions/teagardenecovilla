@@ -12,9 +12,9 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: ['@pinia/nuxt', '@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt', '@nuxt/ui'],
+  modules: ['@pinia/nuxt', '@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt', '@nuxt/ui', '@nuxtjs/color-mode'],
   colorMode: {
-    preference: 'light',
+    preference: 'light', 
     fallback: 'light'
   }
-})
+})  
