@@ -16,7 +16,7 @@
         <div class="w-full h-auto py-20 p-2">
             
             <div class="lg:max-w-5xl md:max-w-3xl max-w-lg lg:grid lg:grid-cols-8 flex flex-col gap-6 bg-red-300/20 h-auto mx-auto rounded-xl shadow-lg">
-                <div class="lg:col-span-3 col-span-2 flex flex-col gap-6 bg-white lg:rounded-l-xl rounded-t-xl p-6">
+                <div class="lg:col-span-4 flex flex-col gap-6 bg-white lg:rounded-l-xl rounded-t-xl p-6">
                     <div class="flex flex-col justify-center items-center bg-red-300/40 w-16 h-16 rounded-full">
                         <Icon name="material-symbols:timelapse-outline-rounded" class="text-red-500 text-4xl"></Icon>
                     </div>
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col gap-6 lg:col-span-5 col-span-2 w-full mx-auto sm:p-12 p-4">
+                <div class="flex flex-col gap-6 lg:col-span-4 w-full mx-auto sm:p-12 p-4">
                     <UCalendar multiple v-model="value" disabled :month-controls="false" :year-controls="false" color="error" :size="calenderSize" />
                     <hr class="">
                     <div class="flex flex-row justify-start items-center gap-4">

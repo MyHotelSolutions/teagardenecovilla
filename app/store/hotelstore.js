@@ -31,11 +31,11 @@ export const useHotelStore = defineStore('hotel', () => {
             bedsize : 'Double quin size beds',
             name : 'Duplex Quadruple room',
             facility : [
-                'lucide-lab:kettle-electric',
+                // 'lucide-lab:kettle-electric',
                 'solar:hanger-2-bold',
                 'guidance:showers',
                 'ep:hot-water',
-                'lucide-lab:chairs-table-platter',
+                // 'lucide-lab:chairs-table-platter',
                 'guidance:no-smoking',
                 'ic:outline-live-tv',
                 'material-symbols:android-wifi-4-bar-rounded'
@@ -51,11 +51,11 @@ export const useHotelStore = defineStore('hotel', () => {
             bedsize : 'Double quin size beds',
             name : 'Duplex Quadruple room',
             facility : [
-                'lucide-lab:kettle-electric',
+                // 'lucide-lab:kettle-electric',
                 'solar:hanger-2-bold',
                 'guidance:showers',
                 'ep:hot-water',
-                'lucide-lab:chairs-table-platter',
+                // 'lucide-lab:chairs-table-platter',
                 'guidance:no-smoking',
                 'ic:outline-live-tv',
                 'material-symbols:android-wifi-4-bar-rounded'
@@ -71,11 +71,11 @@ export const useHotelStore = defineStore('hotel', () => {
             bedsize : 'Double quin size beds',
             name : 'Duplex Quadruple room',
             facility : [
-                'lucide-lab:kettle-electric',
+                // 'lucide-lab:kettle-electric',
                 'solar:hanger-2-bold',
                 'guidance:showers',
                 'ep:hot-water',
-                'lucide-lab:chairs-table-platter',
+                // 'lucide-lab:chairs-table-platter',
                 'guidance:no-smoking',
                 'ic:outline-live-tv',
                 'material-symbols:android-wifi-4-bar-rounded'
@@ -91,11 +91,11 @@ export const useHotelStore = defineStore('hotel', () => {
             bedsize : 'Double quin size beds',
             name : 'Duplex Quadruple room',
             facility : [
-                'lucide-lab:kettle-electric',
+                // 'lucide-lab:kettle-electric',
                 'solar:hanger-2-bold',
                 'guidance:showers',
                 'ep:hot-water',
-                'lucide-lab:chairs-table-platter',
+                // 'lucide-lab:chairs-table-platter',
                 'guidance:no-smoking',
                 'ic:outline-live-tv',
                 'material-symbols:android-wifi-4-bar-rounded'

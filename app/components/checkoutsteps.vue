@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <UStepper :items="items" size="md" :model-value="step"/>
+        <UStepper :items="items" size="xl" :model-value="step"/>
     </div>  
 </template>
 
