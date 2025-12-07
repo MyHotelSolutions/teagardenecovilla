@@ -13,5 +13,8 @@ export default defineNuxtConfig({
     ],
   },
   modules: ['@pinia/nuxt', '@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt', '@nuxt/ui'],
-
+  colorMode: {
+    preference: 'light',
+    fallback: 'light'
+  }
 })
