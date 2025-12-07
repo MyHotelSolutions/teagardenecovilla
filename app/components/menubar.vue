@@ -158,12 +158,14 @@ onUnmounted(() => {
 
           <!-- Mobile Call to Action -->
           <div class="mt-12 sm:mt-16 text-center">
-            <Button 
-              class=" w-60 mx-auto py-4 text-lg rounded-full"
-              @click="isMobileMenuOpen = false"
-            >
-              Book Your Stay
-            </Button>
+            <NuxtLink to="/booking/roomselection">
+              <Button 
+                class=" w-60 mx-auto py-4 text-lg rounded-full"
+                @click="isMobileMenuOpen = false"
+              >
+                Book Your Stay
+              </Button>
+            </NuxtLink>
             
             <!-- Contact Info -->
             <div class="mt-8 sm:mt-12 text-stone-600">
@@ -186,7 +188,7 @@ onUnmounted(() => {
 // Reactive state
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
-
+// toggleMobileMenu
 // Navigation links
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -203,13 +205,15 @@ const handleScroll = () => {
 
 // Toggle mobile menu
 const toggleMobileMenu = () => {
+  console.log('call to close')
   isMobileMenuOpen.value = !isMobileMenuOpen.value
+  console.log(isMobileMenuOpen.value)
   // Prevent body scroll when menu is open
-  if (isMobileMenuOpen.value) {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = 'auto'
-  }
+  // if (isMobileMenuOpen.value == true) {
+  //   document.body.style.overflow = 'hidden'
+  // } else if(isMobileMenuOpen.value == false) {
+  //   document.body.style.overflow = 'auto'
+  // }
 }
 
 const coppyToClipbord = () => {
