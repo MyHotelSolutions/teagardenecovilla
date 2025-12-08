@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <Menubarcheckout></Menubarcheckout>
-        <div class="flex flex-col gap-20 max-w-7xl mx-auto py-50">
+        <div class="flex flex-col gap-20 max-w-7xl mx-auto md:py-50 py-30">
             <checkoutsteps :step="stepNumber"></checkoutsteps>
     
             <!-- content  -->
@@ -187,7 +187,7 @@
     
                     <!-- action button -->
                     <div class="mb-auto w-full">
-                        <NuxtLink to="/booking/payment">
+                        <NuxtLink to="/booking/compleate">
                             <button class="w-full py-2 px-4 text-base rounded-lg whitespace-nowrap bg-teal-800 text-white font-medium">Checkout</button>
                         </NuxtLink>
                     </div>

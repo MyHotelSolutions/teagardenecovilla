@@ -75,7 +75,7 @@
                 </div>
                 
                 <!-- selected rooms -->
-                <div class="col-span-1 p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col gap-6 h-fit  xl:w-full max-w-4xl mx-auto w-full">
+                <div class="col-span-1 sm:p-6 py-6 px-2 rounded-xl shadow-lg border border-gray-100 flex flex-col gap-6 h-fit  xl:w-full max-w-4xl mx-auto w-full">
                     <div class="flex flex-row items-center gap-4">
                         <Icon name="material-symbols:add-box-outline-rounded" class="text-3xl"></Icon>
                         <h2 class="text-2xl font-black">Your selections</h2>
