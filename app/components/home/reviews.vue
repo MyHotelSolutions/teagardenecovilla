@@ -86,17 +86,20 @@
 const reviews = [
     {
         star: 5,
-        description: 'Absolutely stunning villa! The infinity pool overlooking the ocean was breathtaking. The staff was incredibly attentive and the amenities were top-notch. Perfect for our family vacation.The staff was incredibly attentive and the amenities were top-notch. Perfect for our family vacation.',
+        description: "Tea Garden Eco Villas is more than just accommodation; it's a complete, restorative retreat. With its prime location, beautiful natural setting, exceptional pool, heartfelt service, and great food, we left feeling absolutely wonderful and planning our return!❤️",
         image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
-        name: 'Sarah Johnson',
-        country: 'United States'
+        name: 'Imesh Lakshitha',
+        country: 'Sri Lanka',
+        platfom_icon : 'gg:google',
+        platform_name : 'google'
     },
     {
         star: 5,
-        description: 'This villa exceeded all our expectations. The architecture blends modern luxury with traditional charm. Waking up to panoramic mountain views every morning was magical. Highly recommended! Waking up to panoramic mountain views every morning was magical. Highly recommended!',
+        description: "This is a beautiful villa situated in Morawaka, Galle. Up to 16 people can comfortably stay here. Surrounded by lush greenery and mist. You have to bring food, which we couldn't do. So the staff were kind enough to bring groceries for us, and we bought what was left. The foods are absolutely delicious. The chef made everything that we asked for. Everyone was incredibly helpful and nice. Rooms are very spacious with attached bathrooms. The property itself is well maintained. This place is totally worth it for the price.",
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-        name: 'Michael Chen',
-        country: 'Canada'
+        name: 'Sandalu Karunasena',
+        country: 'Sri Lanka',
+        platfom_icon : 'gg:google'
     },
     {
         star: 4,

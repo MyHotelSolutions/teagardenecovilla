@@ -84,11 +84,13 @@ onUnmounted(() => {
       <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div class="flex justify-between items-center">
           <!-- Logo -->
-          <div :class="`font-serif text-2xl sm:text-4xl font-bold tracking-tight transition-colors duration-300 ${
-            isScrolled ? 'text-teal-900' : 'text-white'
-          } ${isMobileMenuOpen ? 'text-teal-900' : ''}`">
-            Tea Garden Eco Villa<span class="text-emerald-500">.</span>
-          </div>
+           <NuxtLink to="/">
+             <div :class="`font-serif text-xl sm:text-2xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${
+               isScrolled ? 'text-teal-900' : 'text-white'
+             } ${isMobileMenuOpen ? 'text-teal-900' : ''}`">
+               Tea Garden Eco Villas<span class="text-emerald-500">.</span>
+             </div>
+           </NuxtLink>
 
           <!-- Desktop Nav -->
           <div class="hidden xl:flex items-center space-x-6 lg:space-x-8">
@@ -120,7 +122,7 @@ onUnmounted(() => {
           >
             <Icon 
               :name="isMobileMenuOpen ? 'material-symbols:close-rounded' : 'material-symbols:menu-rounded'" 
-              class="text-4xl"
+              class="text-3xl"
             />
           </button>
         </div>
@@ -170,11 +172,10 @@ onUnmounted(() => {
             <!-- Contact Info -->
             <div class="mt-8 sm:mt-12 text-stone-600">
               <p class="text-lg mb-2">Need help with your booking?</p>
-              <div class="flex flex-row gap-3 justify-center items-center" @click="coppyToClipbord">
-                <p class="text-xl font-semibold text-teal-900">+94 776 874 714</p>
-                <button class="flex flex-col justify-center items-center">
-                  <Icon name="material-symbols:content-copy-outline" class="text-md text-gray-300 hover:text-gray-500 active:text-gray-500"/>
-                </button>
+              <div class="flex flex-row gap-3 justify-center items-center">
+                <p class="text-xl font-semibold text-teal-900">
+                  <a href="tel:+94776874714">077 687 4714</a>
+                </p>
               </div>
               <p class="text-sm mt-2">info@teagardenvillas.com</p>
             </div>
@@ -214,11 +215,6 @@ const toggleMobileMenu = () => {
   // } else if(isMobileMenuOpen.value == false) {
   //   document.body.style.overflow = 'auto'
   // }
-}
-
-const coppyToClipbord = () => {
-  // this is for coppy mobile number in to clipbord
-  navigator.clipboard.writeText('+94776874714')
 }
 
 // Lifecycle

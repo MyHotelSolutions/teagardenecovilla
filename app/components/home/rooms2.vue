@@ -115,7 +115,9 @@
 </template>
 
 <script setup>
+import { useImageStore } from '@/store/imagestore'
 
+const imagestore = useImageStore()
 
 const focusedImage = ref(0)
 let rotation = null
@@ -147,11 +149,16 @@ const facilities = [
 ]
 
 const allRoomImages = [
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00666.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00672.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00478%20(1).jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/washroom&fitting/DSC00493.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/washroom&fitting/DSC00453.jpg',
+    // 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00666.jpg',
+    // 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00672.jpg',
+    // 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/room/DSC00478%20(1).jpg',
+    // 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/washroom&fitting/DSC00493.jpg',
+    // 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/washroom&fitting/DSC00453.jpg',
+    imagestore.insiderooms[1],
+    imagestore.insiderooms[4],
+    imagestore.insiderooms[5],
+    imagestore.bathroomandfitting[2],
+    imagestore.insiderooms[1],
 
 ]
 

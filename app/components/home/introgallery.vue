@@ -1,59 +1,3 @@
-<!-- <template>
-    amanities heighlights
-        <section class="py-24 md:py-32 bg-white min-h-screen">
-            <div class="flex flex-col justify-center items-center gap-20 container mx-auto px-6 md:px-12">
-
-                title section
-                <div class="flex flex-col justify-center items-center gap-2 w-[60%]">
-                    <p class="text-stone-500/60 text-lg leading-relaxed">Your Escape to Nature’s Heart</p>
-                    <h3 class="font-serif text-4xl md:text-5xl text-teal-800 leading-tight font-black">Tea Garden Eco Villa</h3>
-                    <p class="text-stone-500 text-lg leading-relaxed w-[55%] text-center font-light">Where misty trails, hidden waterfalls, and forest whispers create your perfect mountain retreat.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 items-center">
-                    
-                    image section
-                    <div class="md:col-span-9 relative">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="flex flex-col mt-30 gap-4">
-                                <div class="">
-                                    <img :src="randomImageList[0]" alt="" class="rounded-2xl">
-                                </div>
-                                <div class="flex flex-col justify-start">
-                                    <img :src="randomImageList[1]" alt="" class="rounded-2xl h-[80%] w-full object-cover">
-                                </div>
-                            </div>
-                            <div class="flex flex-col gap-4">
-                                <div class="flex flex-col justify-end">
-                                    <img :src="randomImageList[2]" alt="" class="rounded-2xl h-[80%] w-full object-cover">
-                                </div>
-                                <div class="">
-                                    <img :src="randomImageList[3]" alt="" class="rounded-2xl">
-                                </div>
-                            </div>
-                        </div>
-
-                        Decorative element
-                        <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-stone-50 rounded-full blur-3xl opacity-60" />
-                    </div>
-                    
-                    description section
-                    <div class="flex flex-col justify-between gap-4 md:col-span-3 h-[72vh] p-2 rounded-xl">
-                        <div class="flex flex-col gap-4 p-4 rounded-xl" v-for="(items, index) in introductionText" @mouseenter="selectSpecialImageCategory(items.name)" @mouseleave="startShuffle">
-                            <div class="flex flex-row gap-4 items-center">
-                                <div class="w-10 h-10 rounded-full flex flex-col justify-center items-center bg-red-100/30">
-                                    <Icon :name="items.icon" class="text-2xl text-red-400"></Icon>
-                                </div>
-                                <h4 class="font-serif text-4xl md:text-2xl text-stone-900 leading-tight font-black">{{ items.name }}</h4>
-                            </div>
-                            <p class="text-stone-500 text-md leading-relaxed ml-6">{{ items.description }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-</template> -->
-
 <template>
     <!-- amenities highlights -->
     <section class="py-12 sm:py-20 md:py-24 lg:py-32 bg-white min-h-screen">
@@ -63,9 +7,9 @@
             <div class="flex flex-col justify-center items-center gap-2 sm:gap-3 w-full sm:w-[80%] md:w-[70%] lg:w-[60%] text-center">
                 <p class="text-stone-500/60 text-base sm:text-lg leading-relaxed">Your Escape to Nature's Heart</p>
                 <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-teal-800 leading-tight font-black">Tea Garden Eco Villa</h3>
-                <p class="text-stone-500 text-sm sm:text-base md:text-lg leading-relaxed w-full sm:w-[80%] md:w-[70%] lg:w-[55%] font-light mt-2">
+                <!-- <p class="text-stone-500 text-sm sm:text-base md:text-lg leading-relaxed w-full sm:w-[80%] md:w-[70%] lg:w-[55%] font-light mt-2">
                     Where misty trails, hidden waterfalls, and forest whispers create your perfect mountain retreat.
-                </p>
+                </p> -->
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-10 items-start w-full">
@@ -75,21 +19,97 @@
                     <div class="grid grid-cols-2 gap-3 sm:gap-4">
                         <!-- Left column -->
                         <div class="flex flex-col gap-3 sm:gap-4 mt-0 sm:mt-8 md:mt-16 lg:mt-30">
+                            <!-- left column - first image -->
                             <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
-                                <img :src="randomImageList[0]" alt="Eco villa scenery" class="w-full h-full object-cover">
+                                
+                                <!-- actual image -->
+                                <NuxtImg 
+                                    provider="imagekit" 
+                                    :src="randomImageList[0]" 
+                                    :quality="qualityCal" 
+                                    preset="cover"
+                                    sizes="50vw sm:50vw" 
+                                    class="w-full h-full object-cover" v-if="!randomImageList.length == 0"/>
+                                    
+                                <!-- loading effect -->
+                                <div class="w-full h-full" v-if="randomImageList.length == 0">
+                                    <NuxtImg 
+                                        provider="imagekit" 
+                                        :src="imagestore.restaurant[7]" 
+                                        preset="cover"
+                                        sizes="50vw sm:50vw" 
+                                        class="w-full h-full object-cover"
+                                        :modifiers="{ blur: 20 }"/>
+                                </div>
                             </div>
+                            
+                            <!-- left column - second image -->
                             <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
-                                <img :src="randomImageList[1]" alt="Nature retreat" class="w-full h-full object-cover">
+                                <!-- actual image -->
+                                <NuxtImg 
+                                provider="imagekit" 
+                                :src="randomImageList[1]" 
+                                    :quality="qualityCal" 
+                                    preset="cover"
+                                    sizes="50vw sm:50vw" 
+                                    class="w-full h-full object-cover"  v-if="!randomImageList.length == 0"/>
+                                <!-- loading effect -->
+                                <div class="w-full h-full" v-if="randomImageList.length == 0">
+                                    <NuxtImg 
+                                        provider="imagekit" 
+                                        :src="imagestore.pool[10]" 
+                                        preset="cover"
+                                        sizes="50vw sm:50vw" 
+                                        class="w-full h-full object-cover"
+                                        :modifiers="{ blur: 20 }"/>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Right column -->
                         <div class="flex flex-col gap-3 sm:gap-4">
                             <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
-                                <img :src="randomImageList[2]" alt="Mountain view" class="w-full h-full object-cover">
+                                
+                                <!-- actual image -->
+                                <NuxtImg 
+                                provider="imagekit" 
+                                    :src="randomImageList[2]" 
+                                    :quality="qualityCal" 
+                                    preset="cover"
+                                    sizes="50vw sm:50vw" 
+                                    class="w-full h-full object-cover"  v-if="!randomImageList.length == 0"/>
+                                
+                                <!-- loading effect -->
+                                <div class="w-full h-full" v-if="randomImageList.length == 0">
+                                    <NuxtImg 
+                                        provider="imagekit" 
+                                        :src="imagestore.garden[5]" 
+                                        preset="cover"
+                                        sizes="50vw sm:50vw" 
+                                        class="w-full h-full object-cover"
+                                        :modifiers="{ blur: 20 }"/>
+                                </div>
                             </div>
                             <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
-                                <img :src="randomImageList[3]" alt="Forest atmosphere" class="w-full h-full object-cover">
+                                <!-- actual image -->
+                                <NuxtImg 
+                                    provider="imagekit" 
+                                    :src="randomImageList[3]" 
+                                    :quality="qualityCal" 
+                                    preset="cover"
+                                    sizes="50vw sm:50vw" 
+                                    class="w-full h-full object-cover" v-if="!randomImageList.length == 0"/>
+                                    
+                                <!-- loading effect -->
+                                <div class="w-full h-full" v-if="randomImageList.length == 0">
+                                    <NuxtImg 
+                                        provider="imagekit" 
+                                        :src="imagestore.bbqandfire[3]" 
+                                        preset="cover"
+                                        sizes="50vw sm:50vw" 
+                                        class="w-full h-full object-cover"
+                                        :modifiers="{ blur: 20 }"/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -125,34 +145,39 @@
 </template>
 
 <script setup>
+import { useImageStore } from '@/store/imagestore';
+
 const randomImageList = ref([])
 const allImages = ref([])
 let shuffle = null;
+const screenWidth = ref(null)
+
+const imagestore = useImageStore()
 
 const introductionImages = {
     Restaurant : [
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00388.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00410.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00577%20(2).jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00403.jpg'
+        imagestore.restaurant[7],
+        imagestore.restaurant[0],
+        imagestore.restaurant[6],
+        imagestore.restaurant[3],
     ],
     Pool : [
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/pool/DSC00267.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/pool/DSC00383.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/pool/DSC00415.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/pool/DSC00436.jpg'
+        imagestore.pool[10],
+        imagestore.pool[1],
+        imagestore.pool[4],
+        imagestore.pool[12],
     ],
     Nature : [
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/nature/DSC00139.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/nature/DSC00574.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/nature/DSC00701.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/nature/DSC00581.jpg'        
+        imagestore.garden[5],
+        imagestore.garden[14],
+        imagestore.garden[3],
+        imagestore.garden[16],
     ],
     BBQ : [
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/BBQ/DSC00314.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/BBQ/DSC00317.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/BBQ/DSC00318.jpg',
-        'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/BBQ/_DSC0016.jpg'
+        imagestore.bbqandfire[3],
+        imagestore.bbqandfire[5],
+        imagestore.bbqandfire[6],
+        imagestore.bbqandfire[0],
     ]
 }
 
@@ -182,9 +207,9 @@ const introductionText = [
 
 const selectSpecialImageCategory = (index) => {
     // sleect special image category to view what are the images avialable
-    
-    clearInterval(shuffle)
-    randomImageList.value = introductionImages[index]
+        console.log('this is executed')
+        clearInterval(shuffle)
+        randomImageList.value = introductionImages[index]
 }
 
 
@@ -209,16 +234,19 @@ const startShuffle = () => {
   
     shuffle = setInterval(() => {
         randomImageList.value = selectRandomImageList()   
-    }, 2000)
+    }, 3000)
     
     onUnmounted(() => clearInterval(shuffle))
 }
 
+
 onBeforeMount(() => {
     // execute this once once the component rendered
-
     allImages.value = Object.values(introductionImages).flat()
     startShuffle()
+
+    // get screen width
+    screenWidth.value = window.innerWidth
 })
 
 </script>

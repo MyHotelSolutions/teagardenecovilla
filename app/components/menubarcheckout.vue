@@ -8,11 +8,13 @@
       <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div class="flex justify-between items-center">
           <!-- Logo -->
-          <div :class="`font-serif text-2xl sm:text-4xl font-bold tracking-tight transition-colors duration-300 ${
-            isScrolled ? 'text-teal-900' : 'text-white'
-          } ${isMobileMenuOpen ? 'text-teal-900' : ''}`">
-            Tea Garden Eco Villa<span class="text-emerald-500">.</span>
-          </div>
+          <NuxtLink to="/">
+            <div :class="`font-serif text-xl sm:text-4xl font-bold tracking-tight transition-colors duration-300 ${
+              isScrolled ? 'text-teal-900' : 'text-white'
+            } ${isMobileMenuOpen ? 'text-teal-900' : ''}`">
+              Tea Garden Eco Villas<span class="text-emerald-500">.</span>
+            </div>
+          </NuxtLink>
         </div>
       </div>
     </nav>

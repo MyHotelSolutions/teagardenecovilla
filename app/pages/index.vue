@@ -5,11 +5,12 @@
         
         <div class="relative w-full h-screen min-h-[600px] sm:min-h-[700px]">
             <!-- Background Image -->
-            <img 
-                src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" 
-                alt="Mountain paradise view" 
-                class="w-full h-full object-cover"
-            >
+            <NuxtImg 
+                provider="imagekit" 
+                :src="imagestore.accomodationview[8]" 
+                :quality="qualityCal" 
+                preset="cover" 
+                class="w-full h-full object-cover" />
             
             <!-- Content Overlay -->
             <div class="flex flex-col justify-start items-end absolute top-0 z-10 w-full h-full">
@@ -70,9 +71,9 @@
                         v-for="item in amenitiesList" 
                         :key="item.id">
                         <!-- Icon Container -->
-                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#D1FAE5] group-hover:bg-white transition-colors duration-300">
+                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-14 h-14 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-teal-800 group-hover:bg-white transition-colors duration-300">
                             <!-- Icon -->
-                            <Icon :name="item.icon" class="text-xl sm:text-2xl md:text-3xl text-[#047857] transition-colors duration-300"/>
+                            <Icon :name="item.icon" class="text-2xl sm:text-2xl md:text-3xl text-white transition-colors duration-300"/>
                         </div>
                         <!-- Facility Name -->
                         <p class="text-center group-hover:text-white transition-colors text-xs sm:text-sm md:text-base lg:text-lg duration-300 whitespace-nowrap font-medium break-words">
@@ -108,13 +109,18 @@
 </template>
 
 <script setup>
-import { mapGamepadToXbox360Controller } from '@vueuse/core';
+// import { mapGamepadToXbox360Controller } from '@vueuse/core';
 import { useHotelStore } from '~/store/hotelstore';
+import { useImageStore } from '@/store/imagestore';
 
+
+
+const imagestore = useImageStore()
 const hotelStore = useHotelStore()
 const bookingView = ref(false)
 const adultCount = ref(0)
 const childCount = ref(0)
+const qualityCal = ref(null)
 
 // booking date reage controll
 const today = ref(null)
@@ -131,8 +137,8 @@ const amenitiesList = [
         icon : 'material-symbols:directions-car-outline-sharp'
     },
     {
-        name : 'Daily Cleaning',
-        icon : 'mdi:broom'
+        name : 'Restaurent',
+        icon : 'material-symbols:food-bank'
     },
     {
         name : 'AC',
@@ -243,6 +249,26 @@ const searchReset = () => {
     childCount.value = 0
 }
 
+const calculateImageQuality = () => {
+    
+    const width = window.innerWidth
+
+    if(width >= 1536){
+        qualityCal.value = 85
+    }else if(width >= 1280){
+        qualityCal.value = 80
+    }else if(width >= 1024){
+        qualityCal.value = 75
+    }else if(width >= 768){
+        qualityCal.value = 70
+    }else if(width >= 640){
+        qualityCal.value = 65
+    }else if(width < 640){
+        qualityCal.value = 60
+    }
+    console.log(qualityCal.value)
+}
+
 watch([checkin, checkout], ([newCheckIn, newCheckOut], [oldCheckIn, oldChckOut]) => {
     if(newCheckIn !== oldCheckIn){
         breakPoint.value = new Date(newCheckIn)
@@ -253,6 +279,9 @@ watch([checkin, checkout], ([newCheckIn, newCheckOut], [oldCheckIn, oldChckOut])
     }
 })
 
+onMounted(() => {
+    calculateImageQuality()
+})
 
 onBeforeMount(() => {
     today.value = new Date()
@@ -263,6 +292,7 @@ onBeforeMount(() => {
     maxBookingDate.value.setDate(today.value.getDate() + 180)
     // checkout.value = `${maxBookingDate.value.getFullYear()}-${(maxBookingDate.value.getMonth()+1).toString().padStart(2,'0')}-${maxBookingDate.value.getDate().toString().padStart(2,'0')}`
 })
+
 
 
 

@@ -12,9 +12,37 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: ['@pinia/nuxt', '@pinia/nuxt', '@nuxt/icon', '@vueuse/nuxt', '@nuxt/ui', '@nuxtjs/color-mode'],
+  modules: [
+    '@pinia/nuxt',
+    '@pinia/nuxt',
+    '@nuxt/icon',
+    '@vueuse/nuxt',
+    '@nuxt/ui',
+    '@nuxtjs/color-mode',
+    '@nuxt/image'
+  ],
   colorMode: {
     preference: 'light', 
     fallback: 'light'
+  },
+  image: {
+    imagekit: {
+      baseURL: 'https://ik.imagekit.io/myHotelSolutions/'
+    }, 
+    presets: {
+      cover: {
+        modifiers: {
+          fit: 'cover',
+          format: 'webp',
+        }
+      }
+    },
+    screens: {
+      'sm': 640,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1280,
+      '2xl': 1536
+    }
   }
-})  
+})
