@@ -25,6 +25,14 @@ export default defineNuxtConfig({
     preference: 'light', 
     fallback: 'light'
   },
+  runtimeConfig: {
+    // Private keys are only available server-side
+    // apiSecret: process.env.API_SECRET_KEY,
+    // Public keys are available both server-side and client-side
+    public: {
+      apiBase: process.env.API_BASE_EMAIL
+    }
+  },
   image: {
     imagekit: {
       baseURL: 'https://ik.imagekit.io/myHotelSolutions/'

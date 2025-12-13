@@ -135,7 +135,8 @@ export const useHotelStore = defineStore('hotel', () => {
     start: null,
     end: null
   })
+  const formsubmit = ref(false)
 
 
-  return { socialLinks, availableRooms, selectedRooms, roomDetails, personalData, accountDetails, cardDetails, adultsCount, childCount, roomsCount, childAgeSelectedList, modelValue }
+  return { socialLinks, availableRooms, selectedRooms, roomDetails, personalData, accountDetails, cardDetails, adultsCount, childCount, roomsCount, childAgeSelectedList, modelValue, formsubmit }
 })
