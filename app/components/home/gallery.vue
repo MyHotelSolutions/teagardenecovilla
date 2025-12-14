@@ -11,8 +11,28 @@
             </div>
 
             <!-- image gallery -->
-            <div class="grid grid-cols-5 gap-2 sm:gap-4 sm:min-h-[400px] md:min-h-[500px] sm:h-[60vh] h-[45vh]">
-                <div class="rounded-xl duration-300 h-full" v-for="(item, index) in imageList.length">
+            <!-- for mobile screens -->
+            <div class="grid grid-cols-5 gap-2 sm:gap-4 sm:min-h-[400px] md:min-h-[500px] sm:h-[60vh] h-[45vh]" v-if="screenSize < 768 && screenSize != null">
+                <!-- for lager screen -->
+                <div class="rounded-xl duration-300 h-full" v-for="(item, index) in imageList.slice(0,5).length">
+                    <NuxtLink to="/gallery" class="flex flex-row justify-center items-center h-full"> 
+                        <NuxtImg 
+                            provider="imagekit" 
+                            :src="imageList[index]" 
+                            :quality="qualityCal" 
+                            sizes="175vw md:120vw"
+                            preset="cover" 
+                            class="w-full object-cover rounded-2xl hover:scale-110 active:scale-110 duration-300" 
+                            :class="index == 0 || index == 4 ? 'h-[84%]' : index == 1 || index == 3 ? 'h-[92%]' : index == 2  ? 'h-full' : ''"
+                        />
+                    </NuxtLink>
+                </div>
+            </div>
+            
+            <!-- for lager screens -->
+            <div class="grid grid-cols-6 gap-2 sm:gap-4 sm:min-h-[400px] md:min-h-[500px] sm:h-[60vh] h-[45vh]" v-if="screenSize > 768 && screenSize != null">
+                <!-- for lager screen -->
+                <div class="rounded-xl duration-300 h-full" v-for="(item, index) in imageList.slice(0,6).length">
                     <NuxtLink to="/gallery" class="flex flex-row justify-center items-center h-full"> 
                         <NuxtImg 
                             provider="imagekit" 
@@ -26,7 +46,6 @@
                     </NuxtLink>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -37,6 +56,7 @@ import { useImageStore } from '~/store/imagestore';
 
 const imagestor = useImageStore()
 const qualityCal = ref(20)
+const screenSize = ref(null)
 
 const imageList = ref(
     [
@@ -44,7 +64,8 @@ const imageList = ref(
         imagestor.pool[1],
         imagestor.garden[2],
         imagestor.dinner[3],
-        imagestor.accomodationview[3]
+        imagestor.accomodationview[3],
+        imagestor.insiderooms[1]
     ]
 )
 
@@ -53,6 +74,7 @@ const imageList = ref(
 const calculateImageQuality = () => {
     
     const width = window.innerWidth
+    screenSize.value = width
 
     if(width >= 1536){
         qualityCal.value = 15
@@ -72,7 +94,6 @@ const calculateImageQuality = () => {
 
 onBeforeMount(() => {
     calculateImageQuality()
-    const width = window.innerWidth
 })
 
 </script>
