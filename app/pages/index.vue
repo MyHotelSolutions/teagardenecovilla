@@ -9,6 +9,7 @@
                 provider="imagekit" 
                 :src="imagestore.accomodationview[8]" 
                 :quality="qualityCal" 
+                sizes="225vw md:200vw"
                 preset="cover" 
                 class="w-full h-full object-cover" />
             
@@ -254,17 +255,17 @@ const calculateImageQuality = () => {
     const width = window.innerWidth
 
     if(width >= 1536){
-        qualityCal.value = 85
-    }else if(width >= 1280){
-        qualityCal.value = 80
-    }else if(width >= 1024){
         qualityCal.value = 75
-    }else if(width >= 768){
+    }else if(width >= 1280){
         qualityCal.value = 70
-    }else if(width >= 640){
+    }else if(width >= 1024){
         qualityCal.value = 65
-    }else if(width < 640){
+    }else if(width >= 768){
         qualityCal.value = 60
+    }else if(width >= 640){
+        qualityCal.value = 55
+    }else if(width < 640){
+        qualityCal.value = 50
     }
     console.log(qualityCal.value)
 }

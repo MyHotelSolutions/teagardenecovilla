@@ -4,6 +4,7 @@
             provider="imagekit" 
             :src="imagestore.restaurant[6]" 
             :quality="qualityCal" 
+            sizes="175vw md:120vw"
             preset="cover" 
             class="w-full h-full object-cover" />
 
@@ -34,17 +35,17 @@ const calculateImageQuality = () => {
     const width = window.innerWidth
 
     if(width >= 1536){
-        qualityCal.value = 85
+        qualityCal.value = 25
     }else if(width >= 1280){
-        qualityCal.value = 80
+        qualityCal.value = 20
     }else if(width >= 1024){
-        qualityCal.value = 75
+        qualityCal.value = 15
     }else if(width >= 768){
-        qualityCal.value = 70
+        qualityCal.value = 10
     }else if(width >= 640){
-        qualityCal.value = 65
+        qualityCal.value = 8
     }else if(width < 640){
-        qualityCal.value = 60
+        qualityCal.value = 6
     }
     console.log(qualityCal.value)
 }

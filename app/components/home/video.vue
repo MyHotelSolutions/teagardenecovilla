@@ -10,9 +10,9 @@
             <NuxtImg 
                 provider="imagekit" 
                 :src="imagestore.common[0]" 
-                :quality="90" 
+                :quality="40" 
                 preset="cover"
-                sizes="100vw sm:100vw" 
+                sizes="175vw md:120vw" 
                 class="object-cover h-full w-full"/>
             
             <!-- gradient overlay -->

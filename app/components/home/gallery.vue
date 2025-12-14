@@ -11,16 +11,17 @@
             </div>
 
             <!-- image gallery -->
-            <div class="grid grid-cols-6 gap-3 sm:gap-4 sm:min-h-[400px] md:min-h-[500px] sm:h-[60vh] h-[45vh]">
+            <div class="grid gap-2 sm:gap-4 sm:min-h-[400px] md:min-h-[500px] sm:h-[60vh] h-[45vh]" :class="imageList.length == 5 ? 'grid-cols-5' : 'grid-cols-6'">
                 <div class="rounded-xl duration-300 h-full" v-for="(item, index) in imageList.length">
                     <NuxtLink to="/gallery" class="flex flex-row justify-center items-center h-full"> 
                         <NuxtImg 
                             provider="imagekit" 
                             :src="imageList[index]" 
                             :quality="qualityCal" 
+                            sizes="175vw md:120vw"
                             preset="cover" 
                             class="w-full object-cover rounded-2xl hover:scale-110 active:scale-110 duration-300" 
-                            :class="index == 0 || index == 5 ? 'h-[84%]' : index == 1 || index == 4 ? 'h-[92%]' : index == 2 || index == 3 ? 'h-full' : ''"
+                            :class="imageList.length == 6 && (index == 0 || index == 5) ? 'h-[84%]' : imageList.length == 6 && (index == 1 || index == 4) ? 'h-[92%]' : imageList.length == 6 && (index == 3 || index == 4) ? 'h-full' : imageList.length == 5 && (index == 0 | index == 4) ? 'h-[84%]' : imageList.length == 5 && (index == 1 || index == 3) ? 'h-[92%]' : 'h-full'"
                         />
                     </NuxtLink>
                 </div>
@@ -37,16 +38,7 @@ import { useImageStore } from '~/store/imagestore';
 const imagestor = useImageStore()
 const qualityCal = ref(20)
 
-const imageList = ref(
-    [
-        imagestor.restaurant[4],
-        imagestor.pool[1],
-        imagestor.garden[2],
-        imagestor.dinner[3],
-        imagestor.accomodationview[3],
-        imagestor.winetable[2],
-    ]
-)
+const imageList = ref()
 
 
 
@@ -55,7 +47,7 @@ const calculateImageQuality = () => {
     const width = window.innerWidth
 
     if(width >= 1536){
-        qualityCal.value = 35
+        qualityCal.value = 15
     }else if(width >= 1280){
         qualityCal.value = 13
     }else if(width >= 1024){
@@ -72,6 +64,28 @@ const calculateImageQuality = () => {
 
 onBeforeMount(() => {
     calculateImageQuality()
+    const width = window.innerWidth
+    
+    if(width > 768){
+        imageList.value = [
+            imagestor.restaurant[4],
+            imagestor.pool[1],
+            imagestor.garden[2],
+            imagestor.dinner[3],
+            imagestor.accomodationview[3],
+            imagestor.winetable[2],
+        ]
+    }else if(width <= 768){
+        imageList.value = [
+            imagestor.restaurant[4],
+            imagestor.pool[1],
+            imagestor.garden[2],
+            imagestor.dinner[3],
+            imagestor.accomodationview[3]
+        ]
+    }
+
+    console.log(`image lenght is ${imageList.value.length}`)
 })
 
 </script>
