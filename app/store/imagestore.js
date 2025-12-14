@@ -124,6 +124,32 @@ export const useImageStore = defineStore('image', () => {
   const common = ref([
     'TeaGardenEcovillas/Common/thumb.jpg',
   ])
+  const breakfast = ref([
+    'TeaGardenEcovillas/Breakfast/DSC00717.jpg?updatedAt=1765692812638',
+    'TeaGardenEcovillas/Breakfast/DSC00725.jpg?updatedAt=1765692812541',
+    'TeaGardenEcovillas/Breakfast/DSC00708.jpg?updatedAt=1765692812367',
+    'TeaGardenEcovillas/Breakfast/DSC00740.jpg?updatedAt=1765692812386',
+    'TeaGardenEcovillas/Breakfast/DSC00444.jpg?updatedAt=1765692811776',
+    'TeaGardenEcovillas/Breakfast/DSC00714.jpg?updatedAt=1765692811269',
+    'TeaGardenEcovillas/Breakfast/DSC00458.jpg?updatedAt=1765692807877',
+    'TeaGardenEcovillas/Breakfast/DSC00704.jpg?updatedAt=1765692807824',
+    'TeaGardenEcovillas/Breakfast/WhatsApp%20Image%202025-11-08%20at%2021.51.58_3d4ad825.jpg?updatedAt=1765692798421',
+  ])
+  const lunch = ref([
+    'TeaGardenEcovillas/Lunch/DSC00772.jpg?updatedAt=1765692870301',
+    'TeaGardenEcovillas/Lunch/DSC00776%20cro-.jpg?updatedAt=1765692869316',
+    'TeaGardenEcovillas/Lunch/DSC00750.jpg?updatedAt=1765692869168',
+    'TeaGardenEcovillas/Lunch/DSC00766.jpg?updatedAt=1765692867403',
+    'TeaGardenEcovillas/Lunch/DSC00778.jpg?updatedAt=1765692865574',
+  ])
+  const balconey = ref([
+    'TeaGardenEcovillas/Balcony/DSC00173.jpg?updatedAt=1765692746570',
+    'TeaGardenEcovillas/Balcony/DSC00170.jpg?updatedAt=1765692746561',
+    'TeaGardenEcovillas/Balcony/DSC00699-2.jpg?updatedAt=1765692745315',
+    'TeaGardenEcovillas/Balcony/DSC00465.jpg?updatedAt=1765692744802',
+    'TeaGardenEcovillas/Balcony/DSC00687.jpg?updatedAt=1765692743949',
+    'TeaGardenEcovillas/Balcony/DSC00697-2.jpg?updatedAt=1765692742568',
+  ])
   
-  return {winetable, restaurant, pool, insiderooms, garden, dinner, bbqandfire, bathroomandfitting, accomodationview, common}
+  return {winetable, restaurant, pool, insiderooms, garden, dinner, bbqandfire, bathroomandfitting, accomodationview, common, breakfast, lunch, balconey}
 })
