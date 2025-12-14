@@ -26,6 +26,31 @@ defineProps({
   description: String
 })
 
+const qualityCal = ref(20)
 const imagestore = useImageStore()
+
+const calculateImageQuality = () => {
+    
+    const width = window.innerWidth
+
+    if(width >= 1536){
+        qualityCal.value = 85
+    }else if(width >= 1280){
+        qualityCal.value = 80
+    }else if(width >= 1024){
+        qualityCal.value = 75
+    }else if(width >= 768){
+        qualityCal.value = 70
+    }else if(width >= 640){
+        qualityCal.value = 65
+    }else if(width < 640){
+        qualityCal.value = 60
+    }
+    console.log(qualityCal.value)
+}
+
+onBeforeMount(() => {
+    calculateImageQuality()
+})
 
 </script>

@@ -4,94 +4,295 @@
         <Headerimage title="Gallery" description="Discover vibrant adventures right at your doorstep, then return to pure  tranquility."></Headerimage>
 
         <!-- gallery -->
-        <div class="flex flex-col gap-6 sm:gap-10 md:gap-12 lg:gap-15 h-auto sm:h-auto w-[90vw] sm:w-[85vw] md:w-[80vw] lg:w-[75vw] mx-auto px-4 sm:px-0 py-10">
-            <div class="grid grid-cols-4 min-h-screen w-full gap-4">
-                <div class="col-span-2 w-full h-full rounded-lg md:rounded-2xl overflow-clip" @click="openPopup(imageList[0])">
-                    <img :src="imageList[0]" alt="" class="h-full w-full object-cover rounded-lg md:rounded-2xl hover:scale-104 duration-200">
+        <div class="flex flex-col gap-6 sm:gap-10 md:gap-12 lg:gap-15 h-auto sm:h-auto max-w-7xl w-full mx-auto py-6">
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 min-h-screen w-full gap-4 px-4">
+                <div class="col-span-1 lg:col-span-2 w-full h-full rounded-lg md:rounded-2xl overflow-clip relative" @click="openPopup(imageList[0])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">0</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[0]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300" 
+                        />
+                    </div>
+                <div class="col-span-1 md:row-span-2 lg:row-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[1])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">1</p>
+                    <NuxtImg 
+                        provider="imagekit" 
+                        :src="imageList[1]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />  
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[1])">
-                    <img :src="imageList[1]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
+                <div class="col-span-1 lgcol-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[2])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">2</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                    :src="imageList[2]" 
+                    :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[2])">
-                <img :src="imageList[2]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
+                <div class="col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[3])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">3</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[3]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                        />
+                    </div>
+                <div class="col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[4])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">4</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[4]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 colduration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[3])">
-                    <img :src="imageList[3]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
+                <div class="col-span-1 lg:col-span-2 row-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[5])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">5</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[5]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[4])">
-                    <img :src="imageList[4]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
+                <div class="md:col-span-1 lg:col-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[6])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">6</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                    :src="imageList[6]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                        />
+                    </div>
+                <div class="col-span-1 md:row-span-2 lg:row-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[7])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">7</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[7]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                        />
+                    </div>
+                <div class="md:col-span-1 lg:col-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[8])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">8</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[8]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-2 row-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[5])">
-                    <img :src="imageList[5]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
+                <div class=" col-span-1 md:row-span-1 lg:row-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[9])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">9</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[9]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[6])">
-                    <img :src="imageList[6]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
+                <div class="md:col-span-1 lg:col-span-3 md:row-span-2 lg:row-span-3 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[10])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">10</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[10]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                        />
+                    </div>
+                <div class="col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[11])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">11</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                    :src="imageList[11]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[7])">
-                    <img :src="imageList[7]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
+                <div class="col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[12])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">12</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[12]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                        />
+                    </div>
+                <div class="col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[13])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">13</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[13]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                        />
+                    </div>
+                <div class="col-span-1 md:row-span-2 lg:row-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[14])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">14</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[14]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                        />
+                    </div>
+                <div class="md:col-span-1 lg:col-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[15])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">15</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                    :src="imageList[15]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[8])">
-                    <img :src="imageList[8]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
+                <div class="col-span-1 md:row-span-2 lg:row-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[16])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">16</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[16]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 row-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[9])">
-                    <img :src="imageList[9]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
+                <div class="md:col-span-1 lg:col-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[17])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">17</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                    :src="imageList[17]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                        />
+                    </div>
+                <div class="col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[18])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">18</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                    :src="imageList[18]" 
+                    :quality="qualityCal"
+                    sizes="175vw md:120vw"
+                    preset="cover"
+                    oading="lazy" 
+                    class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-3 row-span-3 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[10])">
-                    <img :src="imageList[10]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
+                <div class="md:col-span-1 lg:col-span-4 md:row-span-2 lg:row-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[19])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">19</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[19]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[11])">
-                    <img :src="imageList[11]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
+                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[20])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">20</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[20]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[12])">
-                    <img :src="imageList[12]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
+                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[21])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">21</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[21]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[13])">
-                    <img :src="imageList[13]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
+                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[22])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">22</p>
+                    <NuxtImg 
+                    provider="imagekit" 
+                        :src="imageList[22]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
+                    />
                 </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[14])">
-                    <img :src="imageList[14]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
-                </div>
-                <div class=" col-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[15])">
-                    <img :src="imageList[15]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-
-                </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[16])">
-                    <img :src="imageList[16]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
-                </div>
-                <div class=" col-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[17])">
-                    <img :src="imageList[17]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
-                </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[18])">
-                    <img :src="imageList[18]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-
-                </div>
-                <div class=" col-span-4 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[19])">
-                    <img :src="imageList[19]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
-                </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[20])">
-                    <img :src="imageList[20]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                    
-                </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[21])">
-                    <img :src="imageList[21]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[22])">
-                    <img :src="imageList[22]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
-                </div>
-                <div class=" col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip" @click="openPopup(imageList[23])">
-                    <img :src="imageList[23]" alt="" class="h-full w-full object-cover md:rounded-2xl rounded-lg hover:scale-104 duration-200">
+                <div class="md:col-span-3 lg:col-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[23])">
+                    <p class="absolute top-0 left-0 text-2xl text-white bg-black">23</p>
+                    <NuxtImg 
+                        provider="imagekit" 
+                        :src="imageList[23]" 
+                        :quality="qualityCal"
+                        sizes="175vw md:120vw"
+                        preset="cover"
+                        oading="lazy" 
+                        class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
+                    />
                 </div>
             </div>
         </div>
@@ -172,40 +373,38 @@
 <script setup>
 import Booknow from '~/components/booknow.vue';
 import Footer from '~/components/footer.vue';
+import { useImageStore } from '@/store/imagestore';
+const imagestore = useImageStore()
 
 const popupOpen = ref(false)
 const selectedImage = ref('')
+const qualityCal = ref(20)
 const imageList = [
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Acomodation/DSC00586.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Acomodation/DSC00587.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Breakfast/DSC00714.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Breakfast/DSC00717.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Breakfast/WhatsApp%20Image%202025-11-08%20at%2021.51.58_3d4ad825.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Garden/DSC00394.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Garden/DSC00236.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Kotapola%20temple/DSC00616.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Kotapola%20temple/DSC00613.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Kotapola%20temple/DSC00591.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Lunch/DSC00750.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Lunch/DSC00778.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00403.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00577%20(2).jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00397%20(1).jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Sun%20Rise/DSC00328.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Sun%20Rise/DSC00325.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Tea%20Estate/DSC00329.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Tea%20Estate/DSC00343_1.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Tea%20Table/DSC00211.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Tea%20Table/DSC00219.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Three%20arch/DSC00543.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Water%20fall/DSC00514.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Water%20fall/DSC00518.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Water%20fall/DSC00521.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Water%20fall/DSC00523.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/pool/DSC00700.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/pool/DSC00244.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/pool/DSC00415.jpg',
-    'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/pool/DSC00198.jpg',
+    imagestore.winetable[0],
+    imagestore.restaurant[1],
+    imagestore.restaurant[2],
+    imagestore.restaurant[4],
+    imagestore.pool[0],
+    imagestore.pool[3],
+    imagestore.pool[6],
+    imagestore.insiderooms[2],
+    imagestore.insiderooms[4],
+    imagestore.insiderooms[5],
+    imagestore.insiderooms[6],
+    imagestore.garden[0],
+    imagestore.garden[2],
+    imagestore.garden[4],
+    imagestore.garden[3],
+    imagestore.garden[6],
+    imagestore.dinner[3],
+    imagestore.dinner[1],
+    imagestore.bbqandfire[2],
+    imagestore.bbqandfire[1],
+    imagestore.bathroomandfitting[1],
+    imagestore.bathroomandfitting[3],
+    imagestore.accomodationview[0],
+    imagestore.accomodationview[3],
+
 ]
 
 const closePopup = () => {
@@ -233,4 +432,28 @@ const previousImage = () => {
         selectedImage.value = imageList[prevIndex]
     }
 }
+
+const calculateImageQuality = () => {
+    
+    const width = window.innerWidth
+
+    if(width >= 1536){
+        qualityCal.value = 35
+    }else if(width >= 1280){
+        qualityCal.value = 13
+    }else if(width >= 1024){
+        qualityCal.value = 10
+    }else if(width >= 768){
+        qualityCal.value = 8
+    }else if(width >= 640){
+        qualityCal.value = 6
+    }else if(width < 640){
+        qualityCal.value = 3
+    }
+    console.log(qualityCal.value)
+}
+
+onBeforeMount(() => {
+    calculateImageQuality()
+})
 </script>

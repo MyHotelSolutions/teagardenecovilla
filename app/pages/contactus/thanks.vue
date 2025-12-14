@@ -44,9 +44,9 @@
 import { useHotelStore } from '@/store/hotelstore';
 
 
-// definePageMeta({
-//     middleware : 'thanks-router'
-// })
+definePageMeta({
+    middleware : 'thanks-router'
+})
 
 const hotelstore = useHotelStore()
 
