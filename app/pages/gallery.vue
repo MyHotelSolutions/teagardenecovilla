@@ -269,7 +269,7 @@
                         oading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
-                </div>openPopup
+                </div>
                 <div class=" col-span-1 row-span-1 md:row-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[22])">
                     <!-- <p class="absolute top-0 left-0 text-2xl text-white bg-black">22</p> -->
                     <NuxtImg 
