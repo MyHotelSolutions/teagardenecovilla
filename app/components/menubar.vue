@@ -194,8 +194,8 @@ const isMobileMenuOpen = ref(false)
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Gallery', href: '/gallery' },
-  { name: 'Places to visit', href: 'placetovisit' },
-  { name: 'About Us', href: 'aboutus' },
+  { name: 'Places to visit', href: '/place-to-visit' },
+  { name: 'About Us', href: '/aboutus' },
   { name: 'Contacts', href: '/contactus' },
 ]
 

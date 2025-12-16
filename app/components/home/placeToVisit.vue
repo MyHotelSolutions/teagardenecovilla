@@ -26,8 +26,8 @@
                     <div class="w-full h-full relative overflow-hidden rounded-2xl">
                         <img :src="placessList[selected].image" alt="" class="w-full h-full object-cover">
                         <div class="flex flex-col gap-3 sm:gap-4 lg:gap-4 justify-end items-start absolute top-0 bottom-0 right-0 left-0 p-6 sm:p-8 lg:p-10 bg-gradient-to-t from-black/70 to-transparent">
-                            <p class="font-serif text-2xl sm:text-3xl lg:text-3xl xl:text-4xl text-white leading-tight font-black">{{ placessList[selected].name }}</p>
-                            <button class="text-teal-800 font-semibold py-2 lg:py-2 sm:py-3 px-6 sm:px-8 lg:px-6 rounded-full bg-white hover:bg-gray-100 text-sm sm:text-base lg:text-base transition-colors">
+                            <p class="font-serif text-2xl sm:text-3xl lg:text-3xl xl:text-4xl text-white leading-tight font-black">{{ placessList[selected].title }}</p>
+                            <button class="text-teal-800 font-semibold py-2 lg:py-2 sm:py-3 px-6 sm:px-8 lg:px-6 rounded-full bg-white hover:bg-gray-100 text-sm sm:text-base lg:text-base transition-colors" @click="directTo">
                                 Read More
                             </button>
                         </div>
@@ -37,7 +37,7 @@
                 <!-- right side - hidden on mobile, shown on tablet+ -->
                 <div class="hidden lg:flex lg:col-span-2 overflow-hidden h-64 sm:h-80 lg:h-full"> 
                     <div class="w-full h-full border relative overflow-hidden rounded-l-2xl">
-                        <img :src="placessList[rightImage].image" alt="" class="w-full h-full object-cover">
+                        <!-- <img :src="placessList[rightImage].image" alt="" class="w-full h-full object-cover"> -->
                         <div class="flex flex-col justify-center items-center absolute top-0 bottom-0 left-0 right-0 bg-black/60 cursor-pointer" @click="placeRalling('up')">
                             <Icon name="material-symbols-light:arrow-right-alt-rounded" class="text-white text-4xl sm:text-5xl lg:text-6xl"></Icon>
                         </div>
@@ -60,40 +60,19 @@
 </template>
 
 <script setup>
+import { useBlogStore } from '~/store/blogstore'
+const runtime = useRuntimeConfig()    
+
+const blogstore = useBlogStore()
+const router = useRouter()
 
 const leftImage = ref(0)
 const selected = ref(1)
 const rightImage = ref(2)
 
-const placessList = ref(
-    [
-        {
-            name : 'Dellawa fall',
-            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/placeToVisit/dellawaWatterFall/DSC00514.jpg',
-        },
-        {
-            name : 'Dellawa Ela',
-            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/placeToVisit/dellawa/DSC00523.jpg',
-        },
-        {
-            name : 'Duuli fall',
-            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/placeToVisit/duuliElla/dullifall-neluwa%5C.webp',
-        },
-        {
-            name : 'Getabaruwa temple',
-            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/placeToVisit/getabaruwa/DSC00608.jpg',
-        },
-        {
-            name : 'Three arch bridge',
-            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/placeToVisit/threeArchBridge/WhatsApp%20Image%202025-11-08%20at%2022.21.03_2cd2a0ba.jpg',
-        },
-        {
-            name : 'Sinharaja Rain Forest',
-            image : 'https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/placeToVisit/sinharajaRainForest/sinharaja.jpg',
-        },
-    ]
-)
+const placessList = ref([])
 
+// this is help to rolling without stoping
 watch(
   () => selected.value,
   (newVal) => {
@@ -112,7 +91,7 @@ watch(
   }
 );
 
-
+// change the position of place
 const placeRalling = (direction) => {
 
     if (direction === 'up') {
@@ -125,5 +104,44 @@ const placeRalling = (direction) => {
             : selected.value - 1;
     }
 };
+
+// get data from  the API
+const { data, error } = await useFetch('https://api.storyblok.com/v2/cdn/stories', {
+    params : {
+        token : runtime.public.heldlesscms,
+        version : 'published',
+        content_type : 'blog-article',
+        excluding_fields : 'blog_article_content_r'
+    }
+})
+
+// set the get data in to list
+const articleList = computed(() => data.value?.stories || [])
+
+// if data available, then get what I want
+if(data){
+    console.log('this is executed')
+    for (let i = 0; i < articleList.value.length ; i++) {
+        const article = {
+            "image" : articleList.value[i].content.image.filename,
+            "title" : articleList.value[i].content.title,
+            "slug" : articleList.value[i].slug,
+            "full_slug" : articleList.value[i].full_slug
+        }
+        placessList.value.push(article)   
+    }
+}
+
+// API error message 
+console.log(articleList)
+console.log(error)
+
+// redirect to the blog article
+const directTo = () => {
+    blogstore.selectedArticleSlug = placessList.value[selected.value].slug
+    blogstore.selectedArticleFullSlug = placessList.value[selected.value].full_slug
+    router.push(`/place-to-visit/${placessList.value[selected.value].slug}`)
+}
+
 
 </script>
