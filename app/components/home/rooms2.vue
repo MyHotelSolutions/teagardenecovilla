@@ -5,9 +5,10 @@
         
             <!-- title section -->
             <div class="flex flex-col justify-center items-center gap-2 text-center h-2/10">
-                <p class="uppercase text-[#059699] transition-colors text-base sm:text-lg whitespace-nowrap font-semibold">Accommodation</p>
-                <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-stone-900 leading-tight font-black">Stay Amidst the Mountains</h3>
+                <!-- <p class="uppercase text-[#059699] transition-colors text-base sm:text-lg whitespace-nowrap font-semibold">Accommodation</p> -->
+                <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">Stay Amidst the Mountains</h3>
                 <hr class="w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[6vw] h-1 rounded-full bg-[#059699]">
+                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-xl text-center">Discover our spacious, inviting rooms: Comfortable beds, modern amenities, and serene views for ultimate relaxation. Guest favorites inside!</p>
             </div>
 
 

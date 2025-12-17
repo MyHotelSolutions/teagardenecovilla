@@ -1,12 +1,7 @@
 <template>
-    <!-- video section -->
-    <div class="flex flex-col justify-center gap-4 sm:gap-6 h-[50vh] sm:h-[60vh] md:h-[75vh] w-full">
-        <div class="flex flex-col justify-center gap-8 sm:gap-12 h-[50vh] sm:h-[60vh] md:h-[75vh] w-full mx-auto relative overflow-hidden">
-            <!-- <img 
-                src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Video/Thumbnail.jpg" 
-                alt="Video thumbnail" 
-                class="object-cover h-full w-full"
-            > -->
+    <!-- video section thumbnail -->
+    <div class="flex flex-col justify-center gap-4 sm:gap-6 h-screen w-full">
+        <div class="flex flex-col justify-center gap-8 sm:gap-12 h-full w-full mx-auto relative overflow-hidden">
             <NuxtImg 
                 provider="imagekit" 
                 :src="imagestore.common[0]" 
@@ -18,12 +13,12 @@
             <!-- gradient overlay -->
             <div class="flex flex-col justify-center items-center absolute w-full h-full top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-white/0 to-slate-950/40">
                 <!-- animated ping effect -->
-                <div class="border-4 sm:border-6 md:border-8 p-6 sm:p-8 md:p-10 rounded-full animate-ping border-white/30 absolute">
+                <div class="border-14 sm:border-12 md:border-16 p-8 sm:p-10 md:p-12 rounded-full animate-ping border-white/30 absolute">
                 </div>
-                
+       
                 <!-- play button -->
                 <div class="w-fit h-fit cursor-pointer transform hover:scale-105 transition-transform duration-200" @click="videoPopup = true">
-                    <Icon name="material-symbols:play-circle-rounded" class="text-6xl sm:text-7xl md:text-9xl text-white"/>
+                    <Icon name="material-symbols:play-circle-rounded" class="text-8xl sm:text-8xl md:text-9xl text-white"/>
                 </div>
             </div>
         </div>

@@ -1,49 +1,54 @@
 <template>
     <div class="flex flex-col justify-center items-center w-full min-h-screen bg-[#fafaf9]">
-        <div class="flex flex-col gap-10 md:gap-12 h-auto w-[90vw] lg:w-[85vw] xl:w-[75vw] mx-auto py-30    ">
+        <div class="flex flex-col gap-16 h-auto max-w-7xl mx-auto py-30">
 
             <div class="flex flex-col justify-center items-center gap-2">
-                <h3 class="font-serif text-3xl md:text-5xl text-stone-900 leading-tight font-black">FAQ</h3>
+                <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">FAQ</h3>
                 <hr class="w-10 md:w-[6vw] h-1.5 rounded-full bg-[#059699]">
+                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-lg text-center">Discover our spacious, inviting rooms: Comfortable beds, modern amenities, and serene views for ultimate relaxation. Guest favorites inside!</p>
             </div>
 
-            <div class="flex flex-col gap-10 xl:grid xl:grid-cols-10 xl:gap-20 h-full">
-
-                <div class="flex flex-col gap-8 md:gap-12 xl:gap-20 col-span-full xl:col-span-6">
-                    <div class="flex flex-col gap-6 cursor-default">
-                        <div class="flex flex-col gap-4" v-for="(item, index) in faq" :key="index">
-                            
-                            <div class="flex flex-row justify-between cursor-pointer py-2 border-b border-stone-200" @click="selectedQestion=index">
-                                <p class="text-black font-medium text-base md:text-xl leading-relaxed pr-4">{{ item.question }}</p>
-                                <Icon 
-                                    name="material-symbols:keyboard-arrow-down-rounded" 
-                                    class="text-3xl md:text-4xl text-black duration-300 transform" 
-                                    :class="selectedQestion == index ? 'rotate-0' : '-rotate-90'" 
-                                />
-                            </div>
-                            
-                            <div :class="selectedQestion == index ? 'block pt-2 pb-4' : 'hidden'">
-                                <p class="text-black/75 font-light text-base md:text-lg leading-relaxed">{{ item.answer }}</p>
-                            </div>
+            <div class="flex flex-row gap-20 h-full p-2">
+                <div class="flex flex-col gap-6 w-[96vw] xl:w-[65%] cursor-default">
+                    
+                    <!-- single question -->
+                    <div class="flex flex-col gap-4 w-full" v-for="(item, index) in faq" :key="index">
+                        <div class="flex flex-row justify-between cursor-pointer py-2 border-b border-stone-200" @click="selectedQestion=index">
+                            <p class="text-black font-medium text-base md:text-lg leading-relaxed pr-4">{{ item.question }}</p>
+                            <Icon 
+                                name="material-symbols:keyboard-arrow-down-rounded" 
+                                class="text-3xl md:text-4xl text-black duration-300 transform border" 
+                                :class="selectedQestion == index ? 'rotate-0' : '-rotate-90'" 
+                            />
+                        </div>
+                        
+                        <!-- answare -->
+                        <div :class="selectedQestion == index ? 'block pt-2 pb-4' : 'hidden'">
+                            <p class="text-black/75 font-light text-base md:text-lg leading-relaxed">{{ item.answer }}</p>
                         </div>
                     </div>
                 </div>
+                <!-- </div> -->
 
-                <div class="col-span-4 h-full hidden xl:block">
-                    <img 
-                        src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/DSC00583.jpg" 
-                        alt="Scenic view of the Tea Garden Eco Villa" 
-                        class="w-full h-full object-cover rounded-2xl shadow-xl"
-                    >
+                <div class="col-span-4 xl:w-[35%] hidden xl:block overflow-clip rounded-2xl">
+                    <NuxtImg 
+                        provider="imagekit" 
+                        :src="imageStore.garden[1]" 
+                        :quality="qualityCal" 
+                        sizes="175vw md:120vw"
+                        preset="cover" 
+                        class="w-full object-cover rounded-2xl hover:scale-110 active:scale-110 duration-300 h-full" 
+                    />
                 </div>
             </div>
-
         </div>
     </div>
 </template>
 
 <script setup>
+import { useImageStore } from '~/store/imagestore';
 
+const imageStore = useImageStore()
 const selectedQestion = ref(0)
 
 const faq = [

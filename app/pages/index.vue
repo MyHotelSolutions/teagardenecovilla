@@ -56,26 +56,30 @@
         <HomeIntrogallery></HomeIntrogallery>
 
         <!-- amenities -->
-        <div class="flex flex-col justify-center gap-8 sm:gap-16 md:gap-20 lg:gap-25 min-h-[60vh] sm:h-[60vh] bg-[#fafaf9] py-8 sm:py-0">
-            <div class="flex flex-col justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 h-auto sm:min-h-[86vh] w-full mx-auto px-4 sm:px-0">
+        <div class="flex flex-col justify-center gap-8 sm:gap-16 md:gap-20 lg:gap-25 min-h-[75vh] h-auto bg-[#fafaf9] py-8 sm:py-0">
+            <div class="flex flex-col justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-20 h-auto sm:min-h-[86vh] w-full mx-auto px-4 sm:px-0">
+                
                 <!-- Title Section -->
-                <div class="flex flex-col justify-center items-center gap-2 text-center">
-                    <p class="uppercase text-[#059699] transition-colors text-sm sm:text-base md:text-lg whitespace-nowrap font-semibold">Curated comforts</p>
-                    <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-stone-900 leading-tight font-[500] tracking-wider">Villa Essentials</h3>
+                <div class="flex flex-col justify-center items-center gap-4 text-center">
+                    <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">Villa Essentials</h3>
                     <hr class="w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[6vw] h-1 sm:h-1.5 rounded-full bg-[#059699]">
+                    <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-lg text-center">Key comforts unveiled: Private pool, in-house chef, AC rooms, hot water, and thoughtful amenities for ultimate relaxation in paradise.</p>
                 </div>
 
-                <!-- Cards Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 w-full sm:w-[95vw] md:w-[92vw] lg:w-[90vw] mx-auto gap-3 sm:gap-4">
-                    <!-- Card -->
-                    <div class="group flex flex-col items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-14 rounded-lg sm:rounded-xl hover:bg-teal-800 transition-colors duration-300 border border-gray-200 cursor-pointer" 
+                <!-- all amenity list -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 w-full max-w-7xl mx-auto gap-3 sm:gap-4 px-4">
+                    
+                    <!-- single Card -->
+                    <div class="group flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-14 rounded-lg sm:rounded-xl hover:bg-teal-800 transition-colors duration-300 bg-white cursor-pointer h-40 sm:h-auto" 
                         v-for="item in amenitiesList" 
                         :key="item.id">
+                        
                         <!-- Icon Container -->
-                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-14 h-14 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-teal-800 group-hover:bg-white transition-colors duration-300">
+                        <div class="flex flex-col justify-center items-center p-2 rounded-full w-18 h-18 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-teal-800 group-hover:bg-white transition-colors duration-300">
                             <!-- Icon -->
-                            <Icon :name="item.icon" class="text-2xl sm:text-2xl md:text-3xl text-white transition-colors duration-300"/>
+                            <Icon :name="item.icon" class="text-3xl sm:text-2xl md:text-3xl text-white group-hover:text-teal-800 transition-colors duration-300"/>
                         </div>
+                        
                         <!-- Facility Name -->
                         <p class="text-center group-hover:text-white transition-colors text-xs sm:text-sm md:text-base lg:text-lg duration-300 whitespace-nowrap font-medium break-words">
                             {{ item.name }}
