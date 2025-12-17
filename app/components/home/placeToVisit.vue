@@ -4,9 +4,9 @@
             
             <!-- title section -->
             <div class="flex flex-col justify-center items-center gap-2 sm:gap-3 lg:gap-2 w-full max-w-4xl">
-                <p class="uppercase text-center text-[#059699] transition-colors text-base sm:text-lg lg:text-lg whitespace-nowrap font-semibold">Places to Visit</p>
-                <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-stone-900 leading-tight font-black text-center">Travel Beyond the Map</h3>
+                <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">Travel Beyond the Map</h3>
                 <hr class="w-[20vw] sm:w-[15vw] lg:w-[6vw] h-1 rounded-full bg-[#059699]">
+                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-xl text-center">Embark on hidden adventures just steps from your villa—discover pristine rainforests, ancient temples, cascading waterfalls, and untouched natural wonders waiting to be explored.</p>
             </div>
 
             <!-- place scroll section -->
@@ -37,7 +37,7 @@
                 <!-- right side - hidden on mobile, shown on tablet+ -->
                 <div class="hidden lg:flex lg:col-span-2 overflow-hidden h-64 sm:h-80 lg:h-full"> 
                     <div class="w-full h-full border relative overflow-hidden rounded-l-2xl">
-                        <!-- <img :src="placessList[rightImage].image" alt="" class="w-full h-full object-cover"> -->
+                        <img :src="placessList[rightImage].image" alt="" class="w-full h-full object-cover">
                         <div class="flex flex-col justify-center items-center absolute top-0 bottom-0 left-0 right-0 bg-black/60 cursor-pointer" @click="placeRalling('up')">
                             <Icon name="material-symbols-light:arrow-right-alt-rounded" class="text-white text-4xl sm:text-5xl lg:text-6xl"></Icon>
                         </div>
