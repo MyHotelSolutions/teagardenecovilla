@@ -7,26 +7,26 @@
                 <!-- reviews -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 h-auto">
                     <div 
-                        class="flex flex-col gap-4 sm:gap-6 border border-gray-300 rounded-xl items-center p-6 duration-300 min-h-[320px] sm:min-h-[380px] md:min-h-[400px] lg:min-h-[420px] hover:shadow-xl hover:scale-101 active:shadow-xl active:scale-101"
+                        class="flex flex-col gap-4 sm:gap-6 border border-gray-300 rounded-2xl items-center p-6 duration-300 min-h-[320px] sm:min-h-[380px] md:min-h-[400px] lg:min-h-[420px] hover:shadow-xl hover:scale-101 active:shadow-xl active:scale-101 shadow-md"
                         v-for="item in reviews"
                         :key="item.id"
                     >
-                        <p class="text-left text-base leading-relaxed text-gray-700 flex-grow overflow-y-auto">
+                        <div class="flex flex-row gap-1">
+                            <Icon 
+                                name="material-symbols:kid-star"
+                                class="p-1 sm:p-2 text-amber-400 text-lg" 
+                                v-for="value in Number(item.content.stars)"
+                            />
+                        </div>
+                        <p class="text-center text-base leading-relaxed text-gray-700  md:flex-grow overflow-y-auto">
                             {{ item.content.review_content }}
                         </p>
                         
-                        <div class="flex flex-col w-full mt-4">
-                            <div class="flex flex-row gap-1">
-                                <Icon 
-                                    name="material-symbols:kid-star"
-                                    class="p-1 sm:p-2 text-amber-400 text-lg" 
-                                    v-for="value in Number(item.content.stars)"
-                                />
-                            </div>
-                            <p class="font-semibold text-base sm:text-lg md:text-xl truncate">{{ item.name }}</p>
-                            <p class="flex flex-row items-center gap-3 text-gray-500 truncate text-xs">From {{ item.content.country_name }} <Icon :name="item.content.country_flag" class="text-2xl"></Icon></p>
+                        <div class="flex flex-col justify-center items-center w-full mt-4">
+                            <p class="flex flex-row items-center gap-3  font-semibold text-base sm:text-lg md:text-xl truncate">{{ item.name }} <Icon :name="item.content.country_flag" class="text-xl"></Icon> </p>
+                            <!-- <p class="flex flex-row items-center gap-3 text-gray-500 truncate text-xs">From {{ item.content.country_name }} </p> -->
                             <a :href="item.content.platform_link">
-                                <p class="text-gray-500 text-xs truncate flex flex-row items-center gap-3">Reviews On <Icon :name="item.content.platform_icon" class="text-2xl"></Icon></p>
+                                <p class="text-gray-500 text-xs truncate flex flex-row items-center gap-3">Reviews On <Icon :name="item.content.platform_icon" class="text-xl"></Icon></p>
                             </a>
                         </div>
                     </div>
