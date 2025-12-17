@@ -1,21 +1,22 @@
 <template>
     <!-- amenities highlights -->
     <section class="py-12 sm:py-20 md:py-24 lg:py-32 bg-white min-h-screen">
-        <div class="flex flex-col justify-center items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div class="flex flex-col justify-center items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 container max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
 
             <!-- title section -->
             <div class="flex flex-col justify-center items-center gap-2 sm:gap-3 w-full sm:w-[80%] md:w-[70%] lg:w-[60%] text-center">
-                <p class="text-stone-500/60 text-base sm:text-lg leading-relaxed">Your Escape to Nature's Heart</p>
-                <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-teal-800 leading-tight font-black">Tea Garden Eco Villa</h3>
+                <!-- <p class="text-stone-500/60 text-base sm:text-lg leading-relaxed">Your Escape to Nature's Heart</p> -->
+                <h3 class="font-serif text-2xl sm:text-4xl text-stone-900 leading-tight font-black text-center">Your Escape to Nature's Heart</h3>
+                <hr class="w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[6vw] h-1 rounded-full bg-[#059699]">
                 <!-- <p class="text-stone-500 text-sm sm:text-base md:text-lg leading-relaxed w-full sm:w-[80%] md:w-[70%] lg:w-[55%] font-light mt-2">
                     Where misty trails, hidden waterfalls, and forest whispers create your perfect mountain retreat.
                 </p> -->
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-10 items-start w-full">
+            <div class="flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-10 items-start w-full">
                 
                 <!-- image section -->
-                <div class="lg:col-span-8 xl:col-span-9 relative order-2 lg:order-1">
+                <div class="w-full lg:w-[65vw] relative order-2 lg:order-1">
                     <div class="grid grid-cols-2 gap-3 sm:gap-4">
                         <!-- Left column -->
                         <div class="flex flex-col gap-3 sm:gap-4 mt-0 sm:mt-8 md:mt-16 lg:mt-30">
@@ -119,7 +120,7 @@
                 </div>
                 
                 <!-- description section -->
-                <div class="grid grid-cols-2 lg:flex lg:flex-col justify-between gap-4 sm:gap-6 lg:gap-4 lg:col-span-4 xl:col-span-3 h-auto lg:h-[72vh] p-2 rounded-xl order-1 lg:order-2">
+                <div class="grid grid-cols-2 lg:grid-cols-1 w-full lg:w-[35vw] justify-between gap-4 sm:gap-6 lg:gap-4 h-auto lg:h-[72vh] p-2 rounded-xl order-1 lg:order-2">
                     <div class="flex flex-col gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl hover:bg-stone-50/50 transition-colors duration-300 cursor-pointer" 
                          v-for="(items, index) in introductionText" 
                          :key="index"
