@@ -1,17 +1,19 @@
 <template>
     <div class="">
         <Menubar></Menubar>
-        <Headerimage></Headerimage>
-        <div class="max-w-7xl w-full mx-auto grid grid-cols-2 gap-4 p-10">
-            <div class="border border-gray-200 p-6 rounded-lg flex flex-col gap-4" v-for="item  in articleList" @click="reditToArticle(item.slug ,item.full_slug)">
-                <img :src="item.content.image.filename" alt="" class="w-full h-[30vh] object-cover rounded-lg">
-                <h1>{{ item.content.title }}</h1>
-                <p>{{ item.content.introduction }}</p>
-                <div class="flex flex-row gap-5 mt-auto ml-auto">
-                    <img :src="item.content.written_by_image.filename" alt="" class="w-20 h-20 bg-blue-200 rounded-full">
+        <Headerimage title="Travel Beyond the Map" description="Embark on hidden adventures just steps from your villa—discover pristine rainforests, ancient temples, cascading waterfalls, and untouched natural wonders waiting to be explored."></Headerimage>
+        <div class="max-w-2xl lg:max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 py-20 px-2 lg:px-0">
+            <div class="border border-gray-200 p-2 md:p-6 rounded-lg flex flex-col gap-4 hover:shadow-2xl duration-200 hover:scale-101" v-for="item  in articleList" @click="reditToArticle(item.slug ,item.full_slug)">
+                <img :src="item.content.image.filename" alt="" class="w-full h-[25vh] lg:h-[30vh] object-cover rounded-lg">
+                <h1 class="font-black text-lg sm:text-xl">{{ item.content.title }}</h1>
+                <p class="text-sm sm:text-base">{{ item.content.introduction }}</p>
+                <div class="flex flex-row items-center gap-5 mt-auto">
+                    <div class="flex flex-col justify-center items-center w-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 rounded-full bg-teal-100">
+                        <img :src="item.content.written_by_image.filename" alt="" class="w-10 sm:w-12 lg:w-14 h-10 sm:h-12 lg:h-14 bg-blue-200 rounded-full">
+                    </div>
                     <div class="flex flex-col">
-                        <p class="flex flex-col text-lg"><span class="text-xs text-gray-400">written by</span> {{ item.content.written_by }}</p>
-                        <p class="flex flex-col text-lg">{{ item.content.written_by_title }}</p>
+                        <p class="flex flex-col text-sm"><span class="text-xs text-gray-400">written by</span> {{ item.content.written_by }}</p>
+                        <p class="text-sm hidden sm:block">{{ item.content.written_by_title }}</p>
                     </div>
                 </div>
             </div>
@@ -52,16 +54,5 @@ const reditToArticle = ( slug, full_slug) => {
 </script>
 
 <style scoped>
-h1 {
-    font-size: xx-large;
-    font-weight: 800;
-}
-
-.rich-content :deep(h2) {
-    font-size: x-large;
-    font-weight: 900;
-    padding-top: 40px;
-    padding-bottom: 10px;
-}
 
 </style>
