@@ -52,7 +52,3 @@ const reditToArticle = ( slug, full_slug) => {
 }
 
 </script>
-
-<style scoped>
-
-</style>
