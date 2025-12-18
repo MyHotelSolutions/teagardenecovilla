@@ -14,7 +14,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300" 
                         />
                     </div>
@@ -26,7 +26,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />  
                 </div>
@@ -38,7 +38,7 @@
                     :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -50,7 +50,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                         />
                     </div>
@@ -62,7 +62,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 colduration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -74,7 +74,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -86,7 +86,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                         />
                     </div>
@@ -98,7 +98,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                         />
                     </div>
@@ -110,7 +110,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -122,7 +122,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -134,7 +134,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                         />
                     </div>
@@ -146,7 +146,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -158,7 +158,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                         />
                     </div>
@@ -170,7 +170,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                         />
                     </div>
@@ -182,7 +182,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                         />
                     </div>
@@ -194,7 +194,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -206,7 +206,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -218,7 +218,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                         />
                     </div>
@@ -230,7 +230,7 @@
                     :quality="qualityCal"
                     sizes="175vw md:120vw"
                     preset="cover"
-                    oading="lazy" 
+                    loading="lazy" 
                     class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 h-full md:rounded-2xl" 
                     />
                 </div>
@@ -242,7 +242,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -254,7 +254,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -266,7 +266,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -278,7 +278,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -290,7 +290,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -303,7 +303,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -315,7 +315,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover h-full rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -327,7 +327,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -339,7 +339,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -351,7 +351,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -363,7 +363,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -375,7 +375,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -387,7 +387,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -399,7 +399,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -411,7 +411,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -423,7 +423,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -435,7 +435,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -447,7 +447,7 @@
                         :quality="qualityCal"
                         sizes="175vw md:120vw"
                         preset="cover"
-                        oading="lazy" 
+                        loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
@@ -497,7 +497,7 @@
                             :quality="qualityCal"
                             sizes="175vw md:120vw"
                             preset="cover"
-                            oading="lazy" 
+                            loading="lazy" 
                             class="max-w-full max-h-full object-contain rounded-md sm:rounded-lg" 
                         />
                     </div>

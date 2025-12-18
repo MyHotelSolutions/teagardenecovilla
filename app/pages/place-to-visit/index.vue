@@ -4,7 +4,14 @@
         <Headerimage title="Travel Beyond the Map" description="Embark on hidden adventures just steps from your villa—discover pristine rainforests, ancient temples, cascading waterfalls, and untouched natural wonders waiting to be explored."></Headerimage>
         <div class="max-w-2xl lg:max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 py-20 px-2 lg:px-0">
             <div class="border border-gray-200 p-2 md:p-6 rounded-lg flex flex-col gap-4 hover:shadow-2xl duration-200 hover:scale-101" v-for="item  in articleList" @click="reditToArticle(item.slug ,item.full_slug)">
-                <img :src="item.content.image.filename" alt="" class="w-full h-[25vh] lg:h-[30vh] object-cover rounded-lg">
+                <!-- <img :src="item.content.image.filename" alt="" class="w-full h-[25vh] lg:h-[30vh] object-cover rounded-lg"> -->
+                <NuxtImg  
+                    :src="item.content.image.filename"
+                    quality="30"
+                    format="webp"
+                    loading="lazy" 
+                    class="w-full h-[25vh] lg:h-[30vh] object-cover rounded-lg" 
+                />
                 <h1 class="font-black text-lg sm:text-xl">{{ item.content.title }}</h1>
                 <p class="text-sm sm:text-base">{{ item.content.introduction }}</p>
                 <div class="flex flex-row items-center gap-5 mt-auto">

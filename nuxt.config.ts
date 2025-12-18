@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     }
   },
   image: {
+    provider : 'storyblok',
     imagekit: {
       baseURL: 'https://ik.imagekit.io/myHotelSolutions/'
     }, 

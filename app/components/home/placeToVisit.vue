@@ -14,7 +14,14 @@
                 <!-- left side - hidden on mobile, shown on tablet+ -->
                 <div class="hidden lg:flex lg:col-span-2 overflow-hidden h-64 sm:h-80 lg:h-full"> 
                     <div class="w-full h-full border relative overflow-hidden rounded-r-2xl">
-                        <img :src="placessList[leftImage].image" alt="" class="w-full h-full object-cover">
+                        <!-- <img :src="placessList[leftImage].image" alt="" class="w-full h-full object-cover"> -->
+                        <NuxtImg  
+                            :src="placessList[leftImage].image"
+                            quality="30"
+                            format="webp"
+                            loading="lazy" 
+                            class="w-full h-full object-cover" 
+                        />
                         <div class="flex flex-col justify-center items-center absolute top-0 bottom-0 left-0 right-0 bg-black/60 cursor-pointer" @click="placeRalling('down')">
                             <Icon name="material-symbols-light:arrow-left-alt-rounded" class="text-white text-4xl sm:text-5xl lg:text-6xl"></Icon>
                         </div>
@@ -24,7 +31,14 @@
                 <!-- center - main content -->
                 <div class="col-span-full lg:col-span-6 overflow-hidden h-80 sm:h-96 lg:h-full"> 
                     <div class="w-full h-full relative overflow-hidden rounded-2xl">
-                        <img :src="placessList[selected].image" alt="" class="w-full h-full object-cover">
+                        <!-- <img :src="placessList[selected].image" alt="" class="w-full h-full object-cover"> -->
+                        <NuxtImg  
+                            :src="placessList[selected].image"
+                            quality="30"
+                            format="webp"
+                            loading="lazy" 
+                            class="w-full h-full object-cover" 
+                        />
                         <div class="flex flex-col gap-3 sm:gap-4 lg:gap-4 justify-end items-start absolute top-0 bottom-0 right-0 left-0 p-6 sm:p-8 lg:p-10 bg-gradient-to-t from-black/70 to-transparent">
                             <p class="font-serif text-2xl sm:text-3xl lg:text-3xl xl:text-4xl text-white leading-tight font-black">{{ placessList[selected].title }}</p>
                             <button class="text-teal-800 font-semibold py-2 lg:py-2 sm:py-3 px-6 sm:px-8 lg:px-6 rounded-full bg-white hover:bg-gray-100 text-sm sm:text-base lg:text-base transition-colors" @click="directTo">
@@ -37,7 +51,14 @@
                 <!-- right side - hidden on mobile, shown on tablet+ -->
                 <div class="hidden lg:flex lg:col-span-2 overflow-hidden h-64 sm:h-80 lg:h-full"> 
                     <div class="w-full h-full border relative overflow-hidden rounded-l-2xl">
-                        <img :src="placessList[rightImage].image" alt="" class="w-full h-full object-cover">
+                        <!-- <img :src="placessList[rightImage].image" alt="" class="w-full h-full object-cover"> -->
+                        <NuxtImg  
+                            :src="placessList[rightImage].image"
+                            quality="30"
+                            format="webp"
+                            loading="lazy" 
+                            class="w-full h-full object-cover" 
+                        />
                         <div class="flex flex-col justify-center items-center absolute top-0 bottom-0 left-0 right-0 bg-black/60 cursor-pointer" @click="placeRalling('up')">
                             <Icon name="material-symbols-light:arrow-right-alt-rounded" class="text-white text-4xl sm:text-5xl lg:text-6xl"></Icon>
                         </div>
