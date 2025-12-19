@@ -14,7 +14,7 @@
             <!-- background bluer -->
             <div class="absolute top-0 left-0 right-0 h-[50%] bg-linear-to-b from-black to-slate-50/0 w-full"></div>
 
-            <div class="absolute bottom-0 w-full pb-12">
+            <div class="absolute bottom-0 w-full pb-4 md:pb-12 px-6 md:px-">
                 <Searchbox></Searchbox>
             </div>
         </div>
@@ -43,7 +43,7 @@
                                     sizes="100vw md:80vw"
                                     preset="cover" 
                                     class="w-full h-full object-cover rounded-l-lg" 
-                                />hotelStore
+                                />
                             </div>
                             <div class="flex flex-col sm:gap-1 gap-2 sm:col-span-4 col-span-6 sm:p-4 p-3">
                                 <p class="sm:text-base text-sm"><span class="py-1 px-2 bg-gray-300 rounded-full border-2 border-gray-400">{{ items.floor }} floor</span> - <span class="py-1 px-2 bg-gray-300 rounded-full border-2 border-gray-400">{{ items.side }} side</span></p>

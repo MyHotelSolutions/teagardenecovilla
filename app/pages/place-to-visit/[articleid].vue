@@ -145,8 +145,6 @@
                                     marginwidth="0" 
                                     :src="data.story.content.location"
                                     class="min-h-[40vh] md:min-h-[25vh] lg:min-h-[35vh] w-full rounded-2xl"
-                                    loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"
                                     title="Tea Garden Eco Villa Location Map"
                                 >
                                 </iframe>

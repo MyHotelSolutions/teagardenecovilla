@@ -77,6 +77,7 @@
         <div class="lg:col-span-1 md:col-span-2 col-span-5">
             <button class="w-full h-full bg-teal-600 rounded-md md:text-lg text-base text-white py-2" @click="checkAvailability">Book Now</button>
         </div>
+        <p class="col-span-5 text-end text-red-400 font-black text-xs flex flex-row gap-2 items-center ml-auto" v-if="searchError"> <Icon name="ic:round-warning" class="text-base"></Icon> Select checkin date and checkout dates</p>
     </div>
 </template>
 
@@ -90,6 +91,7 @@ const router = useRouter()
 const today = new Date()
 const endDate = new Date()
 endDate.setDate(today.getDate() + 180)
+const searchError = ref(false)
 // const adultsCount = ref(2)
 // hotelstore.adultsCount 
 // const childCount = ref(0)
@@ -188,10 +190,17 @@ const bookNow = () => {
     alert(`adult count : ${hotelstore.adultsCount} | child count ${hotelstore.childCount} | child age list : ${hotelstore.childAgeSelectedList} | room count : ${hotelstore.roomsCount}`)
 }
 
+watch(() => [hotelstore.modelValue.start, hotelstore.modelValue.end], ([startNewVal, endNewVal], [oldStartVal, oldEndVal]) => {
+    if(startNewVal != null && endNewVal != null ){
+        searchError.value = false
+    }
+})
+
 const checkAvailability = () => {
     console.log('try to execute')
-    if(hotelstore.modelValue.start.year == 2026 && hotelstore.modelValue.start.month == 1 && hotelstore.modelValue.start.day == 1 && hotelstore.modelValue.end.year == 2026 && hotelstore.modelValue.start.month == 1 && hotelstore.modelValue.end.day == 3){
-        // console.log('you can book it')
+    if(hotelstore.modelValue.start == null || hotelstore.modelValue.end == null){
+        searchError.value = true
+    }else if(hotelstore.modelValue.start.year == 2026 && hotelstore.modelValue.start.month == 1 && hotelstore.modelValue.start.day == 1 && hotelstore.modelValue.end.year == 2026 && hotelstore.modelValue.start.month == 1 && hotelstore.modelValue.end.day == 3){
         console.log('prase one')
         router.push('/booking/roomselection')
     }else {

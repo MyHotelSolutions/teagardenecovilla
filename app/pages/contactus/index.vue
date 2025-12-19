@@ -145,9 +145,9 @@ const router = useRouter()
 
 // Contact information
 const contact = [
-    { title: 'WhatsApp', details: '+94 77 123 4567' },
-    { title: 'Phone', details: '+94 77 123 4567' },
-    { title: 'Email', details: 'contact@teagardenvilla.com' },
+    { title: 'WhatsApp', details: '+447702778744' },
+    { title: 'Phone', details: '+9477 687 4714' },
+    { title: 'Email', details: 'teagardenecovilla@gmail.com' },
     { title: 'Address', details: 'Morawaka, Southern Province, Sri Lanka' },
 ]
 

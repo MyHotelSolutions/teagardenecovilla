@@ -150,6 +150,15 @@ export const useImageStore = defineStore('image', () => {
     'TeaGardenEcovillas/Balcony/DSC00687.jpg?updatedAt=1765692743949',
     'TeaGardenEcovillas/Balcony/DSC00697-2.jpg?updatedAt=1765692742568',
   ])
-  
-  return {winetable, restaurant, pool, insiderooms, garden, dinner, bbqandfire, bathroomandfitting, accomodationview, common, breakfast, lunch, balconey}
+  const thirdPartyImages = ref([
+    'TeaGardenEcovillas/third%20party%20images/bbq2.png',
+    'TeaGardenEcovillas/third%20party%20images/bbq1.webp',
+    'TeaGardenEcovillas/third%20party%20images/bbq3.webp',
+    'TeaGardenEcovillas/third%20party%20images/nature3.jpg',
+    'TeaGardenEcovillas/third%20party%20images/nature1.jpg',
+    'TeaGardenEcovillas/third%20party%20images/nature2.jpg',
+    'TeaGardenEcovillas/third%20party%20images/nature4.webp',
+  ])
+
+  return {winetable, restaurant, pool, insiderooms, garden, dinner, bbqandfire, bathroomandfitting, accomodationview, common, breakfast, lunch, balconey, thirdPartyImages}
 })

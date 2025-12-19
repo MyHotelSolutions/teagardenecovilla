@@ -6,7 +6,7 @@
                 <!-- Brand Section -->
                 <div class=" flex flex-col gap-4 sm:gap-6 md:gap-8 sm:col-span-2 lg:col-span-4">
                     <h3 class="text-start font-serif text-xl sm:text-3xl lg:text-4xl text-white/80 leading-tight font-black sm:text-left">
-                        Tea Garden Eco Villa<span class="text-teal-600">.</span>
+                        Tea Garden Eco Villas<span class="text-teal-600">.</span>
                     </h3>
                     <p class="text-start w-full sm:w-[90%] lg:w-[75%] text-white/60 text-sm sm:text-base lg:text-lg tracking-wide sm:text-left">
                         Discover vibrant adventures right at your doorstep, 
@@ -88,7 +88,7 @@ const links = [
     },
     {
         name : 'Reviews',
-        link : ''
+        link : '/reviews'
     },
     {
         name : 'Contact us',
@@ -96,7 +96,7 @@ const links = [
     },
     {
         name : 'Place to visit',
-        link : '/placetovisit'
+        link : '/place-to-visit'
     },
 ]
 

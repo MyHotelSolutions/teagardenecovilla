@@ -3,7 +3,7 @@
         <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto h-[60%]">
             
             <!-- left side -->
-            <div class="w-full lg:w-[60%] h-[40vh] lg:h-full overflow-clip rounded-overflow-x-hidden2xl order-2 lg:order-1">
+            <div class="w-full lg:w-[60%] h-[40vh] lg:h-full overflow-clip rounded-2xl overflow-x-hidden  order-2 lg:order-1">
                 <!-- <img :src="activityList[selectedActivity].content.image.filename" alt="" class="w-full min-h-[80%] h-full object-cover rounded-2xl hover:scale-108 duration-200"> -->
                 <NuxtImg  
                     :src="activityList[selectedActivity].content.image.filename"

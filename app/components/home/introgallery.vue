@@ -40,7 +40,7 @@
                                         preset="cover"
                                         sizes="50vw sm:50vw" 
                                         class="w-full h-full object-cover"
-                                        :modifiers="{ blur: 20 }"/>
+                                        />
                                 </div>
                             </div>
                             
@@ -62,7 +62,7 @@
                                         preset="cover"
                                         sizes="50vw sm:50vw" 
                                         class="w-full h-full object-cover"
-                                        :modifiers="{ blur: 20 }"/>
+                                        />
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                         preset="cover"
                                         sizes="50vw sm:50vw" 
                                         class="w-full h-full object-cover"
-                                        :modifiers="{ blur: 20 }"/>
+                                        />
                                 </div>
                             </div>
                             <div class="aspect-square sm:aspect-[4/3] overflow-hidden rounded-xl sm:rounded-2xl">
@@ -109,7 +109,7 @@
                                         preset="cover"
                                         sizes="50vw sm:50vw" 
                                         class="w-full h-full object-cover"
-                                        :modifiers="{ blur: 20 }"/>
+                                        />
                                 </div>
                             </div>
                         </div>
@@ -169,16 +169,16 @@ const introductionImages = {
         imagestore.pool[12],
     ],
     Nature : [
-        imagestore.garden[5],
-        imagestore.garden[14],
-        imagestore.garden[3],
-        imagestore.garden[16],
+        imagestore.thirdPartyImages[3],
+        imagestore.thirdPartyImages[4],
+        imagestore.thirdPartyImages[5],
+        imagestore.thirdPartyImages[6],
     ],
     BBQ : [
-        imagestore.bbqandfire[3],
-        imagestore.bbqandfire[5],
-        imagestore.bbqandfire[6],
-        imagestore.bbqandfire[0],
+        imagestore.thirdPartyImages[0],
+        imagestore.thirdPartyImages[1],
+        imagestore.thirdPartyImages[2],
+        imagestore.thirdPartyImages[3],
     ]
 }
 
@@ -188,7 +188,7 @@ const introductionText = [
         name : 'Restaurant',
         description : 'Award-winning cuisine crafted from local ingredients, offering an unforgettable dining experience without leaving the villa.'
     },
-    {
+    {    
         icon : 'mdi:pool',
         name : 'Pool',
         description : 'Your private oasis for sun-soaked relaxation and refreshing dips in a stunning, exclusive setting.'

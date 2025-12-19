@@ -15,14 +15,12 @@
             <!-- background bluer -->
             <div class="absolute top-0 left-0 right-0 h-[50%] bg-linear-to-b from-black to-slate-50/0 w-full"></div>
 
-            <div class="absolute bottom-0 w-full pb-12">
+            <div class="absolute bottom-0 w-full pb-4 md:pb-12 px-6 md:px-0">
                 <Searchbox></Searchbox>
             </div>
         </div>
-
-        <div class="w-full h-auto py-20 p-2">
-            
-            <div class="lg:max-w-5xl md:max-w-3xl max-w-lg lg:grid lg:grid-cols-8 flex flex-col gap-6 bg-red-300/20 h-auto mx-auto rounded-xl shadow-lg">
+        <div class="w-full h-auto py-20 p-4">
+            <div class="lg:max-w-5xl md:max-w-3xl max-w-lg lg:grid lg:grid-cols-8 flex flex-col gap-6 bg-red-300/20 h-auto mx-auto rounded-xl shadow-none md:shadow-lg">
                 <div class="lg:col-span-4 flex flex-col gap-6 bg-white lg:rounded-l-xl rounded-t-xl p-6">
                     <div class="flex flex-col justify-center items-center bg-red-300/40 w-16 h-16 rounded-full">
                         <Icon name="material-symbols:timelapse-outline-rounded" class="text-red-500 text-4xl"></Icon>
