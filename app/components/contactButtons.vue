@@ -29,7 +29,7 @@
         </div>
 
         <!-- this is for small screen -->
-        <div class="group w-12 h-12 bg-teal-800 rounded-full flex flex-col justify-center items-center hover:bg-teal-500" @click="openWhatsapp">
+        <div class="group w-12 h-12 bg-teal-800 rounded-full flex flex-col justify-center items-center hover:bg-teal-500 xl:hidden" @click="openWhatsapp">
             <Icon name="garden:whatsapp-stroke-12" class="group-hover:text-teal-800 text-xl text-white"></Icon>
         </div>
     </div>
