@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-center items-center w-full min-h-screen bg-[#fafaf9]">
+    <div class="flex flex-col justify-center items-center w-full min-h-screen">
         <div class="flex flex-col gap-16 h-auto max-w-7xl mx-auto py-30">
 
             <div class="flex flex-col justify-center items-center gap-2">
@@ -9,7 +9,7 @@
             </div>
 
             <div class="flex flex-row gap-20 h-full p-2">
-                <div class="flex flex-col gap-6 w-[96vw] xl:w-[65%] cursor-default">
+                <div class="flex flex-col gap-6 w-[96vw] xl:w-[60%] cursor-default">
                     
                     <!-- single question -->
                     <div class="flex flex-col gap-4 w-full" v-for="(item, index) in faq" :key="index">
@@ -30,7 +30,7 @@
                 </div>
                 <!-- </div> -->
 
-                <div class="col-span-4 xl:w-[35%] hidden xl:block overflow-clip rounded-2xl">
+                <div class="col-span-4 xl:w-[40%] hidden xl:block overflow-clip rounded-2xl">
                     <NuxtImg 
                         provider="imagekit" 
                         :src="imageStore.garden[1]" 

@@ -97,7 +97,9 @@
         <HomeGallery></HomeGallery>
         
         <HomeReviews></HomeReviews>
-        
+
+        <HomeActivities></HomeActivities>
+
         <HomeFaq></HomeFaq>
         
         <HomePlaceToVisit></HomePlaceToVisit>
