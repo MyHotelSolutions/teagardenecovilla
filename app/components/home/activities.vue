@@ -3,8 +3,15 @@
         <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto h-[60%]">
             
             <!-- left side -->
-            <div class="w-full lg:w-[60%] h-[40vh] lg:h-full overflow-clip rounded-2xl order-2 lg:order-1">
-                <img :src="activityList[selectedActivity].content.image.filename" alt="" class="w-full min-h-[80%] h-full object-cover rounded-2xl hover:scale-108 duration-200">
+            <div class="w-full lg:w-[60%] h-[40vh] lg:h-full overflow-clip rounded-overflow-x-hidden2xl order-2 lg:order-1">
+                <!-- <img :src="activityList[selectedActivity].content.image.filename" alt="" class="w-full min-h-[80%] h-full object-cover rounded-2xl hover:scale-108 duration-200"> -->
+                <NuxtImg  
+                    :src="activityList[selectedActivity].content.image.filename"
+                    quality="30"
+                    format="webp"
+                    loading="lazy" 
+                    class="w-full min-h-[80%] h-full object-cover rounded-2xl hover:scale-108 duration-200" 
+                />
             </div>
     
             <!-- right side -->
@@ -18,12 +25,12 @@
                 
                 <!-- buttton section -->
                 <div class="flex flex-row flex-wrap gap-2" >
-                    <button class="py-1 px-6 rounded-full border-2 border-teal-800" :class="index == selectedActivity ? 'bg-teal-800 text-white' : 'bg-white text-teal-800'" @click="selectedActivity = index" v-for="(item, index) in activityList">{{ item.content.name }}</button>
+                    <button class="py-1 px-6 rounded-full border-2 border-teal-800 text-sm sm:text-base" :class="index == selectedActivity ? 'bg-teal-800 text-white' : 'bg-white text-teal-800'" @click="selectedActivity = index" v-for="(item, index) in activityList">{{ item.content.name }}</button>
                 </div>
     
                 <!-- text content -->
                 <div class="mt-auto">
-                    <p class="">{{ activityList[selectedActivity].content.description }}</p>
+                    <p class="text-sm sm:text-base">{{ activityList[selectedActivity].content.description }}</p>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
         <!-- menu bar -->
         <Menubar></Menubar>
         
-        <div class="relative w-full h-screen min-h-[600px] sm:min-h-[700px]">
+        <div class="relative w-full h-screen min-h-[600px] sm:min-h-[700px]" id="booknow">
             <!-- Background Image -->
             <NuxtImg 
                 provider="imagekit" 
@@ -20,10 +20,10 @@
                     <div class="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-center pt-12 sm:pt-16 md:pt-20 w-full">
                         
                         <!-- booking search box -->
-                        <Searchbox v-if="bookingView"></Searchbox>
+                        <Searchbox v-if="hotelStore.bookingView"></Searchbox>
 
                         <!-- Initial content -->
-                        <div class=" border-white" v-if="!bookingView">
+                        <div class=" border-white" v-if="!hotelStore.bookingView">
                             <!-- Badge -->
                             <span class="inline-block py-2 px-4 sm:py-1 sm:px-3 border border-white/30 rounded-full bg-white/10 backdrop-blur-sm text-white text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase mb-4 sm:mb-6 animate-fade-in-up w-fit mx-auto">
                                 Welcome to Paradise
@@ -38,7 +38,7 @@
                                 </h1>
                                 
                                 <!-- Button -->
-    `                            <Button variant="primary" class="w-fit text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4" @click="bookingView = true">
+    `                            <Button variant="primary" class="w-fit text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4" @click="hotelStore.bookingView = true">
                                     Book Now
                                 </Button>
                             </div>
@@ -124,7 +124,7 @@ import { useImageStore } from '@/store/imagestore';
 
 const imagestore = useImageStore()
 const hotelStore = useHotelStore()
-const bookingView = ref(false)
+// const bookingView = ref(false)
 const adultCount = ref(0)
 const childCount = ref(0)
 const qualityCal = ref(null)

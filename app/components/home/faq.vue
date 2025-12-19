@@ -5,11 +5,11 @@
             <div class="flex flex-col justify-center items-center gap-2">
                 <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">FAQ</h3>
                 <hr class="w-10 md:w-[6vw] h-1.5 rounded-full bg-[#059699]">
-                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-lg text-center">Discover our spacious, inviting rooms: Comfortable beds, modern amenities, and serene views for ultimate relaxation. Guest favorites inside!</p>
+                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-md text-center">Discover our spacious, inviting rooms: Comfortable beds, modern amenities, and serene views for ultimate relaxation. Guest favorites inside!</p>
             </div>
 
-            <div class="flex flex-row gap-20 h-full p-2">
-                <div class="flex flex-col gap-6 w-[96vw] xl:w-[60%] cursor-default">
+            <div class="flex flex-row gap-20 h-full">
+                <div class="flex flex-col gap-6 w-[96vw] xl:w-[60%] cursor-default px-4">
                     
                     <!-- single question -->
                     <div class="flex flex-col gap-4 w-full" v-for="(item, index) in faq" :key="index">

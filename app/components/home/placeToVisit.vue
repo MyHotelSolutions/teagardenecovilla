@@ -40,7 +40,7 @@
                             class="w-full h-full object-cover" 
                         />
                         <div class="flex flex-col gap-3 sm:gap-4 lg:gap-4 justify-end items-start absolute top-0 bottom-0 right-0 left-0 p-6 sm:p-8 lg:p-10 bg-gradient-to-t from-black/70 to-transparent">
-                            <p class="font-serif text-2xl sm:text-3xl lg:text-3xl xl:text-4xl text-white leading-tight font-black">{{ placessList[selected].title }}</p>
+                            <p class="font-serif text-xl sm:text-2xl lg:text-3xl text-white leading-tight font-black">{{ placessList[selected].title }}</p>
                             <button class="text-teal-800 font-semibold py-2 lg:py-2 sm:py-3 px-6 sm:px-8 lg:px-6 rounded-full bg-white hover:bg-gray-100 text-sm sm:text-base lg:text-base transition-colors" @click="directTo">
                                 Read More
                             </button>
