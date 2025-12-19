@@ -3,11 +3,18 @@
         <Menubar></Menubar>
         
         <div class="h-[40vh] sm:h-[44vh] md:h-[48vh] lg:h-[44vh] w-full relative">
-            <img 
-                src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00577%20(2).jpg" 
-                :alt="title || 'Hero banner image'" 
-                class="w-full h-full object-cover"
-            >
+            <NuxtImg 
+                provider="imagekit" 
+                :src="imagestore.pool[0]" 
+                :quality="qualityCal" 
+                sizes="175vw md:120vw"
+                preset="cover" 
+                class="w-full h-full object-cover" 
+            />
+
+            <!-- background bluer -->
+            <div class="absolute top-0 left-0 right-0 h-[50%] bg-linear-to-b from-black to-slate-50/0 w-full"></div>
+
             <div class="absolute bottom-0 w-full pb-12">
                 <Searchbox></Searchbox>
             </div>
@@ -50,10 +57,13 @@
 <script setup>
 import { CalendarDate } from '@internationalized/date'
 import { useHotelStore } from '~/store/hotelstore'
+import { useImageStore } from '~/store/imagestore'
+const imagestore = useImageStore()
 
 const calenderSize = ref('xl')
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 const hotelstore =  useHotelStore()
+const qualityCal = ref(20)
 
 const value = shallowRef([
   new CalendarDate(2026, 1, 4),
@@ -79,6 +89,30 @@ onMounted(() => {
 
         calenderSize.value = 'xl'
     }
+})
+
+
+const calculateImageQuality = () => {
+    
+    const width = window.innerWidth
+
+    if(width >= 1536){
+        qualityCal.value = 45
+    }else if(width >= 1280){
+        qualityCal.value = 40
+    }else if(width >= 1024){
+        qualityCal.value = 35
+    }else if(width >= 768){
+        qualityCal.value = 30
+    }else if(width >= 640){
+        qualityCal.value = 18
+    }else if(width < 640){
+        qualityCal.value = 16
+    }
+}
+
+onBeforeMount(() => {
+    calculateImageQuality()
 })
 
 </script>

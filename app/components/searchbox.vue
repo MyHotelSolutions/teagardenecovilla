@@ -75,9 +75,7 @@
         
         <!-- search button -->
         <div class="lg:col-span-1 md:col-span-2 col-span-5">
-            <NuxtLink to="/booking/notavailable">
-                <button class="w-full h-full bg-teal-600 rounded-md md:text-lg text-base text-white py-2">Book Now</button>
-            </NuxtLink>
+            <button class="w-full h-full bg-teal-600 rounded-md md:text-lg text-base text-white py-2" @click="checkAvailability">Book Now</button>
         </div>
     </div>
 </template>
@@ -87,6 +85,7 @@ import { CalendarDate, DateFormatter, getLocalTimeZone } from '@internationalize
 import { useHotelStore } from '~/store/hotelstore'
 
 const hotelstore = useHotelStore()
+const router = useRouter()
 
 const today = new Date()
 const endDate = new Date()
@@ -187,6 +186,18 @@ const changeRoomCount = (parameter) => {
 
 const bookNow = () => {
     alert(`adult count : ${hotelstore.adultsCount} | child count ${hotelstore.childCount} | child age list : ${hotelstore.childAgeSelectedList} | room count : ${hotelstore.roomsCount}`)
+}
+
+const checkAvailability = () => {
+    console.log('try to execute')
+    if(hotelstore.modelValue.start.year == 2026 && hotelstore.modelValue.start.month == 1 && hotelstore.modelValue.start.day == 1 && hotelstore.modelValue.end.year == 2026 && hotelstore.modelValue.start.month == 1 && hotelstore.modelValue.end.day == 3){
+        // console.log('you can book it')
+        console.log('prase one')
+        router.push('/booking/roomselection')
+    }else {
+        console.log('prase two')
+        router.push('/booking/notavailable')
+    }
 }
 
 </script>

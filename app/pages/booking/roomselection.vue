@@ -2,11 +2,18 @@
     <div class="w-full h-auto">
         <Menubar></Menubar>
         <div class="h-[40vh] sm:h-[44vh] md:h-[48vh] lg:h-[44vh] w-full relative">
-            <img 
-                src="https://hotelprojects.blr1.cdn.digitaloceanspaces.com/TeaGardenMorawaka/Restaurant%20/DSC00577%20(2).jpg" 
-                :alt="title || 'Hero banner image'" 
-                class="w-full h-full object-cover"
-            >
+            <NuxtImg 
+                provider="imagekit" 
+                :src="imagestore.pool[0]" 
+                :quality="qualityCal" 
+                sizes="175vw md:120vw"
+                preset="cover" 
+                class="w-full h-full object-cover" 
+            />
+
+            <!-- background bluer -->
+            <div class="absolute top-0 left-0 right-0 h-[50%] bg-linear-to-b from-black to-slate-50/0 w-full"></div>
+
             <div class="absolute bottom-0 w-full pb-12">
                 <Searchbox></Searchbox>
             </div>
@@ -28,7 +35,15 @@
                     <div class="flex flex-col gap-4">
                         <div class="grid grid-cols-8 sm:gap-4 gap-0 border border-gray-300 rounded-lg bg-gray-100" v-for="(items, index) in hotelStore.availableRooms">
                             <div class="col-span-2">
-                                <img :src="items.image" alt="" class="w-full h-full object-cover rounded-l-lg">
+                                <!-- <img :src="items.image" alt="" class="w-full h-full object-cover rounded-l-lg"> -->
+                                <NuxtImg 
+                                    provider="imagekit" 
+                                    :src="imagestore.insiderooms[1]" 
+                                    :quality="qualityCal" 
+                                    sizes="100vw md:80vw"
+                                    preset="cover" 
+                                    class="w-full h-full object-cover rounded-l-lg" 
+                                />hotelStore
                             </div>
                             <div class="flex flex-col sm:gap-1 gap-2 sm:col-span-4 col-span-6 sm:p-4 p-3">
                                 <p class="sm:text-base text-sm"><span class="py-1 px-2 bg-gray-300 rounded-full border-2 border-gray-400">{{ items.floor }} floor</span> - <span class="py-1 px-2 bg-gray-300 rounded-full border-2 border-gray-400">{{ items.side }} side</span></p>
@@ -144,7 +159,15 @@
                             
                             <!-- rooom image -->
                             <div class="col-span-2">
-                                <img :src="items.image" alt="" class="w-full h-full object-cover rounded-l-lg">
+                                <!-- <img :src="items.image" alt="" class="w-full h-full object-cover rounded-l-lg"> -->
+                                <NuxtImg 
+                                    provider="imagekit" 
+                                    :src="imagestore.insiderooms[1]" 
+                                    :quality="qualityCal" 
+                                    sizes="100vw md:80vw"
+                                    preset="cover" 
+                                    class="w-full h-full object-cover rounded-l-lg" 
+                                />
                             </div>
 
                             <!-- room description, action button and price -->
@@ -152,7 +175,7 @@
 
                                 <!-- room description -->
                                 <div class="flex flex-col gap-2 sm:w-full">
-                                    <p class="sm:text-base text-sm"><span class="py-1 px-2 bg-gray-300 rounded-full border-2 border-gray-400">{{ items.floor }} floor</span> - <span class="py-1 px-2 bg-gray-300 rounded-full border-2 border-gray-400">{{ items.side }} side</span></p>
+                                    <!-- <p class="sm:text-base text-sm"><span class="py-1 px-2 bg-gray-300 rounded-full border-2 border-gray-400">{{ items.floor }} floor</span> - <span class="py-1 px-2 bg-gray-300 rounded-full border-2 border-gray-400">{{ items.side }} side</span></p> -->
                                     <div class="sm:flex sm:flex-col grid grid-cols-2 sm:gap-0 gap-1 sm:text-base text-sm">
                                         <div class="flex felx-col items-center">
                                             <Icon name="ci:dot-03-m"></Icon>
@@ -202,9 +225,12 @@
 
 <script setup>
 import { useHotelStore } from '~/store/hotelstore'
+import { useImageStore } from '~/store/imagestore'
 
 const hotelStore = useHotelStore()
+const imagestore = useImageStore()
 const stepNumber = 0
+const qualityCal = ref(20)
 
 const selecteRoom = (id, index) => {
     hotelStore.selectedRooms.push(hotelStore.availableRooms[index])
@@ -225,9 +251,43 @@ const nightCal = computed(() => {
     }
 })
 
-onMounted(() => {
-    // this place use for default selection
+
+const calculateImageQuality = () => {
+    
+    const width = window.innerWidth
+
+    if(width >= 1536){
+        qualityCal.value = 45
+    }else if(width >= 1280){
+        qualityCal.value = 40
+    }else if(width >= 1024){
+        qualityCal.value = 35
+    }else if(width >= 768){
+        qualityCal.value = 30
+    }else if(width >= 640){
+        qualityCal.value = 18
+    }else if(width < 640){
+        qualityCal.value = 16
+    }
+}
+
+const assignRoomToAvailableAndSelection = () => {
+    for (let i = 0; i < hotelStore.roomsCount; i++) {
+        hotelStore.selectedRooms.push(hotelStore.roomDetails[i])
+        hotelStore.roomDetails.pop(i)        
+    }
+    console.log(hotelStore.selectedRooms)
+    console.log(hotelStore.roomDetails)
     hotelStore.availableRooms = hotelStore.roomDetails
+}
+
+onMounted(() => {
+    console.log('this is executed')
+    assignRoomToAvailableAndSelection()
+})
+
+onBeforeMount(() => {
+    calculateImageQuality()
 })
 
 </script> 

@@ -103,14 +103,13 @@ onUnmounted(() => {
             >
               {{ link.name }}
             </NuxtLink>
-            <NuxtLink to="/booking/roomselection">
               <Button 
                 :variant="isScrolled ? 'primary' : 'secondary'" 
                 class="py-2 px-4 lg:px-6 text-sm rounded-full whitespace-nowrap"
-              >
+                @click="bookNow"
+                >
                 Book Now
               </Button>
-            </NuxtLink>
           </div>
 
           <!-- Mobile Menu Button -->
@@ -160,14 +159,12 @@ onUnmounted(() => {
 
           <!-- Mobile Call to Action -->
           <div class="mt-12 sm:mt-16 text-center">
-            <NuxtLink to="/booking/roomselection">
-              <Button 
-                class=" w-60 mx-auto py-4 text-lg rounded-full"
-                @click="isMobileMenuOpen = false"
-              >
-                Book Your Stay
-              </Button>
-            </NuxtLink>
+            <Button 
+              class=" w-60 mx-auto py-4 text-lg rounded-full"
+              @click="bookNow"
+            >
+              Book Your Stay
+            </Button>
             
             <!-- Contact Info -->
             <div class="mt-8 sm:mt-12 text-stone-600">
@@ -186,9 +183,13 @@ onUnmounted(() => {
 </template>
 
 <script setup>
+import { useHotelStore } from '~/store/hotelstore'
+
 // Reactive state
+const router =  useRouter()
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
+const hotelstore = useHotelStore()
 // toggleMobileMenu
 // Navigation links
 const navLinks = [
@@ -216,6 +217,12 @@ const toggleMobileMenu = () => {
   // } else if(isMobileMenuOpen.value == false) {
   //   document.body.style.overflow = 'auto'
   // }
+}
+
+const bookNow = () => {
+  isMobileMenuOpen.value = false
+  hotelstore.bookingView = true
+  router.push('/#booknow')
 }
 
 // Lifecycle

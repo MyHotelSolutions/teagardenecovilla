@@ -2,35 +2,38 @@
     <div class="flex flex-col justify-center items-center w-full min-h-screen">
         <div class="flex flex-col gap-16 h-auto max-w-7xl mx-auto py-30">
 
-            <div class="flex flex-col justify-center items-center gap-2">
-                <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">FAQ</h3>
-                <hr class="w-10 md:w-[6vw] h-1.5 rounded-full bg-[#059699]">
-                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-md text-center">Discover our spacious, inviting rooms: Comfortable beds, modern amenities, and serene views for ultimate relaxation. Guest favorites inside!</p>
-            </div>
-
             <div class="flex flex-row gap-20 h-full">
-                <div class="flex flex-col gap-6 w-[96vw] xl:w-[60%] cursor-default px-4">
+                <div class="flex flex-col gap-20 h-full w-full xl:w-[70%]">
+                    <div class="flex flex-col justify-center items-center gap-2">
+                        <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">FAQ</h3>
+                        <hr class="w-10 md:w-[6vw] h-1.5 rounded-full bg-[#059699]">
+                        <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-md text-center">Discover our spacious, inviting rooms: Comfortable beds, modern amenities, and serene views for ultimate relaxation. Guest favorites inside!</p>
+                    </div>
                     
-                    <!-- single question -->
-                    <div class="flex flex-col gap-4 w-full" v-for="(item, index) in faq" :key="index">
-                        <div class="flex flex-row justify-between cursor-pointer py-2 border-b border-stone-200" @click="selectedQestion=index">
-                            <p class="text-black font-medium text-base md:text-lg leading-relaxed pr-4">{{ item.question }}</p>
-                            <Icon 
-                                name="material-symbols:keyboard-arrow-down-rounded" 
-                                class="text-3xl md:text-4xl text-black duration-300 transform border" 
-                                :class="selectedQestion == index ? 'rotate-0' : '-rotate-90'" 
-                            />
-                        </div>
+                    <div class="flex flex-col gap-6 w-[96vw] xl:w-full cursor-default px-4">
                         
-                        <!-- answare -->
-                        <div :class="selectedQestion == index ? 'block pt-2 pb-4' : 'hidden'">
-                            <p class="text-black/75 font-light text-base md:text-lg leading-relaxed">{{ item.answer }}</p>
+                        <!-- single question -->
+                        <div class="flex flex-col gap-4 w-full" v-for="(item, index) in faq" :key="index">
+                            <div class="flex flex-row justify-between cursor-pointer py-2 border-b border-stone-200" @click="selectedQestion=index">
+                                <p class="text-black font-medium text-base md:text-lg leading-relaxed pr-4">{{ item.question }}</p>
+                                <Icon 
+                                    name="material-symbols:keyboard-arrow-down-rounded" 
+                                    class="text-3xl md:text-4xl text-black duration-300 transform border" 
+                                    :class="selectedQestion == index ? 'rotate-0' : '-rotate-90'" 
+                                />
+                            </div>
+                            
+                            <!-- answare -->
+                            <div :class="selectedQestion == index ? 'block pt-2 pb-4' : 'hidden'">
+                                <p class="text-black/75 font-light text-base md:text-lg leading-relaxed">{{ item.answer }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- </div> -->
 
-                <div class="col-span-4 xl:w-[40%] hidden xl:block overflow-clip rounded-2xl">
+                <div class="col-span-4 xl:w-[30%] hidden xl:block overflow-clip rounded-2xl">
                     <NuxtImg 
                         provider="imagekit" 
                         :src="imageStore.garden[1]" 
