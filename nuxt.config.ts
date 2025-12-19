@@ -31,7 +31,8 @@ export default defineNuxtConfig({
     // Public keys are available both server-side and client-side
     public: {
       apiBase: process.env.API_BASE_EMAIL,
-      heldlesscms: process.env.API_BASE_HEADLESSCMS
+      heldlesscms: process.env.API_BASE_HEADLESSCMS,
+      wetherapi: process.env.API_BASE_WETHER
     }
   },
   image: {

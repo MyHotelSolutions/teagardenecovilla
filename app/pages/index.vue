@@ -16,7 +16,7 @@
             <!-- Content Overlay -->
             <div class="flex flex-col justify-start items-end absolute top-0 z-10 w-full h-full">
                 <header class="relative h-full flex items-end justify-end overflow-hidden w-full pb-12 sm:pb-16 md:pb-20 lg:pb-22">
-
+                    
                     <div class="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 text-center pt-12 sm:pt-16 md:pt-20 w-full">
                         
                         <!-- booking search box -->
@@ -38,14 +38,14 @@
                                 </h1>
                                 
                                 <!-- Button -->
-    `                            <Button variant="primary" class="w-fit text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4" @click="hotelStore.bookingView = true">
+                                <Button variant="primary" class="w-fit text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4" @click="hotelStore.bookingView = true">
                                     Book Now
                                 </Button>
                             </div>
                         </div>
                     </div>
                     
-`                    <!-- Gradient Overlay for Better Text Readability -->
+                    <!-- Gradient Overlay for Better Text Readability -->
                     <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
                 </header>
             </div>
@@ -107,11 +107,6 @@
         <Booknow></Booknow>
                 
         <Footer></Footer>
-        
-
-        <!-- <div class="h-[2000px] bg-amber-200"></div> -->
-
-
     </div>
 </template>
 
