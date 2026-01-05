@@ -58,4 +58,39 @@ const reditToArticle = ( slug, full_slug) => {
     router.push(`/place-to-visit/${slug}`)
 }
 
+useSeoMeta({
+  title: 'Places to Visit | Nearby Attractions in Morawaka, Sri Lanka',
+
+  description: 'Explore top attractions near Tea Garden Eco Villas in Morawaka: UNESCO-listed Sinharaja Rainforest for trekking & wildlife, stunning waterfalls like Ethamala Ella & Hathmala Ella, lush tea estates, and ancient temples.',  // 149 characters
+
+  // Open Graph
+  ogTitle: 'Places to Visit Near Tea Garden Eco Villas | Morawaka Attractions, Sri Lanka',
+  ogDescription: 'Explore top attractions near Tea Garden Eco Villas in Morawaka: UNESCO-listed Sinharaja Rainforest for trekking & wildlife, stunning waterfalls like Ethamala Ella & Hathmala Ella, lush tea estates, and ancient temples.',
+  ogImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/placess%20to%20visit/DSC00518.jpg?updatedAt=1767589703999',
+  ogImageAlt: 'Lush green trails in Sinharaja Rainforest near Tea Garden Eco Villas, Morawaka, Sri Lanka',
+  ogType: 'website',
+  ogUrl: 'https://www.teagardenecovillas.com/place-to-visit',
+  ogSiteName: 'Tea Garden Eco Villas',
+  ogLocale: 'en_US',
+
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Places to Visit Near Tea Garden Eco Villas | Morawaka Attractions, Sri Lanka',
+  twitterDescription: 'Explore top attractions near Tea Garden Eco Villas in Morawaka: UNESCO-listed Sinharaja Rainforest for trekking & wildlife, stunning waterfalls like Ethamala Ella & Hathmala Ella, lush tea estates, and ancient temples.',
+  twitterImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/placess%20to%20visit/DSC00518.jpg?updatedAt=1767589703999',
+  twitterImageAlt: 'Lush green trails in Sinharaja Rainforest near Tea Garden Eco Villas, Morawaka, Sri Lanka',
+
+  // Robots & Canonical
+  robots: 'index, follow',
+  canonical: 'https://www.teagardenecovillas.com/place-to-visit', 
+
+  // Geo locations (minor local SEO benefit)// Approx Morawaka coordinates
+  geoPosition: '6.7667;80.5833', 
+  geoPlacename: 'Morawaka, Sri Lanka',
+  geoRegion: 'LK',
+
+  // Branding
+  applicationName: 'Tea Garden Eco Villas',
+})
+
 </script>

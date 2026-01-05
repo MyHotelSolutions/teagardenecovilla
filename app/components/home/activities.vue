@@ -1,36 +1,35 @@
 <template>
     <div class="flex flex-col justify-center items-center w-full min-h-[80vh] h-full bg-[#fafaf9] px-4 xl:px-0 py-20 lg:py-0">
-        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto h-[60%]">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto min-h-[60%] h-full">
             
             <!-- left side -->
-            <div class="w-full lg:w-[60%] h-[40vh] lg:h-full overflow-clip rounded-2xl overflow-x-hidden  order-2 lg:order-1">
+            <div class="w-full lg:w-[60%] h-[40vh] lg:h-[75%] overflow-clip rounded-2xl overflow-x-hidden  order-2 lg:order-1">
                 <!-- <img :src="activityList[selectedActivity].content.image.filename" alt="" class="w-full min-h-[80%] h-full object-cover rounded-2xl hover:scale-108 duration-200"> -->
                 <NuxtImg  
                     :src="activityList[selectedActivity].content.image.filename"
                     quality="30"
                     format="webp"
                     loading="lazy" 
-                    class="w-full min-h-[80%] h-full object-cover rounded-2xl hover:scale-108 duration-200" 
+                    class="w-full max-h-[80%] h-full object-cover rounded-2xl hover:scale-108 duration-200" 
                 />
             </div>
     
             <!-- right side -->
-            <div class="flex flex-col gap-8 w-full lg:w-[40%] order-1 lg:order-2">
+            <div class="flex flex-col gap-18 w-full lg:w-[40%] order-1 lg:order-2">
                 <!-- component title -->
                 <div class="flex flex-col justify-center items-center gap-2">
                     <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">Things to do</h3>
                     <hr class="w-10 md:w-[6vw] h-1.5 rounded-full bg-[#059699]">
-                    <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-lg text-center">Discover authentic experiences blending tea heritage, culture, and nature at our serene eco villa amid lush plantations near Sinharaja rainforest.</p>
+                    <!-- <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-lg text-center">Discover authentic experiences blending tea heritage, culture, and nature at our serene eco villa amid lush plantations near Sinharaja rainforest.</p> -->
                 </div>
                 
-                <!-- buttton section -->
-                <div class="flex flex-row flex-wrap gap-2" >
-                    <button class="py-1 px-6 rounded-full border-2 border-teal-800 text-sm sm:text-base" :class="index == selectedActivity ? 'bg-teal-800 text-white' : 'bg-white text-teal-800'" @click="selectedActivity = index" v-for="(item, index) in activityList">{{ item.content.name }}</button>
-                </div>
-    
                 <!-- text content -->
-                <div class="mt-auto">
-                    <p class="text-sm sm:text-base">{{ activityList[selectedActivity].content.description }}</p>
+                <div class="flex flex-col gap-8">
+                    <!-- buttton section -->
+                    <div class="flex flex-row flex-wrap gap-2" >
+                        <button class="py-1 px-6 rounded-full border-2 border-teal-800 text-sm sm:text-base" :class="index == selectedActivity ? 'bg-teal-800 text-white' : 'bg-white text-teal-800'" @click="selectedActivity = index" v-for="(item, index) in activityList">{{ item.content.name }}</button>
+                    </div>
+                    <p class="text-sm sm:text-base md:text-lg font-light">{{ activityList[selectedActivity].content.description }}</p>
                 </div>
             </div>
         </div>

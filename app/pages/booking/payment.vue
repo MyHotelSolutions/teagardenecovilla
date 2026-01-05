@@ -207,6 +207,17 @@ import { useHotelStore } from '~/store/hotelstore'
 const hotelStore = useHotelStore()
 const stepNumber = 1
 
+useSeoMeta({
+  title: 'Payment',
+
+  description: 'Pay for the booking and make you resevesion',
+
+  // Robots & Canonical
+  robots: 'noindex, nofollow',
+  canonical: 'https://www.teagardenecovillas.com/booking/payment',
+
+})
+
 const errormessage = ref({
     title : null,
     firstName : null,

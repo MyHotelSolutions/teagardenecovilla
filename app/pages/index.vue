@@ -115,6 +115,41 @@
 import { useHotelStore } from '~/store/hotelstore';
 import { useImageStore } from '@/store/imagestore';
 
+useSeoMeta({
+  title: 'Tea Garden Eco Villas - Morawaka | Luxury Eco Retreat in Sri Lanka',
+
+  description: 'Discover serene luxury at Tea Garden Eco Villas in Morawaka, Sri Lanka. Nestled amid lush tea estates near Sinharaja Rainforest, enjoy eco-friendly villas, infinity pool, mountain views & authentic cuisine. Book your escape!',
+
+  // Open Graph
+  ogTitle: 'Tea Garden Eco Villas - Morawaka | Luxury Eco Retreat in Sri Lanka',
+  ogDescription: 'Discover serene luxury at Tea Garden Eco Villas in Morawaka, Sri Lanka. Nestled amid lush tea estates near Sinharaja Rainforest, enjoy eco-friendly villas, infinity pool, mountain views & authentic cuisine. Book your escape!',
+  ogImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513', // Replace with a 1200x630 daytime hero image if possible
+  ogImageAlt: 'Luxurious Tea Garden Eco Villas at dusk with warm lighting, balconies, and surrounding greenery in Morawaka, Sri Lanka',
+  ogType: 'website',
+  ogUrl: 'https://www.teagardenecovillas.com/', // Replace with your actual home page URL
+  ogSiteName: 'Tea Garden Eco Villas',
+  ogLocale: 'en_US',
+
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Tea Garden Eco Villas - Morawaka | Luxury Eco Retreat in Sri Lanka',
+  twitterDescription: 'Discover serene luxury at Tea Garden Eco Villas in Morawaka, Sri Lanka. Nestled amid lush tea estates near Sinharaja Rainforest, enjoy eco-friendly villas, infinity pool, mountain views & authentic cuisine. Book your escape!',
+  twitterImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+  twitterImageAlt: 'Luxurious Tea Garden Eco Villas at dusk with warm lighting, balconies, and surrounding greenery in Morawaka, Sri Lanka',
+
+  // Robots & Canonical
+  robots: 'index, follow',
+  canonical: 'https://www.teagardenecovillas.com/',
+
+  //geo locations
+  geoPosition: '6.7667;80.5833',  // Approx Morawaka coords
+  geoPlacename: 'Morawaka, Sri Lanka',
+  geoRegion: 'LK',
+
+  //branding 
+  applicationName: 'Tea Garden Eco Villas',
+
+})
 
 
 const imagestore = useImageStore()
@@ -132,6 +167,7 @@ const checkin = ref(null)
 const checkout = ref(null)
 // booking date reage controll - min and max controll in the input boxes
 const breakPoint = ref(null) // this is only use for set the show selectable datas after select checkin or checkout
+
 
 const amenitiesList = [
     {

@@ -232,6 +232,17 @@ const imagestore = useImageStore()
 const stepNumber = 0
 const qualityCal = ref(20)
 
+useSeoMeta({
+  title: 'Select Rooms',
+
+  description: 'select how many rooms you want from the selected datas',
+
+  // Robots & Canonical
+  robots: 'noindex, nofollow',
+  canonical: 'https://www.teagardenecovillas.com/booking/roomselection',
+
+})
+
 const selecteRoom = (id, index) => {
     hotelStore.selectedRooms.push(hotelStore.availableRooms[index])
     hotelStore.availableRooms = hotelStore.availableRooms.filter((itm) => itm.id != id)

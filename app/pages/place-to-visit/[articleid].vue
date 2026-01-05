@@ -15,7 +15,6 @@
         </div>
         <div class="w-full h-auto p-2 lg:p-0">
             <div class="max-w-7xl w-full mx-auto p-4 rounded-lg flex flex-col gap-4 my-10">
-                
                 <!-- article header section -->
                 <div class="flex flex-col gap-5 lg:flex-row justify-between pb-10 md:pb-4">
                     <div class="flex flex-col gap-2">
@@ -34,7 +33,7 @@
                 </div>
                 
                 <!-- article -->
-                <div class="flex flex-col lg:flex-row gap-6 lg:gap-12 relative">
+                <div class="flex flex-col lg:fle | Place to visit in Morawax-row gap-6 lg:gap-12 relative">
                     <!-- left side -->
                     <div class="flex flex-col gap-4 w-full lg:w-[60%]">
                         <!-- article dates -->
@@ -214,6 +213,41 @@ onBeforeMount(() => {
     calculateImageQuality()
 })
 
+const articleTitles = ref(null)
+const articleDiscription = ref(null)
+
+// Watch data and update SEO when story loads
+watch(data, (story) => {
+  if (story?.story?.content) {
+    const content = story.story.content
+
+    articleTitles.value = content.title || story.story.name
+    articleDiscription.value = content.introduction || content.title
+
+    // Set all SEO meta here (it will update reactively)
+    useSeoMeta({
+      title: content.title || story.story.name,
+      description: content.introduction || content.title,
+
+      ogTitle: content.title || story.story.name,
+      ogDescription: content.introduction || content.title,
+      ogImage: content.featured_image?.filename || 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+      ogImageAlt: content.image_alt || 'Tea Garden Eco Villas',
+      ogType: 'article', // better for blog posts
+      ogUrl: `https://www.teagardenecovillas.com/place-to-visit/${articleTitle.value}`,
+      ogSiteName: 'Tea Garden Eco Villas',
+
+      twitterCard: 'summary_large_image',
+      twitterTitle: content.title || story.story.name,
+      twitterDescription: content.introduction || content.title,
+      twitterImage: content.featured_image?.filename || 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+
+      robots: 'index, follow',
+      canonical: `https://www.teagardenecovillas.com/blog/${articleTitle.value}`,
+    })
+  }
+}, { immediate: true })
+
 </script>
 
 <style scoped>
@@ -235,4 +269,5 @@ onBeforeMount(() => {
 @media (min-width: 1024px) { /* lg */
   .rich-content :deep(p) { font-size: 1.1rem; }
 }
+
 </style>

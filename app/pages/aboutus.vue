@@ -74,4 +74,39 @@ onBeforeMount(() => {
     calculateImageQuality()
 })
 
+useSeoMeta({
+  title: 'About Us | Tea Garden Eco Villas Morawaka',
+
+  description: 'Founded in 2012 by passionate teacher and tea farmer Mr. Nanayakkara on his 50-acre tea estate in Morawaka. A family-run eco villa offering authentic Sri Lankan hospitality amid lush tea fields near Sinharaja Rainforest.', 
+
+  // Open Graph
+  ogTitle: 'About Us - Tea Garden Eco Villas | Family-Run Eco Retreat in Morawaka, Sri Lanka',
+  ogDescription: 'Founded in 2012 by passionate teacher and tea farmer Mr. Nanayakkara on his 50-acre tea estate in Morawaka. A family-run eco villa offering authentic Sri Lankan hospitality amid lush tea fields near Sinharaja Rainforest.',
+  ogImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513', 
+  ogImageAlt: 'Panoramic daytime view of Tea Garden Eco Villas surrounded by lush tea estates and mountains in Morawaka, Sri Lanka',
+  ogType: 'website',
+  ogUrl: 'https://www.teagardenecovillas.com/aboutus', // Update to your actual About Us page URL
+  ogSiteName: 'Tea Garden Eco Villas',
+  ogLocale: 'en_US',
+
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'About Us - Tea Garden Eco Villas | Family-Run Eco Retreat in Morawaka, Sri Lanka',
+  twitterDescription: 'Founded in 2012 by passionate teacher and tea farmer Mr. Nanayakkara on his 50-acre tea estate in Morawaka. A family-run eco villa offering authentic Sri Lankan hospitality amid lush tea fields near Sinharaja Rainforest.',
+  twitterImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+  twitterImageAlt: 'Panoramic daytime view of Tea Garden Eco Villas surrounded by lush tea estates and mountains in Morawaka, Sri Lanka',
+
+  // Robots & Canonical
+  robots: 'index, follow',
+  canonical: 'https://www.teagardenecovillas.com/aboutus', // Update to actual URL
+
+  // Geo locations (minor local SEO benefit)
+  geoPosition: '6.7667;80.5833',  // Approx Morawaka coordinates
+  geoPlacename: 'Morawaka, Sri Lanka',
+  geoRegion: 'LK',
+
+  // Branding
+  applicationName: 'Tea Garden Eco Villas',
+})
+
 </script>

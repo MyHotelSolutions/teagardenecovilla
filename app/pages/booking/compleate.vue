@@ -74,4 +74,14 @@ import { useHotelStore } from '~/store/hotelstore';
 const stepNumber = 2
 const hotelstor = useHotelStore()
 
+useSeoMeta({
+  title: 'Reservation is Done',
+
+  description: 'Thanks for make booking with Tea garden eco villas - morawaka. hope to see you in our premiss',
+
+  // Robots & Canonical
+  robots: 'noindex, follow',
+  canonical: 'https://www.teagardenecovillas.com/booking/compleate',
+})
+
 </script>

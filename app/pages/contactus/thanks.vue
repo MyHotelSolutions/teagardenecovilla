@@ -50,4 +50,15 @@ definePageMeta({
 
 const hotelstore = useHotelStore()
 
+useSeoMeta({
+  title: 'Thanks to Contact Us | Tea Garden Eco Villas Morawaka',
+
+  description: 'Thanks for contact us. we will respons as soon as posible',  // 148 characters
+
+  // Robots & Canonical
+  robots: 'noindex, nofollow',
+  canonical: 'https://www.teagardenecovillas.com/contactus/thanks', 
+
+})
+
 </script>

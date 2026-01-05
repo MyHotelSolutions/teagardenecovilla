@@ -70,6 +70,18 @@ const value = shallowRef([
   new CalendarDate(2026, 1, 28),
 ])
 
+useSeoMeta({
+  title: 'Rooms not available on your selected dates',
+
+  description: 'sorry for the inconvinience. there are no enought rooms available for your preference',
+
+  // Robots & Canonical
+  robots: 'noindex, follow',
+  canonical: 'https://www.teagardenecovillas.com/booking/notavailable',
+
+
+})
+
 const getDate = (val) => {
     const actualDate = new Date(val)
     return `${monthNames[actualDate.getMonth()]} ${actualDate.getDate()}`

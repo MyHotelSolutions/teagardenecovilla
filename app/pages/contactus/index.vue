@@ -173,4 +173,39 @@ const sendMail = async () => {
     }
 }
 
+useSeoMeta({
+  title: 'Contact Us | Tea Garden Eco Villas Morawaka',
+
+  description: 'Contact Tea Garden Eco Villas in Morawaka for bookings and inquiries. Phone: +94 77 687 4714 | Email: teagardenecovilla@gmail.com | Located on Rambukana-Kodikaradoda Road near Sinharaja Rainforest.',  // 148 characters
+
+  // Open Graph
+  ogTitle: 'Contact Us - Tea Garden Eco Villas | Book Your Stay in Morawaka, Sri Lanka',
+  ogDescription: 'Contact Tea Garden Eco Villas in Morawaka for bookings and inquiries. Phone: +94 77 687 4714 | Email: teagardenecovilla@gmail.com | Located on Rambukana-Kodikaradoda Road near Sinharaja Rainforest.',
+  ogImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+  ogImageAlt: 'Serene view of lush tea estates and mountains at Tea Garden Eco Villas, Morawaka, Sri Lanka',
+  ogType: 'website',
+  ogUrl: 'https://www.teagardenecovillas.com/contactus',
+  ogSiteName: 'Tea Garden Eco Villas',
+  ogLocale: 'en_US',
+
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Contact Us - Tea Garden Eco Villas | Book Your Stay in Morawaka, Sri Lanka',
+  twitterDescription: 'Contact Tea Garden Eco Villas in Morawaka for bookings and inquiries. Phone: +94 77 687 4714 | Email: teagardenecovilla@gmail.com | Located on Rambukana-Kodikaradoda Road near Sinharaja Rainforest.',
+  twitterImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+  twitterImageAlt: 'Serene view of lush tea estates and mountains at Tea Garden Eco Villas, Morawaka, Sri Lanka',
+
+  // Robots & Canonical
+  robots: 'index, follow',
+  canonical: 'https://www.teagardenecovillas.com/contactus', 
+
+  // Geo locations (helpful for local searches on contact pages)
+  geoPosition: '6.7667;80.5833',
+  geoPlacename: 'Morawaka, Sri Lanka',
+  geoRegion: 'LK',
+
+  // Branding
+  applicationName: 'Tea Garden Eco Villas',
+})
+
 </script>

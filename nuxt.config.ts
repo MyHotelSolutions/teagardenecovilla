@@ -2,6 +2,15 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+      htmlAttrs: {
+        lang: 'en',
+      },
+    },
+  },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['./app/assets/css/main.css'],
@@ -19,7 +28,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/ui',
     '@nuxtjs/color-mode',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/seo',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
   colorMode: {
     preference: 'light', 

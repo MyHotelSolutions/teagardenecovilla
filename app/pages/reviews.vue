@@ -51,4 +51,40 @@ const { data, error } = await useFetch('https://api.storyblok.com/v2/cdn/stories
 })
 
 const reviews = computed(() => data.value?.stories || [])
+
+useSeoMeta({
+  title: 'Guest Reviews & Testimonials | Tea Garden Eco Villas - Morawaka',
+
+  description: 'Read real guest reviews for Tea Garden Eco Villas in Morawaka, Sri Lanka. Travelers praise our clean spacious rooms, stunning mountain & rainforest views, refreshing outdoor pool, delicious Sri Lankan cuisine, and friendly service. See why guests love this serene eco retreat!',
+
+  // Open Graph
+  ogTitle: 'Guest Reviews & Testimonials | Tea Garden Eco Villas - Morawaka',
+  ogDescription: 'Read authentic reviews from guests who stayed at Tea Garden Eco Villas. Highlights include breathtaking views, comfortable rooms, excellent food, and warm hospitality in the heart of Sri Lanka\'s tea country near Sinharaja Rainforest.',
+  ogImage: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/a4/bb/9c/caption.jpg?w=1200&h=630', // Bright daytime hero image showing pool, villas, tea gardens & mountains (cropped/resized recommendation: 1200x630 for perfect previews)
+  ogImageAlt: 'Daytime view of Tea Garden Eco Villas with outdoor swimming pool, lush tea gardens, and mountain backdrop in Morawaka, Sri Lanka',
+  ogType: 'website',
+  ogUrl: 'https://www.teagardenecovillas.com/reviews',
+  ogSiteName: 'Tea Garden Eco Villas',
+  ogLocale: 'en_US',
+
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Guest Reviews & Testimonials | Tea Garden Eco Villas - Morawaka',
+  twitterDescription: 'Discover what guests say about Tea Garden Eco Villas: amazing views, clean rooms, tasty food, and peaceful nature escape near Sinharaja Rainforest.',
+  twitterImage: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/a4/bb/9c/caption.jpg?w=1200&h=630',
+  twitterImageAlt: 'Daytime view of Tea Garden Eco Villas with outdoor swimming pool, lush tea gardens, and mountain backdrop in Morawaka, Sri Lanka',
+
+  // Robots & Canonical
+  robots: 'index, follow',
+  canonical: 'https://www.teagardenecovillas.com/reviews', // Update to actual reviews page URL
+
+  // Geo locations (minor local SEO benefit)
+  geoPosition: '6.7667;80.5833',  // Approx Morawaka coordinates
+  geoPlacename: 'Morawaka, Sri Lanka',
+  geoRegion: 'LK',
+
+  // Branding
+  applicationName: 'Tea Garden Eco Villas',
+})
+
 </script>

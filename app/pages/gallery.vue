@@ -628,4 +628,40 @@ const calculateImageQuality = () => {
 onBeforeMount(() => {
     calculateImageQuality()
 })
+
+useSeoMeta({
+  title: 'Photo Gallery | Tea Garden Eco Villas - Morawaka ',
+
+  description: 'Explore the breathtaking photo gallery of Tea Garden Eco Villas in Morawaka, Sri Lanka. Discover lush tea estates, serene outdoor swimming pool, luxurious villas with balconies, majestic mountain views, and proximity to Sinharaja Rainforest.',
+
+  // Open Graph
+  ogTitle: 'Photo Gallery - Tea Garden Eco Villas, Morawaka | Stunning Views & Eco Luxury',
+  ogDescription: 'Explore the breathtaking photo gallery of Tea Garden Eco Villas in Morawaka, Sri Lanka. Discover lush tea estates, serene outdoor swimming pool, luxurious villas with balconies, majestic mountain views, and proximity to Sinharaja Rainforest.',
+  ogImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+  ogImageAlt: 'Stunning nighttime view of Tea Garden Eco Villas accommodation with warm lighting, balconies, and lush surrounding greenery in Morawaka, Sri Lanka',
+  ogType: 'website',
+  ogUrl: 'https://www.teagardenecovillas.com/gallery',
+  ogSiteName: 'Tea Garden Eco Villas',
+  ogLocale: 'en_US',
+
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Photo Gallery - Tea Garden Eco Villas, Morawaka | Stunning Views & Eco Luxury',
+  twitterDescription: 'Explore the breathtaking photo gallery of Tea Garden Eco Villas in Morawaka, Sri Lanka. Discover lush tea estates, serene outdoor swimming pool, luxurious villas with balconies, majestic mountain views, and proximity to Sinharaja Rainforest.',
+  twitterImage: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+  twitterImageAlt: 'Stunning nighttime view of Tea Garden Eco Villas accommodation with warm lighting, balconies, and lush surrounding greenery in Morawaka, Sri Lanka',
+
+  // Robots & Canonical
+  robots: 'index, follow',
+  canonical: 'https://www.teagardenecovillas.com/gallery',
+
+  // Geo locations (minor local SEO benefit)
+  geoPosition: '6.7667;80.5833', 
+  geoPlacename: 'Morawaka, Sri Lanka',
+  geoRegion: 'LK',
+
+  // Branding
+  applicationName: 'Tea Garden Eco Villas',
+})
+
 </script>
