@@ -31,8 +31,12 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxtjs/sitemap',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    'nuxt-gtag'
   ],
+  gtag: {
+    id: 'G-FNCQF48JXT'  
+  },
   colorMode: {
     preference: 'light', 
     fallback: 'light'
