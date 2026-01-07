@@ -9,6 +9,18 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
+      // script: [
+      //   {
+      //     type: 'module',
+      //     innerHTML: `
+      //     import Chatbot from 'https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js';
+      //       Chatbot.init({
+      //         chatflowid: "060546c3-5e99-48b2-bdda-84bebfd60e1f",
+      //         apiHost: "http://51.79.254.40:3000",
+      //       });
+      //     `,
+      //   }
+      // ]
     },
   },
   compatibilityDate: '2025-07-15',

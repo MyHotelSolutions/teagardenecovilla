@@ -41,7 +41,7 @@
                 <vue-plyr autoplay>
                     <div class="plyr__video-embed">
                         <iframe
-                            src="https://www.youtube.com/embed/qxN_dQk0dzI?amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1&autoplay=1"
+                            src="https://www.youtube.com/embed/0OfoiOVmmw4?amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1&autoplay=1"
                             allowfullscreen
                             allowtransparency
                             allow="autoplay"
