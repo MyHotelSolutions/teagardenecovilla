@@ -5,14 +5,42 @@
         
         <div class="relative w-full h-screen min-h-[600px] sm:min-h-[700px]" id="booknow">
             <!-- Background Image -->
-            <NuxtImg 
-                provider="imagekit" 
-                :src="imagestore.accomodationview[8]" 
-                :quality="qualityCal" 
-                sizes="225vw md:200vw"
-                preset="cover" 
-                class="w-full h-full object-cover" />
-            
+            <div class="">
+                <!-- Slides -->
+                <div
+                v-for="(image, index) in headerImageList"
+                :key="index"
+                class="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+                :class="index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'"
+                >
+                <NuxtImg 
+                    provider="imagekit" 
+                    :src="image" 
+                    :quality="qualityCal" 
+                    sizes="225vw md:200vw"
+                    preset="cover" 
+                    class="w-full h-full object-cover" 
+                />
+                </div>
+
+                <!-- Navigation buttons -->
+                <button
+                @click="prev"
+                class="absolute left-6 top-1/2 -translate-y-1/2 z-20
+                        bg-black/40 text-white p-3 rounded-full hover:bg-black/60"
+                >
+                ‹
+                </button>
+
+                <button
+                @click="next"
+                class="absolute right-6 top-1/2 -translate-y-1/2 z-20
+                        bg-black/40 text-white p-3 rounded-full hover:bg-black/60"
+                >
+                ›
+                </button>
+            </div>
+                
             <!-- Content Overlay -->
             <div class="flex flex-col justify-start items-end absolute top-0 z-10 w-full h-full">
                 <header class="relative h-full flex items-end justify-end overflow-hidden w-full pb-12 sm:pb-16 md:pb-20 lg:pb-22">
@@ -168,6 +196,23 @@ const checkout = ref(null)
 // booking date reage controll - min and max controll in the input boxes
 const breakPoint = ref(null) // this is only use for set the show selectable datas after select checkin or checkout
 
+const headerImageList = [
+    'TeaGardenEcovillas/Garden/DSC00574.jpg?updatedAt=1765251630757',
+    'TeaGardenEcovillas/Accomodation%20view/DSC00583.jpg?updatedAt=1765251356513',
+    'TeaGardenEcovillas/Breakfast/DSC00704.jpg?updatedAt=1765692807824',
+]
+
+const current = ref(0)
+let interval = null
+
+const next = () => {
+  current.value = (current.value + 1) % headerImageList.length
+}
+
+const prev = () => {
+  current.value =
+    (current.value - 1 + headerImageList.length) % headerImageList.length
+}
 
 const amenitiesList = [
     {
@@ -318,6 +363,7 @@ watch([checkin, checkout], ([newCheckIn, newCheckOut], [oldCheckIn, oldChckOut])
 })
 
 onMounted(() => {
+    interval = setInterval(next, 7000)
     calculateImageQuality()
 })
 
@@ -331,5 +377,8 @@ onBeforeMount(() => {
     // checkout.value = `${maxBookingDate.value.getFullYear()}-${(maxBookingDate.value.getMonth()+1).toString().padStart(2,'0')}-${maxBookingDate.value.getDate().toString().padStart(2,'0')}`
 })
 
+onUnmounted(() => {
+  clearInterval(interval)
+})
 
 </script>

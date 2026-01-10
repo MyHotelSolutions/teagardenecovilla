@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-center gap-4 bottom-0 right-10 fixed xl:right-20 z-100 h-screen">
+    <div class="flex flex-col justify-center gap-4 bottom-15 left-12 w-fit fixed xl:right-20 z-100">
         <!-- this is for lager screens -->
         <div class="hidden xl:block">
             <div class="flex flex-col gap-2" v-if="!hideContact">

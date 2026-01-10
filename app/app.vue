@@ -25,9 +25,9 @@ onMounted(async () => {
         theme: {
             button: {
                 backgroundColor: 'oklch(59.6% 0.145 163.225)',
-                right: 75,
-                bottom: 60,
-                size: 58,
+                right: 45,
+                bottom: 50,
+                size: 48,
                 dragAndDrop: true,
                 iconColor: 'white',
                 customIconSrc: 'https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/icons/chatbot-speech-bubble.svg',
@@ -42,7 +42,7 @@ onMounted(async () => {
                 tooltipMessage: 'Do you want help ?',
                 tooltipBackgroundColor: 'oklch(43.7% 0.078 188.216)',
                 tooltipTextColor: 'white',
-                tooltipFontSize: 16
+                tooltipFontSize: 13
             },
             disclaimer: {
                 title: 'Disclaimer',
