@@ -15,7 +15,7 @@ onMounted(async () => {
 
   Chatbot.init({
     chatflowid: "060546c3-5e99-48b2-bdda-84bebfd60e1f",
-    apiHost: "http://51.79.254.40:3000",
+    apiHost: "https://ai.myhotel.website",
     chatflowConfig: {
             /* Chatflow Config */
         },

@@ -33,7 +33,7 @@
                 </div>
                 
                 <!-- article -->
-                <div class="flex flex-col lg:fle | Place to visit in Morawax-row gap-6 lg:gap-12 relative">
+                <div class="flex flex-col lg:flex-row gap-6 lg:gap-12 relative">
                     <!-- left side -->
                     <div class="flex flex-col gap-4 w-full lg:w-[60%]">
                         <!-- article dates -->
