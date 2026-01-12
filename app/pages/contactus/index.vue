@@ -20,7 +20,7 @@
                         frameborder="0" 
                         scrolling="no" 
                         marginheight="0" 
-                        marginwidth="0" 
+                        marginwidth="0"
                         :src="mapUrl"
                         class="min-h-[40vh] sm:min-h-[50vh] lg:min-h-[40vh]"
                         loading="lazy"
@@ -145,8 +145,8 @@ const router = useRouter()
 
 // Contact information
 const contact = [
-    { title: 'WhatsApp', details: '+447702778744' },
-    { title: 'Phone', details: '+9477 687 4714' },
+    { title: 'WhatsApp', details: '+44 770 277 8744' },
+    { title: 'Phone', details: '+44 770 277 8744' },
     { title: 'Email', details: 'teagardenecovilla@gmail.com' },
     { title: 'Address', details: 'Morawaka, Southern Province, Sri Lanka' },
 ]

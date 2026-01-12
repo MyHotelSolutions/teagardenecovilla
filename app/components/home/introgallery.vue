@@ -175,10 +175,10 @@ const introductionImages = {
         imagestore.thirdPartyImages[6],
     ],
     BBQ : [
-        imagestore.thirdPartyImages[0],
-        imagestore.thirdPartyImages[1],
+        'TeaGardenEcovillas/third%20party%20images/grilled-chipotle-chicken.jpg',
+        'TeaGardenEcovillas/third%20party%20images/BBQ%20image%20by%20cj.jpg',
         imagestore.thirdPartyImages[2],
-        imagestore.thirdPartyImages[3],
+        imagestore.bbqandfire[6],
     ]
 }
 

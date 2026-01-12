@@ -29,11 +29,21 @@
                 <br>Today, Tea Garden Eco Villa remains a family-run haven, committed to sustainable living, warm personal service, and meaningful connections with the land and local culture. We welcome you to experience the true essence of Southern Sri Lanka’s emerald hills.
                     </p>
                     <div class="flex flex-row gap-4 items-center">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="" class="rounded-full w-24 h-24">
+                        <!-- <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="" class="rounded-full w-24 h-24"> -->
+                        
+                        <NuxtImg 
+                            provider="imagekit" 
+                            src="TeaGardenEcovillas/third%20party%20images/Mr.%20Nanayakkara%20image%202.png" 
+                            :quality="qualityCal"
+                            sizes="175vw md:120vw"
+                            preset="cover"
+                            loading="lazy" 
+                            class="rounded-full w-34 h-34" 
+                        />
                         <div class="">
                             <h5 class="font-black text-xl">Mr. Nayayakkara</h5>
                             <p class="">Founder of Tea Garden Eco Villa - Morawaka</p>
-                            <p class="font-light text-sm">Visionery teacher, leader, tea farmour, businessmess + good father.</p>
+                            <p class="font-light text-sm">Biology and Zoology lecturer.</p>
                         </div>
                     </div>
                 </div>

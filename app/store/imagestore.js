@@ -157,6 +157,7 @@ export const useImageStore = defineStore('image', () => {
     'TeaGardenEcovillas/third%20party%20images/nature3.jpg',
     'TeaGardenEcovillas/third%20party%20images/nature1.jpg',
     'TeaGardenEcovillas/third%20party%20images/nature2.jpg',
+    'TeaGardenEcovillas/third%20party%20images/BBQ%20image%20by%20cj.jpg',
     'TeaGardenEcovillas/third%20party%20images/nature4.webp',
   ])
 
