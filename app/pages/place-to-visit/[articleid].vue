@@ -16,12 +16,12 @@
         <div class="w-full h-auto p-2 lg:p-0">
             <div class="max-w-7xl w-full mx-auto p-4 rounded-lg flex flex-col gap-4 my-10">
                 <!-- article header section -->
-                <div class="flex flex-col gap-5 lg:flex-row justify-between pb-10 md:pb-4">
-                    <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-5 lg:flex-row justify-between pb-10 md:pb-4 w-full">
+                    <div class="flex flex-col gap-2 lg:w-[80%] ">
                         <h1 class="font-black text-2xl md:text-4xl">{{ data.story.content.title }}</h1>
                         <!-- <p class="text-xs flex flex-row items-center gap-1 w-fit">category <span class="bg-teal-200/50 px-4 py-1 rounded-full text-black">{{ data.story.content.category }}</span></p> -->
                     </div>
-                    <div class="flex flex-row gap-5 lg:mt-auto lg:ml-auto">
+                    <div class="flex flex-row gap-5 lg:mt-auto lg:ml-auto lg:w-[50%] justify-end items-end">
                         <div class="flex flex-col order-2 lg:order-1">
                             <p class="flex flex-col text-sm lg:text-base lg:text-right"><span class="text-xs text-gray-400">written by</span> {{ data.story.content.written_by }}</p>
                             <p class="flex flex-col text-sm lg:text-base lg:text-right">{{ data.story.content.written_by_title }}</p>
