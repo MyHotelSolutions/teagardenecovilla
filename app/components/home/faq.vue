@@ -5,9 +5,9 @@
             <div class="flex flex-row gap-20 h-full">
                 <div class="flex flex-col gap-20 h-full w-full xl:w-[70%]">
                     <div class="flex flex-col justify-center items-center gap-2">
-                        <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">FAQ</h3>
+                        <h3 class="font-serif text-2xl sm:text-3xl text-stone-900 leading-tight font-black text-center">FAQs</h3>
                         <hr class="w-10 md:w-[6vw] h-1.5 rounded-full bg-[#059699]">
-                        <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-md text-center">Discover our spacious, inviting rooms: Comfortable beds, modern amenities, and serene views for ultimate relaxation. Guest favorites inside!</p>
+                        <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-md text-center">Starlight, sun, and serenity-yours to discover. Your most common questions, answered with a sprinkle of magic and clarity. if you have more, feel free to use out AI support</p>
                     </div>
                     
                     <div class="flex flex-col gap-6 w-[96vw] xl:w-full cursor-default px-4">
@@ -18,7 +18,7 @@
                                 <p class="text-black font-medium text-base md:text-lg leading-relaxed pr-4">{{ item.question }}</p>
                                 <Icon 
                                     name="material-symbols:keyboard-arrow-down-rounded" 
-                                    class="text-3xl md:text-4xl text-black duration-300 transform border" 
+                                    class="text-3xl md:text-4xl text-blaStarlight, sun, and serenity—yours to discover. Your most common questions, answered with a sprinkle of magic and clarity.ck duration-300 transform border" 
                                     :class="selectedQestion == index ? 'rotate-0' : '-rotate-90'" 
                                 />
                             </div>
@@ -73,11 +73,11 @@ const faq = [
     },
     {
         question: 'Does Tea Garden Eco Villas have a restaurant on site?',
-        answer: 'Yes, Tea Garden Eco Villas has one on-site dining facility: Restaurant #1.'
+        answer: 'Yes, Tea Garden Eco Villas has one on-site dining facility.'
     },
     {
         question: 'What activities and services are offered at Tea Garden Eco Villas?',
-        answer: 'Tea Garden Eco Villas offers the following activities and services (charges may apply): Hiking, Walking tours, and access to the Swimming pool.'
+        answer: 'Tea Garden Eco Villas offers the following activities and services (charges may apply): Hiking, Walking tours, and access to the swimming pool (free).'
     },
     {
         question: 'How far is Tea Garden Eco Villas from the centre of Morawaka?',

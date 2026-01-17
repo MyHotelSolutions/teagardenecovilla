@@ -25,7 +25,7 @@
                     <p class="text-stone-500 text-sm sm:text-base md:text-lg leading-relaxed text-left">
                         Tea Garden Eco Villa was born from the vision of Mr. Nanayakkara, a passionate biology science teacher from Matara with deep roots in Sri Lanka’s Southern Province. Owning a breathtaking 50-acre tea estate atop a stunning mountain in Morawaka,
                         <br> he saw the potential to share this natural paradise with travelers exploring the Deniyaya region.
-                            In 2012, he transformed part of his lush tea plantation into an inviting eco-villa, designed to offer authentic Sri Lankan hospitality—or “Aaganthuka Sathkaara”—to guests from around the world. Drawing from his unique blend of experiences as an educator, tea farmer, and businessman, Mr. Nanayakkara created a serene retreat where visitors can immerse themselves in rolling tea fields, misty mountain views, and the tranquility of nature. 
+                            In 2012, he transformed part of his lush tea plantation into an inviting eco-villa, designed to offer authentic Sri Lankan hospitality—or “Aaganthuka Sathkaara”—to guests from around the world. Drawing from his unique blend of experiences as an educator, tea farmer, and businessman, Mr. Nanayakkara created a the perfect retreat where visitors can immerse themselves in rolling tea fields, misty mountain views, and the tranquility of nature. 
                 <br>Today, Tea Garden Eco Villa remains a family-run haven, committed to sustainable living, warm personal service, and meaningful connections with the land and local culture. We welcome you to experience the true essence of Southern Sri Lanka’s emerald hills.
                     </p>
                     <div class="flex flex-row gap-4 items-center">
@@ -33,7 +33,7 @@
                         
                         <NuxtImg 
                             provider="imagekit" 
-                            src="TeaGardenEcovillas/third%20party%20images/Mr.%20Nanayakkara%20image%202.png" 
+                            src="TeaGardenEcovillas/third%20party%20images/Mr.Nanayakkar.png" 
                             :quality="qualityCal"
                             sizes="175vw md:120vw"
                             preset="cover"
@@ -43,7 +43,7 @@
                         <div class="">
                             <h5 class="font-black text-xl">Mr. Nayayakkara</h5>
                             <p class="">Founder of Tea Garden Eco Villa - Morawaka</p>
-                            <p class="font-light text-sm">Biology and Zoology lecturer.</p>
+                            <p class="font-light text-sm">Leader, Tea farmour, Businessmess + Biology and Zoology lecturer.</p>
                         </div>
                     </div>
                 </div>

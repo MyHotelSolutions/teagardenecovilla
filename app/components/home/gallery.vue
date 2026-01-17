@@ -8,7 +8,8 @@
                     Moments Captured
                 </h3>
                 <hr class="w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[8vw] xl:w-[6vw] h-1 rounded-full bg-[#059699]">
-                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-lg text-center">Explore our villa through guests' eyes: breathtaking views, serene pools, lush greenery, and cozy interiors captured in stunning photos. Let these images inspire your dream escape!</p>
+                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-lg text-center">Explore our villa through guests' eyes: breathtaking views, stunning pools, lush greenery, and cozy interiors captured in stunning photos. Let these images inspire your dream getaway! 
+Get rid of” escape into paradise</p>
             </div>
 
             <!-- image gallery -->

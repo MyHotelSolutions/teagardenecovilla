@@ -6,7 +6,7 @@
             <!-- title section -->
             <div class="flex flex-col justify-center items-center gap-2 sm:gap-3 w-full sm:w-[80%] md:w-[70%] lg:w-[60%] text-center">
                 <!-- <p class="text-stone-500/60 text-base sm:text-lg leading-relaxed">Your Escape to Nature's Heart</p> -->
-                <h3 class="font-serif text-2xl sm:text-4xl text-stone-900 leading-tight font-black text-center">Your Escape to Nature's Heart</h3>
+                <h3 class="font-serif text-2xl sm:text-4xl text-stone-900 leading-tight font-black text-center">Your Escape into Nature's Heart</h3>
                 <hr class="w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[6vw] h-1 rounded-full bg-[#059699]">
                 <!-- <p class="text-stone-500 text-sm sm:text-base md:text-lg leading-relaxed w-full sm:w-[80%] md:w-[70%] lg:w-[55%] font-light mt-2">
                     Where misty trails, hidden waterfalls, and forest whispers create your perfect mountain retreat.
@@ -172,7 +172,7 @@ const introductionImages = {
         imagestore.thirdPartyImages[3],
         imagestore.thirdPartyImages[4],
         imagestore.thirdPartyImages[5],
-        imagestore.thirdPartyImages[6],
+        imagestore.thirdPartyImages[7],
     ],
     BBQ : [
         'TeaGardenEcovillas/third%20party%20images/grilled-chipotle-chicken.jpg',
@@ -191,7 +191,7 @@ const introductionText = [
     {    
         icon : 'mdi:pool',
         name : 'Pool',
-        description : 'Your private oasis for sun-soaked relaxation and refreshing dips in a stunning, exclusive setting.'
+        description : 'Your private sanctuary for sun-soaked relaxation and refreshing dips in a stunning, exclusive setting.'
     },
     {
         icon : 'tabler:leaf',
@@ -201,7 +201,7 @@ const introductionText = [
     {
         icon : 'tabler:meat',
         name : 'BBQ',
-        description : 'Vibrant, sizzling feasts under the stars—the ultimate setting for fun, flavor, and making memories.'
+        description : 'Vibrant, sizzling feasts under the stars-the ultimate setting for fun, flavor, and making memories.'
     },
 ]
 

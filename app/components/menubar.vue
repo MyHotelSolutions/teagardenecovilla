@@ -2,7 +2,7 @@
     <!-- Navigation -->
     <nav 
       :class="`fixed w-full transition-all duration-300 z-999 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-4 md:py-6'
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-gradient-to-b from-zinc-900 to-slate-50/0 py-6 md:py-6'
       }`"
     >
       <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">

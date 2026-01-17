@@ -9,9 +9,7 @@
                         Tea Garden Eco Villas<span class="text-teal-600">.</span>
                     </h3>
                     <p class="text-start w-full sm:w-[90%] lg:w-[75%] text-white/60 text-sm sm:text-base lg:text-lg tracking-wide sm:text-left">
-                        Discover vibrant adventures right at your doorstep, 
-                        then return to pure tranquility. Your perfect balance of excitement 
-                        and serene relaxation awaits.
+                        Discover the adventures that await you right at your doorstep. Tea Garden Eco Villas offers the perfect balance of relaxation and enjoyment.
                     </p>
                 </div>
 

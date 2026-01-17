@@ -8,7 +8,7 @@
                     Guest Experiences
                 </h3>
                 <hr class="w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[8vw] xl:w-[6vw] h-1 sm:h-1.5 rounded-full bg-[#059699]">
-                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-md text-center">Escape into paradise: Hear from delighted visitors about breathtaking views, exceptional service, and pure relaxation in our hidden hilltop haven.</p>
+                <p class="text-sm sm:text-base font-light leading-relaxed text-gray-700 overflow-y-auto max-w-md text-center">Hear from delighted visitors about breathtaking views, exceptional service, and pure relaxation in our hidden hilltop haven.</p>
             </div>
 
             <!-- reviews -->

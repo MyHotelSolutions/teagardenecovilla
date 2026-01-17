@@ -39,7 +39,7 @@
                             </h4>
                             <p class="text-stone-500 text-sm sm:text-base md:text-lg leading-relaxed">
                                 Use this form to contact us regarding your stay, questions,
-                                or special requests. We aim to respond as quickly as possible
+                                or special requests. We aim to respond as quickly as possible.
                             </p>
                         </div>
 
@@ -103,8 +103,7 @@
                         Getting in touch
                     </h4>
                     <p class="text-stone-500 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-                        Your journey to serenity begins with a simple conversation. 
-                        Reach out—we're here to listen and craft your perfect escape amidst the palms.
+                        Your journey with us at Tea Garden Eco Villas begins with a conversation. Reach out- we're here to listen and help shape your dream stay!
                     </p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-8">
@@ -148,7 +147,7 @@ const contact = [
     { title: 'WhatsApp', details: '+44 770 277 8744' },
     { title: 'Phone', details: '+44 770 277 8744' },
     { title: 'Email', details: 'teagardenecovilla@gmail.com' },
-    { title: 'Address', details: 'Morawaka, Southern Province, Sri Lanka' },
+    { title: 'Address', details: 'Rabukana Estate, Rambukana-Kodikaradoda Rd, Morawaka 81470, Sri Lanka' },
 ]
 
 const formData = ref({
