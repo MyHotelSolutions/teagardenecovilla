@@ -12,7 +12,8 @@
              <div :class="`font-serif text-xl sm:text-2xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${
                isScrolled ? 'text-teal-900' : 'text-white'
              } ${isMobileMenuOpen ? 'text-teal-900' : ''}`">
-               Tea Garden Eco Villas<span class="text-emerald-500">.</span>
+               <!-- Tea Garden Eco Villas<span class="text-emerald-500">.</span> -->
+              <img src="https://ik.imagekit.io/myHotelSolutions/TeaGardenEcovillas/Logo/tea%20garden%20log.png" alt="" class="w-[130px]">
              </div>
            </NuxtLink>
 

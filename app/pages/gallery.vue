@@ -415,7 +415,8 @@
                         class="w-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
-                <div class="col-span-1 md:col-span-1 lg:col-span-3 row-span-2 md:row-span-2 lg:row-span-4 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[34])">
+                <!-- <div class="col-span-1 md:col-span-1 lg:col-span-4 row-span-2 md:row-span-2 lg:row-span-4 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[34])"> -->
+                <div class="col-span-1 md:col-span-1 lg:col-span-4 row-span-2 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[34])">
                     <!-- <p class="absolute top-0 left-0 text-2xl text-white bg-black">34</p> -->
                     <NuxtImg 
                         provider="imagekit" 
@@ -427,8 +428,7 @@
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
                 </div>
-                <div class="col-span-1 md:col-span-1 lg:col-span-1 row-span-1 md:row-span-1 lg:row-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[35])">
-                    <!-- <p class="absolute top-0 left-0 text-2xl text-white bg-black">35</p> -->
+                <!-- <div class="col-span-1 md:col-span-1 lg:col-span-1 row-span-1 md:row-span-1 lg:row-span-1 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[35])">
                     <NuxtImg 
                         provider="imagekit" 
                         :src="imageList[35]" 
@@ -440,7 +440,6 @@
                     />
                 </div>
                 <div class="col-span-2 md:col-span-1 lg:col-span-1 row-span-2 md:row-span-1 lg:row-span-3 w-full h-full md:rounded-2xl rounded-lg overflow-clip relative" @click="openPopup(imageList[36])">
-                    <!-- <p class="absolute top-0 left-0 text-2xl text-white bg-black">36</p> -->
                     <NuxtImg 
                         provider="imagekit" 
                         :src="imageList[36]" 
@@ -450,7 +449,7 @@
                         loading="lazy" 
                         class="w-full h-full object-cover rounded-2xl hover:scale-106 active:scale-106 duration-300 md:rounded-2xl" 
                     />
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -513,8 +512,8 @@
                             class="text-2xl sm:text-3xl md:text-4xl text-white/70 group-hover:text-white transition-all duration-200 transform group-hover:scale-110"></Icon>
                     </button>
                 </div>
-
-            </div>
+            </div>  
+        </div>
 
         <div 
             class="absolute inset-0 -z-10" 
@@ -525,7 +524,7 @@
 
         <Booknow></Booknow>
         <Footer></Footer>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script setup>
@@ -550,7 +549,7 @@ const imageList = [
     imagestore.pool[6],
     imagestore.balconey[2],
     imagestore.insiderooms[4],
-    imagestore.thirdPartyImages[0],
+    // imagestore.thirdPartyImages[0],bbqandfire[1]
     imagestore.lunch[1],
     imagestore.garden[4],
     imagestore.insiderooms[5],
@@ -562,7 +561,7 @@ const imageList = [
     imagestore.garden[1],
     imagestore.garden[3],
     imagestore.dinner[1],
-    imagestore.bbqandfire[1],
+    // imagestore.bbqandfire[1],
     imagestore.bathroomandfitting[1],
     imagestore.garden[5],
     imagestore.bathroomandfitting[3],
