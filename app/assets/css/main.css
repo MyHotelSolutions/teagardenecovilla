@@ -19,3 +19,18 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
 } */
+
+@supports (-webkit-touch-callout: none) {
+  /* Safari-specific styles */
+  .grid > div {
+    min-height: 200px;
+  }
+  
+  .grid > div[row-span="2"] {
+    min-height: 300px;
+  }
+  
+  .grid > div[row-span="3"] {
+    min-height: 400px;
+  }
+}
